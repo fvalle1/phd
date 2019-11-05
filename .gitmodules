@@ -1,0 +1,3 @@
+[submodule "TWO-NN"]
+	path = TWO-NN
+	url = https://github.com/fmottes/TWO-NN.git
