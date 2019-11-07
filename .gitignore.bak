@@ -73,5 +73,3 @@ docker/core
 docker/data_mining
 
 *.RData
-.xz
-*.xz
