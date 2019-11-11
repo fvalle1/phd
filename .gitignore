@@ -75,3 +75,10 @@ docker/data_mining
 *.RData
 .xz
 *.xz
+
+*.maf
+datasets/
+
+*.tar
+
+*.pb
