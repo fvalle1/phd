@@ -1,0 +1,9 @@
+version: '2'
+services:
+  tcga:
+    image: tiagochst/tcgabiolinksgui
+    ports:
+      - 8787:8787
+      - 3838:3838
+    volumes:
+      - .:/home/rstudio

@@ -13,3 +13,9 @@
 [submodule "Mallet"]
 	path = Mallet
 	url = https://github.com/mimno/Mallet.git
+[submodule "topsbm"]
+	path = topsbm
+	url = https://github.com/TopSBM/topsbm.git
+[submodule "fastconsensus"]
+	path = fastconsensus
+	url = git@github.com:adityat/fastconsensus.git
