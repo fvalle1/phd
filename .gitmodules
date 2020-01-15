@@ -19,3 +19,9 @@
 [submodule "fastconsensus"]
 	path = fastconsensus
 	url = git@github.com:adityat/fastconsensus.git
+[submodule "stopwords"]
+	path = stopwords
+	url = git@github.com:fvalle1/stopwords.git
+[submodule "topics"]
+	path = topics
+	url = git@github.com:fvalle1/topics.git

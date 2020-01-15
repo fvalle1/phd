@@ -1,0 +1,8 @@
+version: '2'
+services:
+ notebooks:
+  build: .
+  ports:
+   - 8889:8888
+  volumes:
+   - /home/fvalle/:/home/jovyan/work

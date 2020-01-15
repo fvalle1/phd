@@ -82,5 +82,7 @@ datasets/
 *.tar
 
 *.pb
+*.pkl
 
 topicmapping/
+TCGAbiolinks/.rstudio/
