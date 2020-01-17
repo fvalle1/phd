@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<mapping>
+	<map>
+		<framework name="dense_1/BiasAdd" out_port_id="0"/>
+		<IR id="1" name="dense_1/MatMul" out_port_id="3"/>
+	</map>
+	<map>
+		<framework name="dense_1_input" out_port_id="0"/>
+		<IR id="0" name="dense_1_input" out_port_id="0"/>
+	</map>
+	<map>
+		<framework name="dense_1/Softmax" out_port_id="0"/>
+		<IR id="2" name="dense_1/Softmax" out_port_id="1"/>
+	</map>
+</mapping>

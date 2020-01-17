@@ -9,3 +9,5 @@ services:
       - /dev:/dev
       - .:/home/user/predictor
     privileged: true
+    devices:
+      - /dev/dri
