@@ -42,11 +42,17 @@ RUN python3.7 -m  pip install --upgrade pip
 #jupyter
 RUN python3.7 -m pip install jupyter
 
+#openCL
+
+RUN cd /opt/intel/openvino/install_dependencies && bash install_NEO_OCL_driver.sh
+
+RUN useradd -G video -ms /bin/bash user
+
 #user
-RUN useradd -m -g sudo user
+#RUN useradd -m -g sudo user
 
 RUN python3.7 -m pip install -r /opt/intel/openvino/inference_engine/demos/python_demos/requirements.txt
-RUN python3.7 -m pip install scipy
+RUN python3.7 -m pip install scipy pyyaml
 RUN echo "source /opt/intel/openvino/bin/setupvars.sh" >> /home/user/.bashrc
 RUN echo "alias python='python3.7'" >> /home/user/.bashrc
 
@@ -56,5 +62,6 @@ RUN mkdir predictor
 
 #run
 EXPOSE 8899
-ENTRYPOINT ["jupyter-notebook", "--ip=0.0.0.0", "--port=8899"]
-CMD [""]
+ENTRYPOINT ["bash", "predictor/run.sh"]
+#ENTRYPOINT ["jupyter-notebook", "--ip=0.0.0.0", "--port=8899"]
+#CMD [""]
