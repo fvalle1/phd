@@ -3,6 +3,6 @@ services:
  notebooks:
   build: .
   ports:
-   - 8889:8888
+   - 8899:8899
   volumes:
    - /home/fvalle/:/home/jovyan/work

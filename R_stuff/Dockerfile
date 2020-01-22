@@ -10,4 +10,5 @@ USER jovyan
 WORKDIR /home/jovyan/work/
 RUN Rscript install_pkgs.R
 
-
+ENTRYPOINT ["jupyter-notebook", "--port=8899"]
+CMD [""]
