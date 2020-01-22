@@ -52,7 +52,8 @@ RUN useradd -G video -ms /bin/bash user
 #RUN useradd -m -g sudo user
 
 RUN python3.7 -m pip install -r /opt/intel/openvino/inference_engine/demos/python_demos/requirements.txt
-RUN python3.7 -m pip install scipy pyyaml
+RUN python3.7 -m pip install -r /opt/intel/openvino/deployment_tools/model_optimizer/requirements.txt
+RUN python3.7 -m pip install scipy pyyaml networkx
 RUN echo "source /opt/intel/openvino/bin/setupvars.sh" >> /home/user/.bashrc
 RUN echo "alias python='python3.7'" >> /home/user/.bashrc
 
