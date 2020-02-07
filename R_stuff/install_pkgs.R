@@ -9,6 +9,7 @@ install.packages("gplots", dependencies=TRUE, repos='http://cran.rstudio.com/')
 install.packages("fastICA", dependencies=TRUE, repos='http://cran.rstudio.com/')
 install.packages("svglite", dependencies=TRUE, repos='http://cran.rstudio.com/')
 install.packages("stringi", dependencies=TRUE, repos='http://cran.rstudio.com/')
+install.packages("clustree", dependencies=TRUE, repos='http://cran.rstudio.com/')
 
 BiocManager::install("WGCNA")
 BiocManager::install("GO.db")
