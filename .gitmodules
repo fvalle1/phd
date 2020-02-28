@@ -25,3 +25,6 @@
 [submodule "topics"]
 	path = topics
 	url = git@github.com:fvalle1/topics.git
+[submodule "Sanity"]
+	path = Sanity
+	url = git@github.com:jmbreda/Sanity.git
