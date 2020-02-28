@@ -10,12 +10,6 @@
 [submodule "hsbm-occam"]
 	path = hsbm-occam
 	url = git@gitlab.c3s.unito.it:filippo.valle/hsbm-occam.git
-[submodule "Mallet"]
-	path = Mallet
-	url = https://github.com/mimno/Mallet.git
-[submodule "topsbm"]
-	path = topsbm
-	url = https://github.com/TopSBM/topsbm.git
 [submodule "topics"]
 	path = topics
 	url = git@github.com:fvalle1/topics.git
