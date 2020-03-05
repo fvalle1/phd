@@ -77,8 +77,11 @@ docker/data_mining
 *.xz
 
 *.maf
-datasets/
-
+*.png
+*.pdf
+*.svg
+*graph.xml.gz
+*.zip
 *.tar
 
 *.pb

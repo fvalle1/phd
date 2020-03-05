@@ -1,0 +1,878 @@
+Welcome to Topic Modelling
+using  12  threads
+initialised
+seed set
+model created
+graph loaded
+<Graph object, undirected, with 735 vertices and 26067 edges at 0x7f52871f9550>
+    l=1  Current bracket: (2, 2, 2) (38.387401813515154, 38.387401813515154, 38.387401813515154)
+    l=1  Current bracket: (2, 2, 2) (38.387401813515154, 38.387401813515154, 38.387401813515154)
+    l=1  Bisect at B = 2 with S = 38.38740181351515
+    l=1  Best result: B = 2, S = 38.38740181351515
+level 1 : rejected replacement (2, 1) -> (2, 2) , dS: 1.386294361203909
+    l=1  Current bracket: (2, 2, 2) (38.387401813515154, 38.387401813515154, 38.387401813515154)
+    l=1  Current bracket: (2, 2, 2) (38.387401813515154, 38.387401813515154, 38.387401813515154)
+    l=1  Bisect at B = 2 with S = 38.38740181351515
+    l=1  Best result: B = 2, S = 38.38740181351515
+level 1 : rejected insert 2 , dS: 2.772588722407818
+    l=0      B: 358 <- 735    shrinking 735 -> 565
+    l=0      B: 358 <- 735    B=565  niter:     1  count:    0  breaks:  0  min_S: 406259.61  max_S: 409298.78  S: 406259.61  ΔS:     -3039.17  moves:    27 
+    l=0      B: 358 <- 735    B=565  niter:     2  count:    0  breaks:  0  min_S: 401975.76  max_S: 409298.78  S: 401975.76  ΔS:     -4283.85  moves:    19 
+    l=0      B: 358 <- 735    B=565  niter:     3  count:    0  breaks:  0  min_S: 397072.69  max_S: 409298.78  S: 397072.69  ΔS:     -4903.07  moves:    24 
+    l=0      B: 358 <- 735    B=565  niter:     4  count:    0  breaks:  0  min_S: 393944.94  max_S: 409298.78  S: 393944.94  ΔS:     -3127.76  moves:    23 
+    l=0      B: 358 <- 735    B=565  niter:     5  count:    0  breaks:  0  min_S: 392460.72  max_S: 409298.78  S: 392460.72  ΔS:     -1484.21  moves:    10 
+    l=0      B: 358 <- 735    B=565  niter:     6  count:    0  breaks:  0  min_S: 390798.39  max_S: 409298.78  S: 390798.39  ΔS:     -1662.33  moves:    16 
+    l=0      B: 358 <- 735    B=565  niter:     7  count:    0  breaks:  0  min_S: 387914.96  max_S: 409298.78  S: 387914.96  ΔS:     -2883.43  moves:    16 
+    l=0      B: 358 <- 735    B=565  niter:     8  count:    0  breaks:  0  min_S: 386109.32  max_S: 409298.78  S: 386109.32  ΔS:     -1805.64  moves:    12 
+    l=0      B: 358 <- 735    B=565  niter:     9  count:    0  breaks:  0  min_S: 383801.71  max_S: 409298.78  S: 383801.71  ΔS:     -2307.60  moves:     9 
+    l=0      B: 358 <- 735    B=565  niter:    10  count:    0  breaks:  0  min_S: 383181.40  max_S: 409298.78  S: 383181.40  ΔS:     -620.319  moves:     5 
+    l=0      B: 358 <- 735    B=565  niter:    11  count:    0  breaks:  0  min_S: 381073.86  max_S: 409298.78  S: 381073.86  ΔS:     -2107.54  moves:    11 
+    l=0      B: 358 <- 735    B=565  niter:    12  count:    0  breaks:  0  min_S: 380095.50  max_S: 409298.78  S: 380095.50  ΔS:     -978.353  moves:     8 
+    l=0      B: 358 <- 735    B=565  niter:    13  count:    0  breaks:  0  min_S: 378953.72  max_S: 409298.78  S: 378953.72  ΔS:     -1141.79  moves:     6 
+    l=0      B: 358 <- 735    B=565  niter:    14  count:    0  breaks:  0  min_S: 378060.27  max_S: 409298.78  S: 378060.27  ΔS:     -893.452  moves:     8 
+    l=0      B: 358 <- 735    B=565  niter:    15  count:    0  breaks:  0  min_S: 375717.12  max_S: 409298.78  S: 375717.12  ΔS:     -2343.15  moves:     7 
+    l=0      B: 358 <- 735    B=565  niter:    16  count:    0  breaks:  0  min_S: 375210.54  max_S: 409298.78  S: 375210.54  ΔS:     -506.582  moves:     6 
+    l=0      B: 358 <- 735    B=565  niter:    17  count:    0  breaks:  0  min_S: 373899.71  max_S: 409298.78  S: 373899.71  ΔS:     -1310.83  moves:     7 
+    l=0      B: 358 <- 735    B=565  niter:    18  count:    0  breaks:  0  min_S: 373610.94  max_S: 409298.78  S: 373610.94  ΔS:     -288.772  moves:     7 
+    l=0      B: 358 <- 735    B=565  niter:    19  count:    0  breaks:  0  min_S: 372153.06  max_S: 409298.78  S: 372153.06  ΔS:     -1457.88  moves:     9 
+    l=0      B: 358 <- 735    B=565  niter:    20  count:    0  breaks:  0  min_S: 371647.93  max_S: 409298.78  S: 371647.93  ΔS:     -505.127  moves:     5 
+    l=0      B: 358 <- 735    B=565  niter:    21  count:    0  breaks:  0  min_S: 371268.29  max_S: 409298.78  S: 371268.29  ΔS:     -379.642  moves:     3 
+    l=0      B: 358 <- 735    B=565  niter:    22  count:    0  breaks:  0  min_S: 371031.06  max_S: 409298.78  S: 371031.06  ΔS:     -237.236  moves:     1 
+    l=0      B: 358 <- 735    B=565  niter:    23  count:    0  breaks:  0  min_S: 370013.61  max_S: 409298.78  S: 370013.61  ΔS:     -1017.44  moves:     7 
+    l=0      B: 358 <- 735    B=565  niter:    24  count:    0  breaks:  0  min_S: 368218.34  max_S: 409298.78  S: 368218.34  ΔS:     -1795.28  moves:     7 
+    l=0      B: 358 <- 735    B=565  niter:    25  count:    0  breaks:  0  min_S: 366508.27  max_S: 409298.78  S: 366508.27  ΔS:     -1710.07  moves:     9 
+    l=0      B: 358 <- 735    B=565  niter:    26  count:    1  breaks:  1  min_S: 366508.27  max_S: 409298.78  S: 366508.27  ΔS:      0.00000  moves:     0 
+    l=0      B: 358 <- 735    shrinking 565 -> 435
+    l=0      B: 358 <- 735    B=435  niter:     1  count:    0  breaks:  0  min_S: 700284.15  max_S: 706525.63  S: 700284.15  ΔS:     -6241.48  moves:    23 
+    l=0      B: 358 <- 735    B=435  niter:     2  count:    0  breaks:  0  min_S: 695805.18  max_S: 706525.63  S: 695805.18  ΔS:     -4478.98  moves:    21 
+    l=0      B: 358 <- 735    B=435  niter:     3  count:    0  breaks:  0  min_S: 691461.04  max_S: 706525.63  S: 691461.04  ΔS:     -4344.14  moves:    15 
+    l=0      B: 358 <- 735    B=435  niter:     4  count:    0  breaks:  0  min_S: 688825.72  max_S: 706525.63  S: 688825.72  ΔS:     -2635.32  moves:    16 
+    l=0      B: 358 <- 735    B=435  niter:     5  count:    0  breaks:  0  min_S: 685299.84  max_S: 706525.63  S: 685299.84  ΔS:     -3525.88  moves:    19 
+    l=0      B: 358 <- 735    B=435  niter:     6  count:    0  breaks:  0  min_S: 683726.10  max_S: 706525.63  S: 683726.10  ΔS:     -1573.74  moves:    10 
+    l=0      B: 358 <- 735    B=435  niter:     7  count:    0  breaks:  0  min_S: 680954.32  max_S: 706525.63  S: 680954.32  ΔS:     -2771.77  moves:    12 
+    l=0      B: 358 <- 735    B=435  niter:     8  count:    0  breaks:  0  min_S: 679913.83  max_S: 706525.63  S: 679913.83  ΔS:     -1040.50  moves:     6 
+    l=0      B: 358 <- 735    B=435  niter:     9  count:    0  breaks:  0  min_S: 678175.76  max_S: 706525.63  S: 678175.76  ΔS:     -1738.06  moves:    10 
+    l=0      B: 358 <- 735    B=435  niter:    10  count:    0  breaks:  0  min_S: 673549.40  max_S: 706525.63  S: 673549.40  ΔS:     -4626.36  moves:    16 
+    l=0      B: 358 <- 735    B=435  niter:    11  count:    0  breaks:  0  min_S: 671007.57  max_S: 706525.63  S: 671007.57  ΔS:     -2541.83  moves:    14 
+    l=0      B: 358 <- 735    B=435  niter:    12  count:    0  breaks:  0  min_S: 668238.98  max_S: 706525.63  S: 668238.98  ΔS:     -2768.60  moves:     9 
+    l=0      B: 358 <- 735    B=435  niter:    13  count:    0  breaks:  0  min_S: 665919.25  max_S: 706525.63  S: 665919.25  ΔS:     -2319.73  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    14  count:    0  breaks:  0  min_S: 664908.30  max_S: 706525.63  S: 664908.30  ΔS:     -1010.95  moves:    13 
+    l=0      B: 358 <- 735    B=435  niter:    15  count:    0  breaks:  0  min_S: 662106.23  max_S: 706525.63  S: 662106.23  ΔS:     -2802.07  moves:    14 
+    l=0      B: 358 <- 735    B=435  niter:    16  count:    0  breaks:  0  min_S: 660780.41  max_S: 706525.63  S: 660780.41  ΔS:     -1325.82  moves:     7 
+    l=0      B: 358 <- 735    B=435  niter:    17  count:    0  breaks:  0  min_S: 659166.33  max_S: 706525.63  S: 659166.33  ΔS:     -1614.08  moves:     9 
+    l=0      B: 358 <- 735    B=435  niter:    18  count:    0  breaks:  0  min_S: 658206.76  max_S: 706525.63  S: 658206.76  ΔS:     -959.574  moves:     6 
+    l=0      B: 358 <- 735    B=435  niter:    19  count:    0  breaks:  0  min_S: 654790.40  max_S: 706525.63  S: 654790.40  ΔS:     -3416.36  moves:     8 
+    l=0      B: 358 <- 735    B=435  niter:    20  count:    0  breaks:  0  min_S: 653205.68  max_S: 706525.63  S: 653205.68  ΔS:     -1584.72  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    21  count:    0  breaks:  0  min_S: 652327.03  max_S: 706525.63  S: 652327.03  ΔS:     -878.653  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    22  count:    0  breaks:  0  min_S: 650840.21  max_S: 706525.63  S: 650840.21  ΔS:     -1486.82  moves:     7 
+    l=0      B: 358 <- 735    B=435  niter:    23  count:    0  breaks:  0  min_S: 646665.70  max_S: 706525.63  S: 646665.70  ΔS:     -4174.52  moves:    12 
+    l=0      B: 358 <- 735    B=435  niter:    24  count:    0  breaks:  0  min_S: 644326.52  max_S: 706525.63  S: 644326.52  ΔS:     -2339.18  moves:     9 
+    l=0      B: 358 <- 735    B=435  niter:    25  count:    0  breaks:  0  min_S: 641989.91  max_S: 706525.63  S: 641989.91  ΔS:     -2336.61  moves:     6 
+    l=0      B: 358 <- 735    B=435  niter:    26  count:    0  breaks:  0  min_S: 640703.27  max_S: 706525.63  S: 640703.27  ΔS:     -1286.63  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    27  count:    0  breaks:  0  min_S: 639424.60  max_S: 706525.63  S: 639424.60  ΔS:     -1278.67  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    28  count:    0  breaks:  0  min_S: 639082.41  max_S: 706525.63  S: 639082.41  ΔS:     -342.186  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    29  count:    0  breaks:  0  min_S: 637037.61  max_S: 706525.63  S: 637037.61  ΔS:     -2044.80  moves:     6 
+    l=0      B: 358 <- 735    B=435  niter:    30  count:    0  breaks:  0  min_S: 635695.35  max_S: 706525.63  S: 635695.35  ΔS:     -1342.26  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    31  count:    0  breaks:  0  min_S: 634999.55  max_S: 706525.63  S: 634999.55  ΔS:     -695.798  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    32  count:    0  breaks:  0  min_S: 634338.11  max_S: 706525.63  S: 634338.11  ΔS:     -661.442  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    33  count:    0  breaks:  0  min_S: 633559.45  max_S: 706525.63  S: 633559.45  ΔS:     -778.658  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    34  count:    0  breaks:  0  min_S: 631836.63  max_S: 706525.63  S: 631836.63  ΔS:     -1722.82  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    35  count:    0  breaks:  0  min_S: 630802.81  max_S: 706525.63  S: 630802.81  ΔS:     -1033.82  moves:     6 
+    l=0      B: 358 <- 735    B=435  niter:    36  count:    0  breaks:  0  min_S: 630511.97  max_S: 706525.63  S: 630511.97  ΔS:     -290.841  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    37  count:    0  breaks:  0  min_S: 629874.69  max_S: 706525.63  S: 629874.69  ΔS:     -637.284  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    38  count:    0  breaks:  0  min_S: 629261.83  max_S: 706525.63  S: 629261.83  ΔS:     -612.855  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    39  count:    0  breaks:  0  min_S: 629000.39  max_S: 706525.63  S: 629000.39  ΔS:     -261.446  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    40  count:    0  breaks:  0  min_S: 628277.71  max_S: 706525.63  S: 628277.71  ΔS:     -722.674  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    41  count:    0  breaks:  0  min_S: 626546.11  max_S: 706525.63  S: 626546.11  ΔS:     -1731.61  moves:     6 
+    l=0      B: 358 <- 735    B=435  niter:    42  count:    1  breaks:  1  min_S: 626546.11  max_S: 706525.63  S: 626546.11  ΔS:      0.00000  moves:     0 
+    l=0      B: 358 <- 735    shrinking 435 -> 358
+    l=0      B: 358 <- 735    B=358  niter:     1  count:    0  breaks:  0  min_S: 924737.29  max_S: 935491.24  S: 924737.29  ΔS:     -10753.9  moves:    22 
+    l=0      B: 358 <- 735    B=358  niter:     2  count:    0  breaks:  0  min_S: 921959.03  max_S: 935491.24  S: 921959.03  ΔS:     -2778.26  moves:    15 
+    l=0      B: 358 <- 735    B=358  niter:     3  count:    0  breaks:  0  min_S: 915619.64  max_S: 935491.24  S: 915619.64  ΔS:     -6339.39  moves:    13 
+    l=0      B: 358 <- 735    B=358  niter:     4  count:    0  breaks:  0  min_S: 911800.08  max_S: 935491.24  S: 911800.08  ΔS:     -3819.55  moves:    13 
+    l=0      B: 358 <- 735    B=358  niter:     5  count:    0  breaks:  0  min_S: 910450.74  max_S: 935491.24  S: 910450.74  ΔS:     -1349.34  moves:     8 
+    l=0      B: 358 <- 735    B=358  niter:     6  count:    0  breaks:  0  min_S: 906897.35  max_S: 935491.24  S: 906897.35  ΔS:     -3553.39  moves:    10 
+    l=0      B: 358 <- 735    B=358  niter:     7  count:    0  breaks:  0  min_S: 903233.34  max_S: 935491.24  S: 903233.34  ΔS:     -3664.01  moves:     9 
+    l=0      B: 358 <- 735    B=358  niter:     8  count:    0  breaks:  0  min_S: 901846.31  max_S: 935491.24  S: 901846.31  ΔS:     -1387.03  moves:     9 
+    l=0      B: 358 <- 735    B=358  niter:     9  count:    0  breaks:  0  min_S: 900590.12  max_S: 935491.24  S: 900590.12  ΔS:     -1256.18  moves:     8 
+    l=0      B: 358 <- 735    B=358  niter:    10  count:    0  breaks:  0  min_S: 899459.60  max_S: 935491.24  S: 899459.60  ΔS:     -1130.52  moves:     4 
+    l=0      B: 358 <- 735    B=358  niter:    11  count:    0  breaks:  0  min_S: 898120.48  max_S: 935491.24  S: 898120.48  ΔS:     -1339.12  moves:     7 
+    l=0      B: 358 <- 735    B=358  niter:    12  count:    0  breaks:  0  min_S: 897323.08  max_S: 935491.24  S: 897323.08  ΔS:     -797.399  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:    13  count:    0  breaks:  0  min_S: 895797.56  max_S: 935491.24  S: 895797.56  ΔS:     -1525.53  moves:     6 
+    l=0      B: 358 <- 735    B=358  niter:    14  count:    0  breaks:  0  min_S: 894274.68  max_S: 935491.24  S: 894274.68  ΔS:     -1522.88  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:    15  count:    0  breaks:  0  min_S: 891432.83  max_S: 935491.24  S: 891432.83  ΔS:     -2841.84  moves:    10 
+    l=0      B: 358 <- 735    B=358  niter:    16  count:    0  breaks:  0  min_S: 889920.41  max_S: 935491.24  S: 889920.41  ΔS:     -1512.43  moves:     8 
+    l=0      B: 358 <- 735    B=358  niter:    17  count:    0  breaks:  0  min_S: 887854.37  max_S: 935491.24  S: 887854.37  ΔS:     -2066.04  moves:     8 
+    l=0      B: 358 <- 735    B=358  niter:    18  count:    0  breaks:  0  min_S: 886572.20  max_S: 935491.24  S: 886572.20  ΔS:     -1282.16  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:    19  count:    0  breaks:  0  min_S: 885389.89  max_S: 935491.24  S: 885389.89  ΔS:     -1182.32  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:    20  count:    0  breaks:  0  min_S: 883239.84  max_S: 935491.24  S: 883239.84  ΔS:     -2150.05  moves:     6 
+    l=0      B: 358 <- 735    B=358  niter:    21  count:    0  breaks:  0  min_S: 881230.56  max_S: 935491.24  S: 881230.56  ΔS:     -2009.28  moves:     9 
+    l=0      B: 358 <- 735    B=358  niter:    22  count:    0  breaks:  0  min_S: 879751.07  max_S: 935491.24  S: 879751.07  ΔS:     -1479.49  moves:     4 
+    l=0      B: 358 <- 735    B=358  niter:    23  count:    0  breaks:  0  min_S: 878669.79  max_S: 935491.24  S: 878669.79  ΔS:     -1081.28  moves:     2 
+    l=0      B: 358 <- 735    B=358  niter:    24  count:    0  breaks:  0  min_S: 877441.77  max_S: 935491.24  S: 877441.77  ΔS:     -1228.02  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:    25  count:    0  breaks:  0  min_S: 876668.47  max_S: 935491.24  S: 876668.47  ΔS:     -773.300  moves:     8 
+    l=0      B: 358 <- 735    B=358  niter:    26  count:    0  breaks:  0  min_S: 876058.70  max_S: 935491.24  S: 876058.70  ΔS:     -609.772  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:    27  count:    0  breaks:  0  min_S: 875093.13  max_S: 935491.24  S: 875093.13  ΔS:     -965.566  moves:     4 
+    l=0      B: 358 <- 735    B=358  niter:    28  count:    0  breaks:  0  min_S: 874842.24  max_S: 935491.24  S: 874842.24  ΔS:     -250.891  moves:     3 
+    l=0      B: 358 <- 735    B=358  niter:    29  count:    1  breaks:  1  min_S: 874842.24  max_S: 935491.24  S: 874842.24  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (2, 358, 735) (6861610.495510009, 874842.2420859161, 231024.80205999)
+    l=0      B: 502 <- 565    shrinking 565 -> 502
+    l=0      B: 502 <- 565    B=502  niter:     1  count:    0  breaks:  0  min_S: 491367.83  max_S: 493947.82  S: 491367.83  ΔS:     -2579.99  moves:     9 
+    l=0      B: 502 <- 565    B=502  niter:     2  count:    0  breaks:  0  min_S: 490155.49  max_S: 493947.82  S: 490155.49  ΔS:     -1212.34  moves:    10 
+    l=0      B: 502 <- 565    B=502  niter:     3  count:    0  breaks:  0  min_S: 487466.88  max_S: 493947.82  S: 487466.88  ΔS:     -2688.61  moves:    13 
+    l=0      B: 502 <- 565    B=502  niter:     4  count:    0  breaks:  0  min_S: 486224.38  max_S: 493947.82  S: 486224.38  ΔS:     -1242.50  moves:     9 
+    l=0      B: 502 <- 565    B=502  niter:     5  count:    0  breaks:  0  min_S: 485281.37  max_S: 493947.82  S: 485281.37  ΔS:     -943.010  moves:     7 
+    l=0      B: 502 <- 565    B=502  niter:     6  count:    0  breaks:  0  min_S: 484060.95  max_S: 493947.82  S: 484060.95  ΔS:     -1220.43  moves:     6 
+    l=0      B: 502 <- 565    B=502  niter:     7  count:    0  breaks:  0  min_S: 483277.56  max_S: 493947.82  S: 483277.56  ΔS:     -783.387  moves:     6 
+    l=0      B: 502 <- 565    B=502  niter:     8  count:    0  breaks:  0  min_S: 482002.70  max_S: 493947.82  S: 482002.70  ΔS:     -1274.86  moves:     7 
+    l=0      B: 502 <- 565    B=502  niter:     9  count:    0  breaks:  0  min_S: 481079.52  max_S: 493947.82  S: 481079.52  ΔS:     -923.182  moves:     5 
+    l=0      B: 502 <- 565    B=502  niter:    10  count:    0  breaks:  0  min_S: 478036.22  max_S: 493947.82  S: 478036.22  ΔS:     -3043.30  moves:    12 
+    l=0      B: 502 <- 565    B=502  niter:    11  count:    0  breaks:  0  min_S: 476377.64  max_S: 493947.82  S: 476377.64  ΔS:     -1658.59  moves:     4 
+    l=0      B: 502 <- 565    B=502  niter:    12  count:    0  breaks:  0  min_S: 475512.72  max_S: 493947.82  S: 475512.72  ΔS:     -864.919  moves:     5 
+    l=0      B: 502 <- 565    B=502  niter:    13  count:    0  breaks:  0  min_S: 473381.83  max_S: 493947.82  S: 473381.83  ΔS:     -2130.89  moves:     7 
+    l=0      B: 502 <- 565    B=502  niter:    14  count:    0  breaks:  0  min_S: 472858.84  max_S: 493947.82  S: 472858.84  ΔS:     -522.988  moves:     3 
+    l=0      B: 502 <- 565    B=502  niter:    15  count:    0  breaks:  0  min_S: 471765.14  max_S: 493947.82  S: 471765.14  ΔS:     -1093.70  moves:     4 
+    l=0      B: 502 <- 565    B=502  niter:    16  count:    0  breaks:  0  min_S: 471400.39  max_S: 493947.82  S: 471400.39  ΔS:     -364.751  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:    17  count:    0  breaks:  0  min_S: 470865.10  max_S: 493947.82  S: 470865.10  ΔS:     -535.294  moves:     3 
+    l=0      B: 502 <- 565    B=502  niter:    18  count:    0  breaks:  0  min_S: 470669.25  max_S: 493947.82  S: 470669.25  ΔS:     -195.848  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:    19  count:    0  breaks:  0  min_S: 470175.34  max_S: 493947.82  S: 470175.34  ΔS:     -493.916  moves:     6 
+    l=0      B: 502 <- 565    B=502  niter:    20  count:    0  breaks:  0  min_S: 470067.69  max_S: 493947.82  S: 470067.69  ΔS:     -107.641  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:    21  count:    0  breaks:  0  min_S: 469449.23  max_S: 493947.82  S: 469449.23  ΔS:     -618.467  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:    22  count:    0  breaks:  0  min_S: 466847.68  max_S: 493947.82  S: 466847.68  ΔS:     -2601.54  moves:     8 
+    l=0      B: 502 <- 565    B=502  niter:    23  count:    0  breaks:  0  min_S: 466700.37  max_S: 493947.82  S: 466700.37  ΔS:     -147.313  moves:     3 
+    l=0      B: 502 <- 565    B=502  niter:    24  count:    0  breaks:  0  min_S: 466435.46  max_S: 493947.82  S: 466435.46  ΔS:     -264.906  moves:     1 
+    l=0      B: 502 <- 565    B=502  niter:    25  count:    0  breaks:  0  min_S: 465220.08  max_S: 493947.82  S: 465220.08  ΔS:     -1215.39  moves:     6 
+    l=0      B: 502 <- 565    B=502  niter:    26  count:    0  breaks:  0  min_S: 464840.60  max_S: 493947.82  S: 464840.60  ΔS:     -379.474  moves:     3 
+    l=0      B: 502 <- 565    B=502  niter:    27  count:    0  breaks:  0  min_S: 464196.19  max_S: 493947.82  S: 464196.19  ΔS:     -644.415  moves:     3 
+    l=0      B: 502 <- 565    B=502  niter:    28  count:    0  breaks:  0  min_S: 463803.54  max_S: 493947.82  S: 463803.54  ΔS:     -392.653  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:    29  count:    0  breaks:  0  min_S: 463630.54  max_S: 493947.82  S: 463630.54  ΔS:     -172.992  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:    30  count:    0  breaks:  0  min_S: 463494.61  max_S: 493947.82  S: 463494.61  ΔS:     -135.936  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:    31  count:    0  breaks:  0  min_S: 463055.53  max_S: 493947.82  S: 463055.53  ΔS:     -439.078  moves:     3 
+    l=0      B: 502 <- 565    B=502  niter:    32  count:    0  breaks:  0  min_S: 462739.81  max_S: 493947.82  S: 462739.81  ΔS:     -315.718  moves:     3 
+    l=0      B: 502 <- 565    B=502  niter:    33  count:    0  breaks:  0  min_S: 461916.09  max_S: 493947.82  S: 461916.09  ΔS:     -823.724  moves:     3 
+    l=0      B: 502 <- 565    B=502  niter:    34  count:    0  breaks:  0  min_S: 461204.42  max_S: 493947.82  S: 461204.42  ΔS:     -711.665  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:    35  count:    0  breaks:  0  min_S: 460860.01  max_S: 493947.82  S: 460860.01  ΔS:     -344.409  moves:     1 
+    l=0      B: 502 <- 565    B=502  niter:    36  count:    1  breaks:  1  min_S: 460860.01  max_S: 493947.82  S: 460818.47  ΔS:     -41.5397  moves:     1 
+    l=0  Current bracket: (358, 502, 735) (874842.2420859161, 460818.4733458327, 231024.80205999)
+    l=0      B: 591 <- 735    shrinking 735 -> 591
+    l=0      B: 591 <- 735    B=591  niter:     1  count:    0  breaks:  0  min_S: 355103.55  max_S: 362754.87  S: 355103.55  ΔS:     -7651.33  moves:    34 
+    l=0      B: 591 <- 735    B=591  niter:     2  count:    0  breaks:  0  min_S: 352079.81  max_S: 362754.87  S: 352079.81  ΔS:     -3023.73  moves:    16 
+    l=0      B: 591 <- 735    B=591  niter:     3  count:    0  breaks:  0  min_S: 350154.82  max_S: 362754.87  S: 350154.82  ΔS:     -1924.99  moves:    16 
+    l=0      B: 591 <- 735    B=591  niter:     4  count:    0  breaks:  0  min_S: 348044.64  max_S: 362754.87  S: 348044.64  ΔS:     -2110.18  moves:    16 
+    l=0      B: 591 <- 735    B=591  niter:     5  count:    0  breaks:  0  min_S: 346245.36  max_S: 362754.87  S: 346245.36  ΔS:     -1799.29  moves:    11 
+    l=0      B: 591 <- 735    B=591  niter:     6  count:    0  breaks:  0  min_S: 345701.80  max_S: 362754.87  S: 345701.80  ΔS:     -543.555  moves:     7 
+    l=0      B: 591 <- 735    B=591  niter:     7  count:    0  breaks:  0  min_S: 344307.40  max_S: 362754.87  S: 344307.40  ΔS:     -1394.40  moves:    11 
+    l=0      B: 591 <- 735    B=591  niter:     8  count:    0  breaks:  0  min_S: 342957.84  max_S: 362754.87  S: 342957.84  ΔS:     -1349.56  moves:    10 
+    l=0      B: 591 <- 735    B=591  niter:     9  count:    0  breaks:  0  min_S: 341631.95  max_S: 362754.87  S: 341631.95  ΔS:     -1325.89  moves:    11 
+    l=0      B: 591 <- 735    B=591  niter:    10  count:    0  breaks:  0  min_S: 340233.96  max_S: 362754.87  S: 340233.96  ΔS:     -1398.00  moves:     8 
+    l=0      B: 591 <- 735    B=591  niter:    11  count:    0  breaks:  0  min_S: 339297.53  max_S: 362754.87  S: 339297.53  ΔS:     -936.425  moves:     8 
+    l=0      B: 591 <- 735    B=591  niter:    12  count:    0  breaks:  0  min_S: 338287.67  max_S: 362754.87  S: 338287.67  ΔS:     -1009.86  moves:     8 
+    l=0      B: 591 <- 735    B=591  niter:    13  count:    0  breaks:  0  min_S: 337457.16  max_S: 362754.87  S: 337457.16  ΔS:     -830.508  moves:     9 
+    l=0      B: 591 <- 735    B=591  niter:    14  count:    0  breaks:  0  min_S: 336619.41  max_S: 362754.87  S: 336619.41  ΔS:     -837.753  moves:     8 
+    l=0      B: 591 <- 735    B=591  niter:    15  count:    0  breaks:  0  min_S: 336022.33  max_S: 362754.87  S: 336022.33  ΔS:     -597.080  moves:     5 
+    l=0      B: 591 <- 735    B=591  niter:    16  count:    0  breaks:  0  min_S: 334610.76  max_S: 362754.87  S: 334610.76  ΔS:     -1411.57  moves:     6 
+    l=0      B: 591 <- 735    B=591  niter:    17  count:    0  breaks:  0  min_S: 334133.69  max_S: 362754.87  S: 334133.69  ΔS:     -477.079  moves:     4 
+    l=0      B: 591 <- 735    B=591  niter:    18  count:    0  breaks:  0  min_S: 333269.33  max_S: 362754.87  S: 333269.33  ΔS:     -864.358  moves:     6 
+    l=0      B: 591 <- 735    B=591  niter:    19  count:    0  breaks:  0  min_S: 332877.87  max_S: 362754.87  S: 332877.87  ΔS:     -391.459  moves:     3 
+    l=0      B: 591 <- 735    B=591  niter:    20  count:    0  breaks:  0  min_S: 331641.25  max_S: 362754.87  S: 331641.25  ΔS:     -1236.62  moves:     5 
+    l=0      B: 591 <- 735    B=591  niter:    21  count:    0  breaks:  0  min_S: 331008.15  max_S: 362754.87  S: 331008.15  ΔS:     -633.100  moves:     3 
+    l=0      B: 591 <- 735    B=591  niter:    22  count:    0  breaks:  0  min_S: 330773.28  max_S: 362754.87  S: 330773.28  ΔS:     -234.865  moves:     4 
+    l=0      B: 591 <- 735    B=591  niter:    23  count:    0  breaks:  0  min_S: 329998.05  max_S: 362754.87  S: 329998.05  ΔS:     -775.239  moves:     2 
+    l=0      B: 591 <- 735    B=591  niter:    24  count:    0  breaks:  0  min_S: 329376.21  max_S: 362754.87  S: 329376.21  ΔS:     -621.832  moves:     4 
+    l=0      B: 591 <- 735    B=591  niter:    25  count:    0  breaks:  0  min_S: 328972.95  max_S: 362754.87  S: 328972.95  ΔS:     -403.260  moves:     3 
+    l=0      B: 591 <- 735    B=591  niter:    26  count:    0  breaks:  0  min_S: 328568.52  max_S: 362754.87  S: 328568.52  ΔS:     -404.437  moves:     4 
+    l=0      B: 591 <- 735    B=591  niter:    27  count:    0  breaks:  0  min_S: 328355.10  max_S: 362754.87  S: 328355.10  ΔS:     -213.414  moves:     5 
+    l=0      B: 591 <- 735    B=591  niter:    28  count:    0  breaks:  0  min_S: 328199.27  max_S: 362754.87  S: 328199.27  ΔS:     -155.832  moves:     2 
+    l=0      B: 591 <- 735    B=591  niter:    29  count:    0  breaks:  0  min_S: 327576.67  max_S: 362754.87  S: 327576.67  ΔS:     -622.599  moves:     5 
+    l=0      B: 591 <- 735    B=591  niter:    30  count:    0  breaks:  0  min_S: 327452.71  max_S: 362754.87  S: 327452.71  ΔS:     -123.965  moves:     2 
+    l=0      B: 591 <- 735    B=591  niter:    31  count:    0  breaks:  0  min_S: 326384.90  max_S: 362754.87  S: 326384.90  ΔS:     -1067.80  moves:     3 
+    l=0      B: 591 <- 735    B=591  niter:    32  count:    0  breaks:  0  min_S: 326243.99  max_S: 362754.87  S: 326243.99  ΔS:     -140.909  moves:     3 
+    l=0      B: 591 <- 735    B=591  niter:    33  count:    0  breaks:  0  min_S: 325733.39  max_S: 362754.87  S: 325733.39  ΔS:     -510.598  moves:     4 
+    l=0      B: 591 <- 735    B=591  niter:    34  count:    0  breaks:  0  min_S: 324836.49  max_S: 362754.87  S: 324836.49  ΔS:     -896.909  moves:     5 
+    l=0      B: 591 <- 735    B=591  niter:    35  count:    1  breaks:  1  min_S: 324836.49  max_S: 362754.87  S: 324836.49  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (502, 591, 735) (460818.4733458327, 324836.4856469986, 231024.80205999)
+    l=0      B: 646 <- 735    shrinking 735 -> 646
+    l=0      B: 646 <- 735    B=646  niter:     1  count:    0  breaks:  0  min_S: 275674.34  max_S: 276562.96  S: 275674.34  ΔS:     -888.616  moves:    10 
+    l=0      B: 646 <- 735    B=646  niter:     2  count:    0  breaks:  0  min_S: 274692.08  max_S: 276562.96  S: 274692.08  ΔS:     -982.257  moves:     9 
+    l=0      B: 646 <- 735    B=646  niter:     3  count:    0  breaks:  0  min_S: 273397.46  max_S: 276562.96  S: 273397.46  ΔS:     -1294.62  moves:    13 
+    l=0      B: 646 <- 735    B=646  niter:     4  count:    0  breaks:  0  min_S: 272881.34  max_S: 276562.96  S: 272881.34  ΔS:     -516.126  moves:     9 
+    l=0      B: 646 <- 735    B=646  niter:     5  count:    0  breaks:  0  min_S: 271444.68  max_S: 276562.96  S: 271444.68  ΔS:     -1436.66  moves:     8 
+    l=0      B: 646 <- 735    B=646  niter:     6  count:    0  breaks:  0  min_S: 269398.99  max_S: 276562.96  S: 269398.99  ΔS:     -2045.69  moves:     9 
+    l=0      B: 646 <- 735    B=646  niter:     7  count:    0  breaks:  0  min_S: 269262.92  max_S: 276562.96  S: 269262.92  ΔS:     -136.072  moves:     3 
+    l=0      B: 646 <- 735    B=646  niter:     8  count:    0  breaks:  0  min_S: 269104.94  max_S: 276562.96  S: 269104.94  ΔS:     -157.977  moves:     3 
+    l=0      B: 646 <- 735    B=646  niter:     9  count:    0  breaks:  0  min_S: 268889.50  max_S: 276562.96  S: 268889.50  ΔS:     -215.448  moves:     5 
+    l=0      B: 646 <- 735    B=646  niter:    10  count:    0  breaks:  0  min_S: 268842.47  max_S: 276562.96  S: 268842.47  ΔS:     -47.0301  moves:     1 
+    l=0      B: 646 <- 735    B=646  niter:    11  count:    0  breaks:  0  min_S: 268508.18  max_S: 276562.96  S: 268508.18  ΔS:     -334.289  moves:     3 
+    l=0      B: 646 <- 735    B=646  niter:    12  count:    0  breaks:  0  min_S: 268248.86  max_S: 276562.96  S: 268248.86  ΔS:     -259.313  moves:     3 
+    l=0      B: 646 <- 735    B=646  niter:    13  count:    0  breaks:  0  min_S: 267929.93  max_S: 276562.96  S: 267929.93  ΔS:     -318.933  moves:     2 
+    l=0      B: 646 <- 735    B=646  niter:    14  count:    0  breaks:  0  min_S: 267069.64  max_S: 276562.96  S: 267069.64  ΔS:     -860.290  moves:     3 
+    l=0      B: 646 <- 735    B=646  niter:    15  count:    0  breaks:  0  min_S: 266615.74  max_S: 276562.96  S: 266615.74  ΔS:     -453.905  moves:     3 
+    l=0      B: 646 <- 735    B=646  niter:    16  count:    0  breaks:  0  min_S: 266528.23  max_S: 276562.96  S: 266528.23  ΔS:     -87.5113  moves:     2 
+    l=0      B: 646 <- 735    B=646  niter:    17  count:    0  breaks:  0  min_S: 266316.70  max_S: 276562.96  S: 266316.70  ΔS:     -211.524  moves:     3 
+    l=0      B: 646 <- 735    B=646  niter:    18  count:    0  breaks:  0  min_S: 265779.44  max_S: 276562.96  S: 265779.44  ΔS:     -537.257  moves:     2 
+    l=0      B: 646 <- 735    B=646  niter:    19  count:    0  breaks:  0  min_S: 265729.25  max_S: 276562.96  S: 265729.25  ΔS:     -50.1986  moves:     3 
+    l=0      B: 646 <- 735    B=646  niter:    20  count:    0  breaks:  0  min_S: 265586.35  max_S: 276562.96  S: 265586.35  ΔS:     -142.900  moves:     1 
+    l=0      B: 646 <- 735    B=646  niter:    21  count:    1  breaks:  1  min_S: 265586.35  max_S: 276562.96  S: 265575.67  ΔS:     -10.6743  moves:     1 
+    l=0  Current bracket: (591, 646, 735) (324836.4856469986, 265575.67164513853, 231024.80205999)
+    l=0      B: 680 <- 735    shrinking 735 -> 680
+    l=0      B: 680 <- 735    B=680  niter:     1  count:    0  breaks:  0  min_S: 249067.19  max_S: 249863.59  S: 249067.19  ΔS:     -796.397  moves:     9 
+    l=0      B: 680 <- 735    B=680  niter:     2  count:    0  breaks:  0  min_S: 248049.76  max_S: 249863.59  S: 248049.76  ΔS:     -1017.43  moves:    10 
+    l=0      B: 680 <- 735    B=680  niter:     3  count:    0  breaks:  0  min_S: 247296.76  max_S: 249863.59  S: 247296.76  ΔS:     -752.997  moves:     4 
+    l=0      B: 680 <- 735    B=680  niter:     4  count:    1  breaks:  1  min_S: 247296.76  max_S: 249863.59  S: 247294.53  ΔS:     -2.22660  moves:     1 
+    l=0  Current bracket: (646, 680, 735) (265575.67164513853, 247294.5346667103, 231024.80205999)
+    l=0      B: 701 <- 735    shrinking 735 -> 701
+    l=0      B: 701 <- 735    B=701  niter:     1  count:    0  breaks:  0  min_S: 235164.11  max_S: 235216.64  S: 235164.11  ΔS:     -52.5298  moves:     2 
+    l=0      B: 701 <- 735    B=701  niter:     2  count:    0  breaks:  0  min_S: 234793.64  max_S: 235216.64  S: 234793.64  ΔS:     -370.470  moves:     4 
+    l=0      B: 701 <- 735    B=701  niter:     3  count:    0  breaks:  0  min_S: 234754.92  max_S: 235216.64  S: 234754.92  ΔS:     -38.7181  moves:     3 
+    l=0      B: 701 <- 735    B=701  niter:     4  count:    0  breaks:  0  min_S: 234621.25  max_S: 235216.64  S: 234621.25  ΔS:     -133.673  moves:     2 
+    l=0      B: 701 <- 735    B=701  niter:     5  count:    1  breaks:  1  min_S: 234621.25  max_S: 235216.64  S: 234608.57  ΔS:     -12.6773  moves:     1 
+    l=0  Current bracket: (680, 701, 735) (247294.5346667103, 234608.5704618074, 231024.80205999)
+    l=0      B: 714 <- 735    shrinking 735 -> 714
+    l=0      B: 714 <- 735    B=714  niter:     1  count:    1  breaks:  1  min_S: 230783.50  max_S: 230783.50  S: 230764.42  ΔS:     -19.0833  moves:     3 
+    l=0  Current bracket: (701, 714, 735) (234608.5704618074, 230764.4155835573, 231024.80205999)
+    l=0      B: 722 <- 735    shrinking 735 -> 722
+    l=0      B: 722 <- 735    B=722  niter:     1  count:    0  breaks:  0  min_S: 229764.18  max_S: 229871.10  S: 229764.18  ΔS:     -106.924  moves:     4 
+    l=0      B: 722 <- 735    B=722  niter:     2  count:    1  breaks:  1  min_S: 229764.18  max_S: 229871.10  S: 229764.18  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (701, 714, 735) (234608.5704618074, 230764.4155835573, 231024.80205999)
+    l=0  Bisect at B = 722 with S = 229764.1788743607
+    l=0      B: 727 <- 735    shrinking 735 -> 727
+    l=0      B: 727 <- 735    B=727  niter:     1  count:    0  breaks:  0  min_S: 229835.58  max_S: 229864.94  S: 229835.58  ΔS:     -29.3635  moves:     3 
+    l=0      B: 727 <- 735    B=727  niter:     2  count:    1  breaks:  1  min_S: 229835.58  max_S: 229864.94  S: 229832.04  ΔS:     -3.54152  moves:     3 
+    l=0  Current bracket: (714, 722, 735) (230764.4155835573, 229764.17887436075, 231024.80205999)
+    l=0  Bisect at B = 727 with S = 229832.0387421651
+    l=0      B: 717 <- 722    shrinking 722 -> 717
+    l=0      B: 717 <- 722    B=717  niter:     1  count:    1  breaks:  1  min_S: 230070.04  max_S: 230070.04  S: 230069.69  ΔS:    -0.346206  moves:     1 
+    l=0  Current bracket: (714, 722, 727) (230764.4155835573, 229764.17887436075, 229832.03874216508)
+    l=0  Bisect at B = 717 with S = 230069.6915909211
+    l=0      B: 719 <- 722    shrinking 722 -> 719
+    l=0      B: 719 <- 722    B=719  niter:     1  count:    0  breaks:  0  min_S: 229702.84  max_S: 229736.69  S: 229702.84  ΔS:     -33.8519  moves:     3 
+    l=0      B: 719 <- 722    B=719  niter:     2  count:    0  breaks:  0  min_S: 229670.62  max_S: 229736.69  S: 229670.62  ΔS:     -32.2108  moves:     1 
+    l=0      B: 719 <- 722    B=719  niter:     3  count:    1  breaks:  1  min_S: 229670.62  max_S: 229736.69  S: 229670.62  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (717, 722, 727) (230069.6915909211, 229764.17887436075, 229832.03874216508)
+    l=0  Bisect at B = 719 with S = 229670.6247249744
+    l=0      B: 720 <- 722    shrinking 722 -> 720
+    l=0      B: 720 <- 722    B=720  niter:     1  count:    1  breaks:  1  min_S: 229881.30  max_S: 229881.30  S: 229862.27  ΔS:     -19.0370  moves:     2 
+    l=0  Current bracket: (717, 719, 722) (230069.6915909211, 229670.62472497445, 229764.17887436075)
+    l=0  Bisect at B = 720 with S = 229862.2660192547
+    l=0      B: 718 <- 719    shrinking 719 -> 718
+    l=0      B: 718 <- 719    B=718  niter:     1  count:    1  breaks:  1  min_S: 229605.42  max_S: 229605.42  S: 229605.42  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (717, 719, 720) (230069.6915909211, 229670.62472497445, 229862.2660192547)
+    l=0  Bisect at B = 718 with S = 229605.4226674837
+    l=0  Best result: B = 718, S = 229605.4226674837
+level 0 : replaced (735, 2) -> (735, 718) , dS: -5126106.195709719 2
+    l=1      B: 341 <- 718    shrinking 718 -> 552
+    l=1      B: 341 <- 718    B=552  niter:     1  count:    0  breaks:  0  min_S: 219293.56  max_S: 219656.08  S: 219293.56  ΔS:     -362.520  moves:    46 
+    l=1      B: 341 <- 718    B=552  niter:     2  count:    0  breaks:  0  min_S: 219103.92  max_S: 219656.08  S: 219103.92  ΔS:     -189.638  moves:    28 
+    l=1      B: 341 <- 718    B=552  niter:     3  count:    0  breaks:  0  min_S: 218914.78  max_S: 219656.08  S: 218914.78  ΔS:     -189.141  moves:    32 
+    l=1      B: 341 <- 718    B=552  niter:     4  count:    0  breaks:  0  min_S: 218739.17  max_S: 219656.08  S: 218739.17  ΔS:     -175.616  moves:    24 
+    l=1      B: 341 <- 718    B=552  niter:     5  count:    0  breaks:  0  min_S: 218693.10  max_S: 219656.08  S: 218693.10  ΔS:     -46.0732  moves:    16 
+    l=1      B: 341 <- 718    B=552  niter:     6  count:    0  breaks:  0  min_S: 218615.49  max_S: 219656.08  S: 218615.49  ΔS:     -77.6020  moves:    14 
+    l=1      B: 341 <- 718    B=552  niter:     7  count:    0  breaks:  0  min_S: 218528.54  max_S: 219656.08  S: 218528.54  ΔS:     -86.9535  moves:    17 
+    l=1      B: 341 <- 718    B=552  niter:     8  count:    0  breaks:  0  min_S: 218469.16  max_S: 219656.08  S: 218469.16  ΔS:     -59.3813  moves:    15 
+    l=1      B: 341 <- 718    B=552  niter:     9  count:    0  breaks:  0  min_S: 218442.43  max_S: 219656.08  S: 218442.43  ΔS:     -26.7328  moves:    15 
+    l=1      B: 341 <- 718    B=552  niter:    10  count:    0  breaks:  0  min_S: 218415.77  max_S: 219656.08  S: 218415.77  ΔS:     -26.6601  moves:     8 
+    l=1      B: 341 <- 718    B=552  niter:    11  count:    0  breaks:  0  min_S: 218354.04  max_S: 219656.08  S: 218354.04  ΔS:     -61.7299  moves:     8 
+    l=1      B: 341 <- 718    B=552  niter:    12  count:    1  breaks:  1  min_S: 218354.04  max_S: 219656.08  S: 218341.43  ΔS:     -12.6045  moves:     6 
+    l=1      B: 341 <- 718    shrinking 552 -> 425
+    l=1      B: 341 <- 718    B=425  niter:     1  count:    0  breaks:  0  min_S: 216775.48  max_S: 216938.11  S: 216775.48  ΔS:     -162.637  moves:    62 
+    l=1      B: 341 <- 718    B=425  niter:     2  count:    0  breaks:  0  min_S: 216692.07  max_S: 216938.11  S: 216692.07  ΔS:     -83.4065  moves:    44 
+    l=1      B: 341 <- 718    B=425  niter:     3  count:    0  breaks:  0  min_S: 216655.64  max_S: 216938.11  S: 216655.64  ΔS:     -36.4271  moves:    23 
+    l=1      B: 341 <- 718    B=425  niter:     4  count:    0  breaks:  0  min_S: 216621.38  max_S: 216938.11  S: 216621.38  ΔS:     -34.2628  moves:    25 
+    l=1      B: 341 <- 718    B=425  niter:     5  count:    0  breaks:  0  min_S: 216533.52  max_S: 216938.11  S: 216533.52  ΔS:     -87.8579  moves:    26 
+    l=1      B: 341 <- 718    B=425  niter:     6  count:    0  breaks:  0  min_S: 216490.74  max_S: 216938.11  S: 216490.74  ΔS:     -42.7783  moves:    17 
+    l=1      B: 341 <- 718    B=425  niter:     7  count:    0  breaks:  0  min_S: 216463.59  max_S: 216938.11  S: 216463.59  ΔS:     -27.1559  moves:    18 
+    l=1      B: 341 <- 718    B=425  niter:     8  count:    0  breaks:  0  min_S: 216426.31  max_S: 216938.11  S: 216426.31  ΔS:     -37.2775  moves:    17 
+    l=1      B: 341 <- 718    B=425  niter:     9  count:    0  breaks:  0  min_S: 216395.56  max_S: 216938.11  S: 216395.56  ΔS:     -30.7524  moves:    10 
+    l=1      B: 341 <- 718    B=425  niter:    10  count:    0  breaks:  0  min_S: 216373.75  max_S: 216938.11  S: 216373.75  ΔS:     -21.8068  moves:    15 
+    l=1      B: 341 <- 718    B=425  niter:    11  count:    0  breaks:  0  min_S: 216346.58  max_S: 216938.11  S: 216346.58  ΔS:     -27.1733  moves:    16 
+    l=1      B: 341 <- 718    B=425  niter:    12  count:    1  breaks:  1  min_S: 216346.58  max_S: 216938.11  S: 216325.62  ΔS:     -20.9601  moves:    12 
+    l=1      B: 341 <- 718    shrinking 425 -> 341
+    l=1      B: 341 <- 718    B=341  niter:     1  count:    0  breaks:  0  min_S: 215765.89  max_S: 215854.51  S: 215765.89  ΔS:     -88.6193  moves:    59 
+    l=1      B: 341 <- 718    B=341  niter:     2  count:    0  breaks:  0  min_S: 215659.73  max_S: 215854.51  S: 215659.73  ΔS:     -106.157  moves:    50 
+    l=1      B: 341 <- 718    B=341  niter:     3  count:    0  breaks:  0  min_S: 215622.41  max_S: 215854.51  S: 215622.41  ΔS:     -37.3243  moves:    33 
+    l=1      B: 341 <- 718    B=341  niter:     4  count:    0  breaks:  0  min_S: 215594.80  max_S: 215854.51  S: 215594.80  ΔS:     -27.6153  moves:    27 
+    l=1      B: 341 <- 718    B=341  niter:     5  count:    0  breaks:  0  min_S: 215571.69  max_S: 215854.51  S: 215571.69  ΔS:     -23.1047  moves:    18 
+    l=1      B: 341 <- 718    B=341  niter:     6  count:    0  breaks:  0  min_S: 215549.31  max_S: 215854.51  S: 215549.31  ΔS:     -22.3809  moves:    19 
+    l=1      B: 341 <- 718    B=341  niter:     7  count:    0  breaks:  0  min_S: 215498.09  max_S: 215854.51  S: 215498.09  ΔS:     -51.2151  moves:    16 
+    l=1      B: 341 <- 718    B=341  niter:     8  count:    1  breaks:  1  min_S: 215498.09  max_S: 215854.51  S: 215480.23  ΔS:     -17.8630  moves:    19 
+    l=1  Current bracket: (2, 341, 718) (222119.07477765143, 215480.23150282237, 225997.1548229909)
+    l=1      B: 485 <- 552    shrinking 552 -> 485
+    l=1      B: 485 <- 552    B=485  niter:     1  count:    0  breaks:  0  min_S: 217233.40  max_S: 217275.74  S: 217233.40  ΔS:     -42.3386  moves:    21 
+    l=1      B: 485 <- 552    B=485  niter:     2  count:    0  breaks:  0  min_S: 217170.68  max_S: 217275.74  S: 217170.68  ΔS:     -62.7179  moves:    22 
+    l=1      B: 485 <- 552    B=485  niter:     3  count:    0  breaks:  0  min_S: 217146.95  max_S: 217275.74  S: 217146.95  ΔS:     -23.7348  moves:    17 
+    l=1      B: 485 <- 552    B=485  niter:     4  count:    0  breaks:  0  min_S: 217122.54  max_S: 217275.74  S: 217122.54  ΔS:     -24.4050  moves:    18 
+    l=1      B: 485 <- 552    B=485  niter:     5  count:    0  breaks:  0  min_S: 217099.20  max_S: 217275.74  S: 217099.20  ΔS:     -23.3435  moves:     8 
+    l=1      B: 485 <- 552    B=485  niter:     6  count:    1  breaks:  1  min_S: 217099.20  max_S: 217275.74  S: 217084.27  ΔS:     -14.9315  moves:     8 
+    l=1  Current bracket: (2, 341, 718) (222119.07477765143, 215480.23150282237, 225997.1548229909)
+    l=1  Bisect at B = 485 with S = 217084.2691934812
+    l=1      B: 197 <- 341    shrinking 341 -> 262
+    l=1      B: 197 <- 341    B=262  niter:     1  count:    0  breaks:  0  min_S: 215078.19  max_S: 215174.17  S: 215078.19  ΔS:     -95.9784  moves:    60 
+    l=1      B: 197 <- 341    B=262  niter:     2  count:    0  breaks:  0  min_S: 215042.57  max_S: 215174.17  S: 215042.57  ΔS:     -35.6151  moves:    34 
+    l=1      B: 197 <- 341    B=262  niter:     3  count:    0  breaks:  0  min_S: 214993.04  max_S: 215174.17  S: 214993.04  ΔS:     -49.5368  moves:    31 
+    l=1      B: 197 <- 341    B=262  niter:     4  count:    0  breaks:  0  min_S: 214923.91  max_S: 215174.17  S: 214923.91  ΔS:     -69.1263  moves:    42 
+    l=1      B: 197 <- 341    B=262  niter:     5  count:    0  breaks:  0  min_S: 214883.11  max_S: 215174.17  S: 214883.11  ΔS:     -40.8005  moves:    28 
+    l=1      B: 197 <- 341    B=262  niter:     6  count:    1  breaks:  1  min_S: 214883.11  max_S: 215174.17  S: 214862.73  ΔS:     -20.3759  moves:    15 
+    l=1      B: 197 <- 341    shrinking 262 -> 202
+    l=1      B: 197 <- 341    B=202  niter:     1  count:    0  breaks:  0  min_S: 214436.95  max_S: 214503.23  S: 214436.95  ΔS:     -66.2862  moves:    61 
+    l=1      B: 197 <- 341    B=202  niter:     2  count:    0  breaks:  0  min_S: 214393.25  max_S: 214503.23  S: 214393.25  ΔS:     -43.6977  moves:    34 
+    l=1      B: 197 <- 341    B=202  niter:     3  count:    1  breaks:  1  min_S: 214393.25  max_S: 214503.23  S: 214373.61  ΔS:     -19.6408  moves:    24 
+    l=1      B: 197 <- 341    shrinking 202 -> 197
+    l=1      B: 197 <- 341    B=197  niter:     1  count:    1  breaks:  1  min_S: 214174.43  max_S: 214174.43  S: 214159.99  ΔS:     -14.4457  moves:    15 
+    l=1  Current bracket: (2, 341, 485) (222119.07477765143, 215480.23150282237, 217084.26919348116)
+    l=1  Bisect at B = 197 with S = 214159.9869191298
+    l=1      B: 108 <- 197    shrinking 197 -> 152
+    l=1      B: 108 <- 197    B=152  niter:     1  count:    0  breaks:  0  min_S: 213813.15  max_S: 213857.31  S: 213813.15  ΔS:     -44.1597  moves:    42 
+    l=1      B: 108 <- 197    B=152  niter:     2  count:    0  breaks:  0  min_S: 213780.26  max_S: 213857.31  S: 213780.26  ΔS:     -32.8906  moves:    43 
+    l=1      B: 108 <- 197    B=152  niter:     3  count:    0  breaks:  0  min_S: 213753.96  max_S: 213857.31  S: 213753.96  ΔS:     -26.3024  moves:    31 
+    l=1      B: 108 <- 197    B=152  niter:     4  count:    0  breaks:  0  min_S: 213710.59  max_S: 213857.31  S: 213710.59  ΔS:     -43.3648  moves:    20 
+    l=1      B: 108 <- 197    B=152  niter:     5  count:    0  breaks:  0  min_S: 213682.03  max_S: 213857.31  S: 213682.03  ΔS:     -28.5601  moves:    18 
+    l=1      B: 108 <- 197    B=152  niter:     6  count:    0  breaks:  0  min_S: 213656.92  max_S: 213857.31  S: 213656.92  ΔS:     -25.1167  moves:    15 
+    l=1      B: 108 <- 197    B=152  niter:     7  count:    1  breaks:  1  min_S: 213656.92  max_S: 213857.31  S: 213639.22  ΔS:     -17.7011  moves:    15 
+    l=1      B: 108 <- 197    shrinking 152 -> 117
+    l=1      B: 108 <- 197    B=117  niter:     1  count:    0  breaks:  0  min_S: 212630.56  max_S: 212734.94  S: 212630.56  ΔS:     -104.373  moves:    59 
+    l=1      B: 108 <- 197    B=117  niter:     2  count:    0  breaks:  0  min_S: 212591.20  max_S: 212734.94  S: 212591.20  ΔS:     -39.3604  moves:    41 
+    l=1      B: 108 <- 197    B=117  niter:     3  count:    0  breaks:  0  min_S: 212554.04  max_S: 212734.94  S: 212554.04  ΔS:     -37.1636  moves:    36 
+    l=1      B: 108 <- 197    B=117  niter:     4  count:    1  breaks:  1  min_S: 212554.04  max_S: 212734.94  S: 212538.67  ΔS:     -15.3705  moves:    19 
+    l=1      B: 108 <- 197    shrinking 117 -> 108
+    l=1      B: 108 <- 197    B=108  niter:     1  count:    0  breaks:  0  min_S: 211736.62  max_S: 211856.97  S: 211736.62  ΔS:     -120.358  moves:    79 
+    l=1      B: 108 <- 197    B=108  niter:     2  count:    0  breaks:  0  min_S: 211679.93  max_S: 211856.97  S: 211679.93  ΔS:     -56.6863  moves:    38 
+    l=1      B: 108 <- 197    B=108  niter:     3  count:    0  breaks:  0  min_S: 211617.90  max_S: 211856.97  S: 211617.90  ΔS:     -62.0300  moves:    29 
+    l=1      B: 108 <- 197    B=108  niter:     4  count:    0  breaks:  0  min_S: 211587.66  max_S: 211856.97  S: 211587.66  ΔS:     -30.2437  moves:    26 
+    l=1      B: 108 <- 197    B=108  niter:     5  count:    0  breaks:  0  min_S: 211525.03  max_S: 211856.97  S: 211525.03  ΔS:     -62.6243  moves:    37 
+    l=1      B: 108 <- 197    B=108  niter:     6  count:    0  breaks:  0  min_S: 211495.42  max_S: 211856.97  S: 211495.42  ΔS:     -29.6097  moves:    19 
+    l=1      B: 108 <- 197    B=108  niter:     7  count:    1  breaks:  1  min_S: 211495.42  max_S: 211856.97  S: 211475.90  ΔS:     -19.5257  moves:    28 
+    l=1  Current bracket: (2, 197, 341) (222119.07477765143, 214159.9869191298, 215480.23150282237)
+    l=1  Bisect at B = 108 with S = 211475.8969322359
+    l=1      B: 53 <- 108    shrinking 106 -> 82
+    l=1      B: 53 <- 108    B=82  niter:     1  count:    0  breaks:  0  min_S: 211114.69  max_S: 211152.48  S: 211114.69  ΔS:     -37.7933  moves:    25 
+    l=1      B: 53 <- 108    B=82  niter:     2  count:    0  breaks:  0  min_S: 211068.28  max_S: 211152.48  S: 211068.28  ΔS:     -46.4114  moves:    19 
+    l=1      B: 53 <- 108    B=82  niter:     3  count:    0  breaks:  0  min_S: 211038.58  max_S: 211152.48  S: 211038.58  ΔS:     -29.7013  moves:    13 
+    l=1      B: 53 <- 108    B=82  niter:     4  count:    1  breaks:  1  min_S: 211038.58  max_S: 211152.48  S: 211017.96  ΔS:     -20.6215  moves:     7 
+    l=1      B: 53 <- 108    shrinking 80 -> 62
+    l=1      B: 53 <- 108    B=62  niter:     1  count:    1  breaks:  1  min_S: 210831.23  max_S: 210831.23  S: 210820.15  ΔS:     -11.0806  moves:     6 
+    l=1      B: 53 <- 108    shrinking 62 -> 53
+    l=1      B: 53 <- 108    B=53  niter:     1  count:    1  breaks:  1  min_S: 210727.64  max_S: 210727.64  S: 210726.79  ΔS:    -0.850559  moves:     4 
+    l=1  Current bracket: (2, 108, 197) (222119.07477765143, 211475.89693223592, 214159.9869191298)
+    l=1  Bisect at B = 53 with S = 210726.7851596529
+    l=1      B: 74 <- 82    shrinking 80 -> 74
+    l=1      B: 74 <- 82    B=74  niter:     1  count:    1  breaks:  1  min_S: 210949.29  max_S: 210949.29  S: 210944.02  ΔS:     -5.26890  moves:    11 
+    l=1  Current bracket: (2, 53, 108) (222119.07477765143, 210726.7851596529, 211475.89693223592)
+    l=1  Bisect at B = 74 with S = 210944.0205243067
+    l=1      B: 32 <- 53    shrinking 53 -> 41
+    l=1      B: 32 <- 53    B=41  niter:     1  count:    1  breaks:  1  min_S: 210593.14  max_S: 210593.14  S: 210585.37  ΔS:     -7.77549  moves:     6 
+    l=1      B: 32 <- 53    shrinking 41 -> 32
+    l=1      B: 32 <- 53    B=32  niter:     1  count:    1  breaks:  1  min_S: 210474.19  max_S: 210474.19  S: 210461.65  ΔS:     -12.5386  moves:    12 
+    l=1  Current bracket: (2, 53, 74) (222119.07477765143, 210726.7851596529, 210944.0205243067)
+    l=1  Bisect at B = 32 with S = 210461.652137308
+    l=1      B: 19 <- 32    shrinking 32 -> 25
+    l=1      B: 19 <- 32    B=25  niter:     1  count:    1  breaks:  1  min_S: 210336.43  max_S: 210336.43  S: 210327.74  ΔS:     -8.69764  moves:    12 
+    l=1      B: 19 <- 32    shrinking 25 -> 19
+    l=1      B: 19 <- 32    B=19  niter:     1  count:    0  breaks:  0  min_S: 210214.66  max_S: 210236.54  S: 210214.66  ΔS:     -21.8825  moves:     9 
+    l=1      B: 19 <- 32    B=19  niter:     2  count:    1  breaks:  1  min_S: 210214.66  max_S: 210236.54  S: 210206.88  ΔS:     -7.78190  moves:     4 
+    l=1  Current bracket: (2, 32, 53) (222119.07477765143, 210461.65213730797, 210726.7851596529)
+    l=1  Bisect at B = 19 with S = 210206.878515012
+    l=1      B: 11 <- 19    shrinking 19 -> 15
+    l=1      B: 11 <- 19    B=15  niter:     1  count:    1  breaks:  1  min_S: 210142.59  max_S: 210142.59  S: 210140.83  ΔS:     -1.76533  moves:     5 
+    l=1      B: 11 <- 19    shrinking 15 -> 12
+    l=1      B: 11 <- 19    B=12  niter:     1  count:    1  breaks:  1  min_S: 210196.04  max_S: 210196.04  S: 210195.21  ΔS:    -0.826788  moves:     2 
+    l=1      B: 11 <- 19    shrinking 12 -> 11
+    l=1      B: 11 <- 19    B=11  niter:     1  count:    1  breaks:  1  min_S: 210308.45  max_S: 210308.45  S: 210293.49  ΔS:     -14.9678  moves:    12 
+    l=1  Current bracket: (2, 19, 32) (222119.07477765143, 210206.87851501195, 210461.65213730797)
+    l=1  Bisect at B = 11 with S = 210293.4856350939
+    l=1      B: 24 <- 25    shrinking 25 -> 24
+    l=1      B: 24 <- 25    B=24  niter:     1  count:    1  breaks:  1  min_S: 210313.00  max_S: 210313.00  S: 210304.88  ΔS:     -8.11842  moves:    10 
+    l=1  Current bracket: (11, 19, 32) (210293.4856350939, 210206.87851501195, 210461.65213730797)
+    l=1  Bisect at B = 24 with S = 210304.8841542659
+    l=1      B: 14 <- 15    shrinking 15 -> 14
+    l=1      B: 14 <- 15    B=14  niter:     1  count:    1  breaks:  1  min_S: 210126.93  max_S: 210126.93  S: 210126.82  ΔS:    -0.112522  moves:     2 
+    l=1  Current bracket: (11, 19, 24) (210293.4856350939, 210206.87851501195, 210304.88415426592)
+    l=1  Bisect at B = 14 with S = 210126.81573176
+    l=1      B: 16 <- 19    shrinking 19 -> 16
+    l=1      B: 16 <- 19    B=16  niter:     1  count:    1  breaks:  1  min_S: 210158.35  max_S: 210158.35  S: 210155.84  ΔS:     -2.50645  moves:     7 
+    l=1  Current bracket: (11, 14, 19) (210293.4856350939, 210126.81573176003, 210206.87851501195)
+    l=1  Bisect at B = 16 with S = 210155.8449921767
+    l=1  Current bracket: (11, 14, 16) (210293.4856350939, 210126.81573176003, 210155.84499217675)
+    l=1  Bisect at B = 12 with S = 210195.2129673487
+    l=1      B: 13 <- 14    shrinking 14 -> 13
+    l=1      B: 13 <- 14    B=13  niter:     1  count:    1  breaks:  1  min_S: 210130.49  max_S: 210130.49  S: 210125.25  ΔS:     -5.24270  moves:     5 
+    l=1  Current bracket: (12, 14, 16) (210195.21296734866, 210126.81573176003, 210155.84499217675)
+    l=1  Bisect at B = 13 with S = 210125.2461664392
+    l=1  Current bracket: (12, 13, 14) (210195.21296734866, 210125.2461664392, 210126.81573176003)
+    l=1  Bisect at B = 12 with S = 210195.2129673487
+    l=1  Best result: B = 13, S = 210125.2461664392
+level 1 : replaced (718, 1) -> (718, 13) , dS: -1517032.901655043 3
+    l=2      B: 8 <- 13    shrinking 13 -> 10
+    l=2      B: 8 <- 13    B=10  niter:     1  count:    1  breaks:  1  min_S: 466.73987  max_S: 466.73987  S: 466.73987  ΔS:      0.00000  moves:     0 
+    l=2      B: 8 <- 13    shrinking 10 -> 8
+    l=2      B: 8 <- 13    B=8  niter:     1  count:    1  breaks:  1  min_S: 465.35483  max_S: 465.35483  S: 465.35483  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (2, 8, 13) (494.22440128863695, 465.35482988524495, 514.5217707126027)
+    l=2      B: 5 <- 8    shrinking 8 -> 6
+    l=2      B: 5 <- 8    B=6  niter:     1  count:    1  breaks:  1  min_S: 465.58228  max_S: 465.58228  S: 465.58228  ΔS:      0.00000  moves:     0 
+    l=2      B: 5 <- 8    shrinking 6 -> 5
+    l=2      B: 5 <- 8    B=5  niter:     1  count:    1  breaks:  1  min_S: 474.29708  max_S: 474.29708  S: 474.29708  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (2, 8, 13) (494.22440128863695, 465.35482988524495, 514.5217707126027)
+    l=2  Bisect at B = 5 with S = 474.2970825453139
+    l=2  Current bracket: (5, 8, 13) (474.29708254531386, 465.35482988524495, 514.5217707126027)
+    l=2  Bisect at B = 10 with S = 466.7398699826836
+    l=2  Current bracket: (5, 8, 10) (474.29708254531386, 465.35482988524495, 466.73986998268356)
+    l=2  Bisect at B = 6 with S = 465.582277795163
+    l=2      B: 7 <- 8    shrinking 8 -> 7
+    l=2      B: 7 <- 8    B=7  niter:     1  count:    1  breaks:  1  min_S: 465.57636  max_S: 465.57636  S: 465.57636  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (6, 8, 10) (465.582277795163, 465.35482988524495, 466.73986998268356)
+    l=2  Bisect at B = 7 with S = 465.5763599343094
+    l=2      B: 9 <- 10    shrinking 10 -> 9
+    l=2      B: 9 <- 10    B=9  niter:     1  count:    1  breaks:  1  min_S: 465.49346  max_S: 465.49346  S: 465.49346  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (7, 8, 10) (465.5763599343094, 465.35482988524495, 466.73986998268356)
+    l=2  Bisect at B = 9 with S = 465.4934612411421
+    l=2  Current bracket: (7, 8, 9) (465.5763599343094, 465.35482988524495, 465.4934612411421)
+    l=2  Bisect at B = 7 with S = 465.5763599343094
+    l=2  Best result: B = 8, S = 465.354829885245
+level 2 : replaced (13, 1) -> (13, 8) , dS: -448.4582997841062 4
+    l=3      B: 5 <- 8    shrinking 8 -> 6
+    l=3      B: 5 <- 8    B=6  niter:     1  count:    0  breaks:  0  min_S: 145.31473  max_S: 148.50376  S: 145.31473  ΔS:     -3.18903  moves:     2 
+    l=3      B: 5 <- 8    B=6  niter:     2  count:    1  breaks:  1  min_S: 145.31473  max_S: 148.50376  S: 145.31473  ΔS:      0.00000  moves:     0 
+    l=3      B: 5 <- 8    shrinking 6 -> 5
+    l=3      B: 5 <- 8    B=5  niter:     1  count:    1  breaks:  1  min_S: 143.46859  max_S: 143.46859  S: 143.46859  ΔS:      0.00000  moves:     0 
+    l=3  Current bracket: (2, 5, 8) (139.90535308224514, 143.46859405328212, 150.37642459236588)
+    l=3      B: 3 <- 5    shrinking 5 -> 4
+    l=3      B: 3 <- 5    B=4  niter:     1  count:    1  breaks:  1  min_S: 142.63506  max_S: 142.63506  S: 142.63506  ΔS:      0.00000  moves:     0 
+    l=3      B: 3 <- 5    shrinking 4 -> 3
+    l=3      B: 3 <- 5    B=3  niter:     1  count:    1  breaks:  1  min_S: 140.89496  max_S: 140.89496  S: 140.89496  ΔS:      0.00000  moves:     0 
+    l=3  Current bracket: (2, 3, 5) (139.90535308224514, 140.89495932962006, 143.46859405328212)
+    l=3  Current bracket: (2, 2, 3) (139.90535308224514, 139.90535308224514, 140.89495932962006)
+    l=3  Bisect at B = 2 with S = 139.9053530822451
+    l=3  Best result: B = 2, S = 139.9053530822451
+level 3 : replaced (8, 1) -> (8, 2) , dS: -405.2936946841073 5
+    l=4  Current bracket: (2, 2, 2) (35.61481309127538, 35.61481309127538, 35.61481309127538)
+    l=4  Current bracket: (2, 2, 2) (35.61481309127538, 35.61481309127538, 35.61481309127538)
+    l=4  Bisect at B = 2 with S = 35.61481309127538
+    l=4  Best result: B = 2, S = 35.61481309127538
+level 4 : rejected replacement (2, 1) -> (2, 2) , dS: 0.0
+    l=4  Current bracket: (2, 2, 2) (35.61481309127538, 35.61481309127538, 35.61481309127538)
+    l=4  Current bracket: (2, 2, 2) (35.61481309127538, 35.61481309127538, 35.61481309127538)
+    l=4  Bisect at B = 2 with S = 35.61481309127538
+    l=4  Best result: B = 2, S = 35.61481309127538
+level 4 : rejected insert 2 , dS: 0.0
+level 3 : skipping 2
+    l=2      B: 8 <- 13    shrinking 13 -> 10
+    l=2      B: 8 <- 13    B=10  niter:     1  count:    1  breaks:  1  min_S: 430.69864  max_S: 430.69864  S: 430.69864  ΔS:      0.00000  moves:     0 
+    l=2      B: 8 <- 13    shrinking 10 -> 8
+    l=2      B: 8 <- 13    B=8  niter:     1  count:    1  breaks:  1  min_S: 429.74002  max_S: 429.74002  S: 429.74002  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (2, 8, 13) (458.6095881973616, 429.7400167939696, 478.9069576213273)
+    l=2      B: 5 <- 8    shrinking 8 -> 6
+    l=2      B: 5 <- 8    B=6  niter:     1  count:    1  breaks:  1  min_S: 429.96746  max_S: 429.96746  S: 429.96746  ΔS:      0.00000  moves:     0 
+    l=2      B: 5 <- 8    shrinking 6 -> 5
+    l=2      B: 5 <- 8    B=5  niter:     1  count:    1  breaks:  1  min_S: 430.21539  max_S: 430.21539  S: 430.21539  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (2, 8, 13) (458.6095881973616, 429.7400167939696, 478.9069576213273)
+    l=2  Bisect at B = 5 with S = 430.2153858583257
+    l=2  Current bracket: (5, 8, 13) (430.2153858583257, 429.7400167939696, 478.9069576213273)
+    l=2  Bisect at B = 10 with S = 430.6986374246743
+    l=2  Current bracket: (5, 8, 10) (430.2153858583257, 429.7400167939696, 430.6986374246743)
+    l=2  Bisect at B = 6 with S = 429.9674647038876
+    l=2      B: 7 <- 8    shrinking 8 -> 7
+    l=2      B: 7 <- 8    B=7  niter:     1  count:    1  breaks:  1  min_S: 429.96155  max_S: 429.96155  S: 429.96155  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (6, 8, 10) (429.96746470388763, 429.7400167939696, 430.6986374246743)
+    l=2  Bisect at B = 7 with S = 429.961546843034
+    l=2      B: 9 <- 10    shrinking 10 -> 9
+    l=2      B: 9 <- 10    B=9  niter:     1  count:    1  breaks:  1  min_S: 430.20729  max_S: 430.20729  S: 430.20729  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (7, 8, 10) (429.961546843034, 429.7400167939696, 430.6986374246743)
+    l=2  Bisect at B = 9 with S = 430.2072880499613
+    l=2  Current bracket: (7, 8, 9) (429.961546843034, 429.7400167939696, 430.20728804996133)
+    l=2  Bisect at B = 7 with S = 429.961546843034
+    l=2  Best result: B = 8, S = 429.7400167939696
+level 2 : rejected replacement (13, 8) -> (13, 8) , dS: 0.0
+    l=2      B: 8 <- 13    shrinking 13 -> 10
+    l=2      B: 8 <- 13    B=10  niter:     1  count:    1  breaks:  1  min_S: 432.94042  max_S: 432.94042  S: 432.94042  ΔS:      0.00000  moves:     0 
+    l=2      B: 8 <- 13    shrinking 10 -> 8
+    l=2      B: 8 <- 13    B=8  niter:     1  count:    0  breaks:  0  min_S: 431.08943  max_S: 434.20596  S: 431.08943  ΔS:     -3.11653  moves:     3 
+    l=2      B: 8 <- 13    B=8  niter:     2  count:    1  breaks:  1  min_S: 431.08943  max_S: 434.20596  S: 431.08943  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (2, 8, 13) (458.6095881973616, 431.08943156602453, 478.9069576213273)
+    l=2      B: 5 <- 8    shrinking 8 -> 6
+    l=2      B: 5 <- 8    B=6  niter:     1  count:    1  breaks:  1  min_S: 429.96746  max_S: 429.96746  S: 429.96746  ΔS:      0.00000  moves:     0 
+    l=2      B: 5 <- 8    shrinking 6 -> 5
+    l=2      B: 5 <- 8    B=5  niter:     1  count:    1  breaks:  1  min_S: 430.21539  max_S: 430.21539  S: 430.21539  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (2, 8, 13) (458.6095881973616, 431.08943156602453, 478.9069576213273)
+    l=2  Bisect at B = 5 with S = 430.2153858583257
+    l=2      B: 3 <- 5    shrinking 5 -> 4
+    l=2      B: 3 <- 5    B=4  niter:     1  count:    1  breaks:  1  min_S: 429.06423  max_S: 429.06423  S: 429.06423  ΔS:      0.00000  moves:     0 
+    l=2      B: 3 <- 5    shrinking 4 -> 3
+    l=2      B: 3 <- 5    B=3  niter:     1  count:    0  breaks:  0  min_S: 424.12263  max_S: 432.46406  S: 424.12263  ΔS:     -8.34143  moves:     3 
+    l=2      B: 3 <- 5    B=3  niter:     2  count:    1  breaks:  1  min_S: 424.12263  max_S: 432.46406  S: 424.12263  ΔS:      0.00000  moves:     0 
+    l=2  Current bracket: (2, 5, 8) (458.6095881973616, 430.2153858583257, 431.08943156602453)
+    l=2  Bisect at B = 3 with S = 424.1226262474862
+    l=2  Current bracket: (2, 3, 5) (458.6095881973616, 424.1226262474862, 430.2153858583257)
+    l=2  Bisect at B = 4 with S = 429.064227325171
+    l=2  Current bracket: (2, 3, 4) (458.6095881973616, 424.1226262474862, 429.06422732517103)
+    l=2  Bisect at B = 2 with S = 458.6095881973616
+    l=2  Best result: B = 3, S = 424.1226262474862
+level 2 : rejected insert 13 , dS: 14.679978877480607
+    l=1      B: 341 <- 718    shrinking 718 -> 552
+    l=1      B: 341 <- 718    B=552  niter:     1  count:    0  breaks:  0  min_S: 217057.11  max_S: 217174.28  S: 217057.11  ΔS:     -117.164  moves:    39 
+    l=1      B: 341 <- 718    B=552  niter:     2  count:    0  breaks:  0  min_S: 216977.93  max_S: 217174.28  S: 216977.93  ΔS:     -79.1823  moves:    28 
+    l=1      B: 341 <- 718    B=552  niter:     3  count:    0  breaks:  0  min_S: 216910.82  max_S: 217174.28  S: 216910.82  ΔS:     -67.1135  moves:    22 
+    l=1      B: 341 <- 718    B=552  niter:     4  count:    0  breaks:  0  min_S: 216847.47  max_S: 217174.28  S: 216847.47  ΔS:     -63.3481  moves:    13 
+    l=1      B: 341 <- 718    B=552  niter:     5  count:    0  breaks:  0  min_S: 216782.24  max_S: 217174.28  S: 216782.24  ΔS:     -65.2291  moves:    18 
+    l=1      B: 341 <- 718    B=552  niter:     6  count:    0  breaks:  0  min_S: 216747.98  max_S: 217174.28  S: 216747.98  ΔS:     -34.2599  moves:     9 
+    l=1      B: 341 <- 718    B=552  niter:     7  count:    0  breaks:  0  min_S: 216688.00  max_S: 217174.28  S: 216688.00  ΔS:     -59.9802  moves:    11 
+    l=1      B: 341 <- 718    B=552  niter:     8  count:    0  breaks:  0  min_S: 216654.56  max_S: 217174.28  S: 216654.56  ΔS:     -33.4398  moves:    11 
+    l=1      B: 341 <- 718    B=552  niter:     9  count:    1  breaks:  1  min_S: 216654.56  max_S: 217174.28  S: 216638.29  ΔS:     -16.2716  moves:     7 
+    l=1      B: 341 <- 718    shrinking 552 -> 425
+    l=1      B: 341 <- 718    B=425  niter:     1  count:    0  breaks:  0  min_S: 216191.90  max_S: 216263.96  S: 216191.90  ΔS:     -72.0627  moves:    30 
+    l=1      B: 341 <- 718    B=425  niter:     2  count:    0  breaks:  0  min_S: 216154.54  max_S: 216263.96  S: 216154.54  ΔS:     -37.3567  moves:    24 
+    l=1      B: 341 <- 718    B=425  niter:     3  count:    0  breaks:  0  min_S: 216108.06  max_S: 216263.96  S: 216108.06  ΔS:     -46.4815  moves:    15 
+    l=1      B: 341 <- 718    B=425  niter:     4  count:    1  breaks:  1  min_S: 216108.06  max_S: 216263.96  S: 216092.51  ΔS:     -15.5494  moves:    16 
+    l=1      B: 341 <- 718    shrinking 425 -> 341
+    l=1      B: 341 <- 718    B=341  niter:     1  count:    0  breaks:  0  min_S: 215693.18  max_S: 215822.12  S: 215693.18  ΔS:     -128.940  moves:    56 
+    l=1      B: 341 <- 718    B=341  niter:     2  count:    0  breaks:  0  min_S: 215575.64  max_S: 215822.12  S: 215575.64  ΔS:     -117.541  moves:    37 
+    l=1      B: 341 <- 718    B=341  niter:     3  count:    0  breaks:  0  min_S: 215523.48  max_S: 215822.12  S: 215523.48  ΔS:     -52.1514  moves:    28 
+    l=1      B: 341 <- 718    B=341  niter:     4  count:    0  breaks:  0  min_S: 215469.20  max_S: 215822.12  S: 215469.20  ΔS:     -54.2833  moves:    25 
+    l=1      B: 341 <- 718    B=341  niter:     5  count:    0  breaks:  0  min_S: 215415.53  max_S: 215822.12  S: 215415.53  ΔS:     -53.6679  moves:    20 
+    l=1      B: 341 <- 718    B=341  niter:     6  count:    0  breaks:  0  min_S: 215354.82  max_S: 215822.12  S: 215354.82  ΔS:     -60.7130  moves:    31 
+    l=1      B: 341 <- 718    B=341  niter:     7  count:    0  breaks:  0  min_S: 215321.97  max_S: 215822.12  S: 215321.97  ΔS:     -32.8532  moves:    19 
+    l=1      B: 341 <- 718    B=341  niter:     8  count:    1  breaks:  1  min_S: 215321.97  max_S: 215822.12  S: 215311.04  ΔS:     -10.9311  moves:    15 
+    l=1  Current bracket: (8, 341, 718) (213619.5363112121, 215311.03527797325, 217487.14528504145)
+    l=1      B: 197 <- 341    shrinking 341 -> 262
+    l=1      B: 197 <- 341    B=262  niter:     1  count:    0  breaks:  0  min_S: 214069.20  max_S: 214121.78  S: 214069.20  ΔS:     -52.5815  moves:    41 
+    l=1      B: 197 <- 341    B=262  niter:     2  count:    0  breaks:  0  min_S: 214037.57  max_S: 214121.78  S: 214037.57  ΔS:     -31.6269  moves:    20 
+    l=1      B: 197 <- 341    B=262  niter:     3  count:    1  breaks:  1  min_S: 214037.57  max_S: 214121.78  S: 214019.88  ΔS:     -17.6952  moves:    18 
+    l=1      B: 197 <- 341    shrinking 262 -> 202
+    l=1      B: 197 <- 341    B=202  niter:     1  count:    0  breaks:  0  min_S: 213764.26  max_S: 213806.29  S: 213764.26  ΔS:     -42.0290  moves:    24 
+    l=1      B: 197 <- 341    B=202  niter:     2  count:    0  breaks:  0  min_S: 213681.85  max_S: 213806.29  S: 213681.85  ΔS:     -82.4081  moves:    27 
+    l=1      B: 197 <- 341    B=202  niter:     3  count:    0  breaks:  0  min_S: 213649.40  max_S: 213806.29  S: 213649.40  ΔS:     -32.4564  moves:    19 
+    l=1      B: 197 <- 341    B=202  niter:     4  count:    1  breaks:  1  min_S: 213649.40  max_S: 213806.29  S: 213632.29  ΔS:     -17.1050  moves:    11 
+    l=1      B: 197 <- 341    shrinking 202 -> 197
+    l=1      B: 197 <- 341    B=197  niter:     1  count:    1  breaks:  1  min_S: 213591.96  max_S: 213591.96  S: 213571.50  ΔS:     -20.4572  moves:    11 
+    l=1  Current bracket: (8, 197, 341) (213619.5363112121, 213571.50175865772, 215311.03527797325)
+    l=1      B: 108 <- 197    shrinking 197 -> 152
+    l=1      B: 108 <- 197    B=152  niter:     1  count:    0  breaks:  0  min_S: 212765.44  max_S: 212806.23  S: 212765.44  ΔS:     -40.7884  moves:    16 
+    l=1      B: 108 <- 197    B=152  niter:     2  count:    0  breaks:  0  min_S: 212729.86  max_S: 212806.23  S: 212729.86  ΔS:     -35.5896  moves:    23 
+    l=1      B: 108 <- 197    B=152  niter:     3  count:    1  breaks:  1  min_S: 212729.86  max_S: 212806.23  S: 212712.42  ΔS:     -17.4355  moves:    19 
+    l=1      B: 108 <- 197    shrinking 152 -> 117
+    l=1      B: 108 <- 197    B=117  niter:     1  count:    0  breaks:  0  min_S: 211990.19  max_S: 212018.47  S: 211990.19  ΔS:     -28.2723  moves:    30 
+    l=1      B: 108 <- 197    B=117  niter:     2  count:    0  breaks:  0  min_S: 211964.38  max_S: 212018.47  S: 211964.38  ΔS:     -25.8117  moves:    30 
+    l=1      B: 108 <- 197    B=117  niter:     3  count:    0  breaks:  0  min_S: 211938.07  max_S: 212018.47  S: 211938.07  ΔS:     -26.3073  moves:    21 
+    l=1      B: 108 <- 197    B=117  niter:     4  count:    1  breaks:  1  min_S: 211938.07  max_S: 212018.47  S: 211921.00  ΔS:     -17.0750  moves:    12 
+    l=1      B: 108 <- 197    shrinking 117 -> 108
+    l=1      B: 108 <- 197    B=108  niter:     1  count:    1  breaks:  1  min_S: 211649.98  max_S: 211649.98  S: 211649.23  ΔS:    -0.754524  moves:     5 
+    l=1  Current bracket: (8, 197, 341) (213619.5363112121, 213571.50175865772, 215311.03527797325)
+    l=1  Bisect at B = 108 with S = 211649.2303752036
+    l=1      B: 53 <- 108    shrinking 108 -> 83
+    l=1      B: 53 <- 108    B=83  niter:     1  count:    0  breaks:  0  min_S: 211592.88  max_S: 211631.19  S: 211592.88  ΔS:     -38.3141  moves:    34 
+    l=1      B: 53 <- 108    B=83  niter:     2  count:    1  breaks:  1  min_S: 211592.88  max_S: 211631.19  S: 211578.36  ΔS:     -14.5242  moves:    20 
+    l=1      B: 53 <- 108    shrinking 83 -> 64
+    l=1      B: 53 <- 108    B=64  niter:     1  count:    0  breaks:  0  min_S: 211330.91  max_S: 211354.94  S: 211330.91  ΔS:     -24.0388  moves:    27 
+    l=1      B: 53 <- 108    B=64  niter:     2  count:    0  breaks:  0  min_S: 211306.12  max_S: 211354.94  S: 211306.12  ΔS:     -24.7896  moves:    20 
+    l=1      B: 53 <- 108    B=64  niter:     3  count:    1  breaks:  1  min_S: 211306.12  max_S: 211354.94  S: 211296.94  ΔS:     -9.17902  moves:    14 
+    l=1      B: 53 <- 108    shrinking 64 -> 53
+    l=1      B: 53 <- 108    B=53  niter:     1  count:    1  breaks:  1  min_S: 211085.80  max_S: 211085.80  S: 211068.47  ΔS:     -17.3228  moves:    27 
+    l=1  Current bracket: (8, 108, 197) (213619.5363112121, 211649.2303752036, 213571.50175865772)
+    l=1  Bisect at B = 53 with S = 211068.4735546559
+    l=1      B: 74 <- 83    shrinking 83 -> 74
+    l=1      B: 74 <- 83    B=74  niter:     1  count:    1  breaks:  1  min_S: 211490.81  max_S: 211490.81  S: 211474.47  ΔS:     -16.3480  moves:    18 
+    l=1  Current bracket: (8, 53, 108) (213619.5363112121, 211068.47355465585, 211649.2303752036)
+    l=1  Bisect at B = 74 with S = 211474.4656587798
+    l=1      B: 32 <- 53    shrinking 53 -> 41
+    l=1      B: 32 <- 53    B=41  niter:     1  count:    1  breaks:  1  min_S: 210721.38  max_S: 210721.38  S: 210713.42  ΔS:     -7.95661  moves:     9 
+    l=1      B: 32 <- 53    shrinking 41 -> 32
+    l=1      B: 32 <- 53    B=32  niter:     1  count:    1  breaks:  1  min_S: 210282.49  max_S: 210282.49  S: 210278.25  ΔS:     -4.24378  moves:     2 
+    l=1  Current bracket: (8, 53, 74) (213619.5363112121, 211068.47355465585, 211474.46565877975)
+    l=1  Bisect at B = 32 with S = 210278.2485356771
+    l=1      B: 19 <- 32    shrinking 32 -> 25
+    l=1      B: 19 <- 32    B=25  niter:     1  count:    1  breaks:  1  min_S: 210196.43  max_S: 210196.43  S: 210187.38  ΔS:     -9.05308  moves:     2 
+    l=1      B: 19 <- 32    shrinking 25 -> 19
+    l=1      B: 19 <- 32    B=19  niter:     1  count:    1  breaks:  1  min_S: 210115.78  max_S: 210115.78  S: 210115.78  ΔS:      0.00000  moves:     0 
+    l=1  Current bracket: (8, 32, 53) (213619.5363112121, 210278.24853567712, 211068.47355465585)
+    l=1  Bisect at B = 19 with S = 210115.7768649346
+    l=1      B: 24 <- 25    shrinking 25 -> 24
+    l=1      B: 24 <- 25    B=24  niter:     1  count:    1  breaks:  1  min_S: 210173.26  max_S: 210173.26  S: 210171.69  ΔS:     -1.57854  moves:     2 
+    l=1  Current bracket: (8, 19, 32) (213619.5363112121, 210115.77686493457, 210278.24853567712)
+    l=1  Bisect at B = 24 with S = 210171.6860868093
+    l=1      B: 14 <- 19    shrinking 19 -> 15
+    l=1      B: 14 <- 19    B=15  niter:     1  count:    1  breaks:  1  min_S: 210089.30  max_S: 210089.30  S: 210085.59  ΔS:     -3.71189  moves:     4 
+    l=1      B: 14 <- 19    shrinking 15 -> 14
+    l=1      B: 14 <- 19    B=14  niter:     1  count:    1  breaks:  1  min_S: 210085.26  max_S: 210085.26  S: 210084.96  ΔS:    -0.298690  moves:     2 
+    l=1  Current bracket: (8, 19, 24) (213619.5363112121, 210115.77686493457, 210171.68608680926)
+    l=1  Bisect at B = 14 with S = 210084.9647190779
+    l=1      B: 11 <- 14    shrinking 14 -> 11
+    l=1      B: 11 <- 14    B=11  niter:     1  count:    1  breaks:  1  min_S: 210244.45  max_S: 210244.45  S: 210240.14  ΔS:     -4.31124  moves:     1 
+    l=1  Current bracket: (8, 14, 19) (213619.5363112121, 210084.96471907792, 210115.77686493457)
+    l=1  Bisect at B = 11 with S = 210240.1408488352
+    l=1      B: 16 <- 19    shrinking 19 -> 16
+    l=1      B: 16 <- 19    B=16  niter:     1  count:    1  breaks:  1  min_S: 210093.63  max_S: 210093.63  S: 210093.36  ΔS:    -0.266090  moves:     1 
+    l=1  Current bracket: (11, 14, 19) (210240.14084883523, 210084.96471907792, 210115.77686493457)
+    l=1  Bisect at B = 16 with S = 210093.3621337869
+    l=1      B: 12 <- 14    shrinking 14 -> 12
+    l=1      B: 12 <- 14    B=12  niter:     1  count:    1  breaks:  1  min_S: 210107.10  max_S: 210107.10  S: 210097.32  ΔS:     -9.78079  moves:     3 
+    l=1  Current bracket: (11, 14, 16) (210240.14084883523, 210084.96471907792, 210093.36213378693)
+    l=1  Bisect at B = 12 with S = 210097.3180887991
+    l=1      B: 13 <- 14    shrinking 14 -> 13
+    l=1      B: 13 <- 14    B=13  niter:     1  count:    1  breaks:  1  min_S: 210087.64  max_S: 210087.64  S: 210085.45  ΔS:     -2.18666  moves:     1 
+    l=1  Current bracket: (12, 14, 16) (210097.3180887991, 210084.96471907792, 210093.36213378693)
+    l=1  Bisect at B = 13 with S = 210085.4492620226
+    l=1  Current bracket: (13, 14, 16) (210085.44926202256, 210084.96471907792, 210093.36213378693)
+    l=1  Bisect at B = 15 with S = 210085.5900352619
+    l=1  Current bracket: (13, 14, 15) (210085.44926202256, 210084.96471907792, 210085.5900352619)
+    l=1  Bisect at B = 13 with S = 210085.4492620226
+    l=1  Best result: B = 14, S = 210084.9647190779
+level 1 : rejected replacement (718, 13) -> (718, 14) , dS: 128.49347712434246
+    l=1      B: 341 <- 718    shrinking 718 -> 552
+    l=1      B: 341 <- 718    B=552  niter:     1  count:    0  breaks:  0  min_S: 217054.45  max_S: 217213.12  S: 217054.45  ΔS:     -158.667  moves:    44 
+    l=1      B: 341 <- 718    B=552  niter:     2  count:    0  breaks:  0  min_S: 216968.22  max_S: 217213.12  S: 216968.22  ΔS:     -86.2319  moves:    24 
+    l=1      B: 341 <- 718    B=552  niter:     3  count:    0  breaks:  0  min_S: 216913.05  max_S: 217213.12  S: 216913.05  ΔS:     -55.1723  moves:    14 
+    l=1      B: 341 <- 718    B=552  niter:     4  count:    0  breaks:  0  min_S: 216865.40  max_S: 217213.12  S: 216865.40  ΔS:     -47.6455  moves:    17 
+    l=1      B: 341 <- 718    B=552  niter:     5  count:    0  breaks:  0  min_S: 216824.24  max_S: 217213.12  S: 216824.24  ΔS:     -41.1657  moves:    14 
+    l=1      B: 341 <- 718    B=552  niter:     6  count:    0  breaks:  0  min_S: 216751.59  max_S: 217213.12  S: 216751.59  ΔS:     -72.6466  moves:    16 
+    l=1      B: 341 <- 718    B=552  niter:     7  count:    1  breaks:  1  min_S: 216751.59  max_S: 217213.12  S: 216731.44  ΔS:     -20.1543  moves:     7 
+    l=1      B: 341 <- 718    shrinking 552 -> 425
+    l=1      B: 341 <- 718    B=425  niter:     1  count:    0  breaks:  0  min_S: 216098.57  max_S: 216201.07  S: 216098.57  ΔS:     -102.498  moves:    29 
+    l=1      B: 341 <- 718    B=425  niter:     2  count:    0  breaks:  0  min_S: 216027.44  max_S: 216201.07  S: 216027.44  ΔS:     -71.1297  moves:    18 
+    l=1      B: 341 <- 718    B=425  niter:     3  count:    0  breaks:  0  min_S: 215979.67  max_S: 216201.07  S: 215979.67  ΔS:     -47.7684  moves:    14 
+    l=1      B: 341 <- 718    B=425  niter:     4  count:    0  breaks:  0  min_S: 215909.69  max_S: 216201.07  S: 215909.69  ΔS:     -69.9857  moves:    17 
+    l=1      B: 341 <- 718    B=425  niter:     5  count:    0  breaks:  0  min_S: 215878.93  max_S: 216201.07  S: 215878.93  ΔS:     -30.7570  moves:     8 
+    l=1      B: 341 <- 718    B=425  niter:     6  count:    0  breaks:  0  min_S: 215851.24  max_S: 216201.07  S: 215851.24  ΔS:     -27.6928  moves:    10 
+    l=1      B: 341 <- 718    B=425  niter:     7  count:    0  breaks:  0  min_S: 215796.82  max_S: 216201.07  S: 215796.82  ΔS:     -54.4222  moves:    14 
+    l=1      B: 341 <- 718    B=425  niter:     8  count:    0  breaks:  0  min_S: 215766.45  max_S: 216201.07  S: 215766.45  ΔS:     -30.3695  moves:     9 
+    l=1      B: 341 <- 718    B=425  niter:     9  count:    1  breaks:  1  min_S: 215766.45  max_S: 216201.07  S: 215754.42  ΔS:     -12.0277  moves:     7 
+    l=1      B: 341 <- 718    shrinking 425 -> 341
+    l=1      B: 341 <- 718    B=341  niter:     1  count:    0  breaks:  0  min_S: 215758.05  max_S: 215875.72  S: 215758.05  ΔS:     -117.669  moves:    56 
+    l=1      B: 341 <- 718    B=341  niter:     2  count:    0  breaks:  0  min_S: 215702.78  max_S: 215875.72  S: 215702.78  ΔS:     -55.2733  moves:    29 
+    l=1      B: 341 <- 718    B=341  niter:     3  count:    0  breaks:  0  min_S: 215671.41  max_S: 215875.72  S: 215671.41  ΔS:     -31.3644  moves:    21 
+    l=1      B: 341 <- 718    B=341  niter:     4  count:    0  breaks:  0  min_S: 215582.69  max_S: 215875.72  S: 215582.69  ΔS:     -88.7212  moves:    25 
+    l=1      B: 341 <- 718    B=341  niter:     5  count:    1  breaks:  1  min_S: 215582.69  max_S: 215875.72  S: 215565.11  ΔS:     -17.5886  moves:    18 
+    l=1  Current bracket: (8, 341, 718) (213619.5363112121, 215565.1050687189, 217487.14528504145)
+    l=1      B: 197 <- 341    shrinking 341 -> 262
+    l=1      B: 197 <- 341    B=262  niter:     1  count:    0  breaks:  0  min_S: 214912.96  max_S: 215055.87  S: 214912.96  ΔS:     -142.910  moves:    63 
+    l=1      B: 197 <- 341    B=262  niter:     2  count:    0  breaks:  0  min_S: 214851.59  max_S: 215055.87  S: 214851.59  ΔS:     -61.3687  moves:    51 
+    l=1      B: 197 <- 341    B=262  niter:     3  count:    0  breaks:  0  min_S: 214802.05  max_S: 215055.87  S: 214802.05  ΔS:     -49.5360  moves:    34 
+    l=1      B: 197 <- 341    B=262  niter:     4  count:    0  breaks:  0  min_S: 214774.53  max_S: 215055.87  S: 214774.53  ΔS:     -27.5189  moves:    30 
+    l=1      B: 197 <- 341    B=262  niter:     5  count:    0  breaks:  0  min_S: 214746.59  max_S: 215055.87  S: 214746.59  ΔS:     -27.9424  moves:    24 
+    l=1      B: 197 <- 341    B=262  niter:     6  count:    0  breaks:  0  min_S: 214701.98  max_S: 215055.87  S: 214701.98  ΔS:     -44.6108  moves:    25 
+    l=1      B: 197 <- 341    B=262  niter:     7  count:    1  breaks:  1  min_S: 214701.98  max_S: 215055.87  S: 214684.98  ΔS:     -17.0005  moves:    22 
+    l=1      B: 197 <- 341    shrinking 262 -> 202
+    l=1      B: 197 <- 341    B=202  niter:     1  count:    0  breaks:  0  min_S: 213407.20  max_S: 213441.59  S: 213407.20  ΔS:     -34.3906  moves:    18 
+    l=1      B: 197 <- 341    B=202  niter:     2  count:    1  breaks:  1  min_S: 213407.20  max_S: 213441.59  S: 213394.31  ΔS:     -12.8892  moves:    11 
+    l=1      B: 197 <- 341    shrinking 202 -> 197
+    l=1      B: 197 <- 341    B=197  niter:     1  count:    1  breaks:  1  min_S: 213339.21  max_S: 213339.21  S: 213325.70  ΔS:     -13.5141  moves:    11 
+    l=1  Current bracket: (8, 197, 341) (213619.5363112121, 213325.697905478, 215565.1050687189)
+    l=1      B: 108 <- 197    shrinking 197 -> 152
+    l=1      B: 108 <- 197    B=152  niter:     1  count:    0  breaks:  0  min_S: 212649.24  max_S: 212683.38  S: 212649.24  ΔS:     -34.1380  moves:    28 
+    l=1      B: 108 <- 197    B=152  niter:     2  count:    0  breaks:  0  min_S: 212608.22  max_S: 212683.38  S: 212608.22  ΔS:     -41.0181  moves:    25 
+    l=1      B: 108 <- 197    B=152  niter:     3  count:    1  breaks:  1  min_S: 212608.22  max_S: 212683.38  S: 212593.67  ΔS:     -14.5540  moves:     8 
+    l=1      B: 108 <- 197    shrinking 152 -> 117
+    l=1      B: 108 <- 197    B=117  niter:     1  count:    1  breaks:  1  min_S: 211673.31  max_S: 211673.31  S: 211654.86  ΔS:     -18.4515  moves:    16 
+    l=1      B: 108 <- 197    shrinking 117 -> 108
+    l=1      B: 108 <- 197    B=108  niter:     1  count:    1  breaks:  1  min_S: 211690.24  max_S: 211690.24  S: 211684.49  ΔS:     -5.75193  moves:    10 
+    l=1  Current bracket: (8, 197, 341) (213619.5363112121, 213325.697905478, 215565.1050687189)
+    l=1  Bisect at B = 108 with S = 211684.4930168104
+    l=1      B: 53 <- 108    shrinking 108 -> 83
+    l=1      B: 53 <- 108    B=83  niter:     1  count:    0  breaks:  0  min_S: 211627.72  max_S: 211688.37  S: 211627.72  ΔS:     -60.6491  moves:    36 
+    l=1      B: 53 <- 108    B=83  niter:     2  count:    1  breaks:  1  min_S: 211627.72  max_S: 211688.37  S: 211607.19  ΔS:     -20.5297  moves:    26 
+    l=1      B: 53 <- 108    shrinking 83 -> 64
+    l=1      B: 53 <- 108    B=64  niter:     1  count:    0  breaks:  0  min_S: 211336.64  max_S: 211379.63  S: 211336.64  ΔS:     -42.9899  moves:    37 
+    l=1      B: 53 <- 108    B=64  niter:     2  count:    0  breaks:  0  min_S: 211314.45  max_S: 211379.63  S: 211314.45  ΔS:     -22.1907  moves:    23 
+    l=1      B: 53 <- 108    B=64  niter:     3  count:    1  breaks:  1  min_S: 211314.45  max_S: 211379.63  S: 211310.42  ΔS:     -4.03667  moves:    12 
+    l=1      B: 53 <- 108    shrinking 64 -> 53
+    l=1      B: 53 <- 108    B=53  niter:     1  count:    1  breaks:  1  min_S: 211084.69  max_S: 211084.69  S: 211076.34  ΔS:     -8.35499  moves:    15 
+    l=1  Current bracket: (8, 108, 197) (213619.5363112121, 211684.49301681045, 213325.697905478)
+    l=1  Bisect at B = 53 with S = 211076.3358794038
+    l=1      B: 74 <- 83    shrinking 83 -> 74
+    l=1      B: 74 <- 83    B=74  niter:     1  count:    1  breaks:  1  min_S: 211501.79  max_S: 211501.79  S: 211493.31  ΔS:     -8.48018  moves:    14 
+    l=1  Current bracket: (8, 53, 108) (213619.5363112121, 211076.33587940378, 211684.49301681045)
+    l=1  Bisect at B = 74 with S = 211493.3142016872
+    l=1      B: 32 <- 53    shrinking 53 -> 41
+    l=1      B: 32 <- 53    B=41  niter:     1  count:    1  breaks:  1  min_S: 210780.26  max_S: 210780.26  S: 210768.90  ΔS:     -11.3671  moves:    25 
+    l=1      B: 32 <- 53    shrinking 41 -> 32
+    l=1      B: 32 <- 53    B=32  niter:     1  count:    0  breaks:  0  min_S: 210505.94  max_S: 210532.84  S: 210505.94  ΔS:     -26.8965  moves:    30 
+    l=1      B: 32 <- 53    B=32  niter:     2  count:    0  breaks:  0  min_S: 210476.12  max_S: 210532.84  S: 210476.12  ΔS:     -29.8192  moves:    11 
+    l=1      B: 32 <- 53    B=32  niter:     3  count:    1  breaks:  1  min_S: 210476.12  max_S: 210532.84  S: 210473.40  ΔS:     -2.71625  moves:     7 
+    l=1  Current bracket: (8, 53, 74) (213619.5363112121, 211076.33587940378, 211493.31420168717)
+    l=1  Bisect at B = 32 with S = 210473.4030863003
+    l=1      B: 19 <- 32    shrinking 31 -> 24
+    l=1      B: 19 <- 32    B=24  niter:     1  count:    1  breaks:  1  min_S: 210283.71  max_S: 210283.71  S: 210283.45  ΔS:    -0.261419  moves:     2 
+    l=1      B: 19 <- 32    shrinking 24 -> 19
+    l=1      B: 19 <- 32    B=19  niter:     1  count:    0  breaks:  0  min_S: 210121.80  max_S: 210146.34  S: 210121.80  ΔS:     -24.5369  moves:     1 
+    l=1      B: 19 <- 32    B=19  niter:     2  count:    1  breaks:  1  min_S: 210121.80  max_S: 210146.34  S: 210120.96  ΔS:    -0.847480  moves:     1 
+    l=1  Current bracket: (8, 32, 53) (213619.5363112121, 210473.4030863003, 211076.33587940378)
+    l=1  Bisect at B = 19 with S = 210120.9567173664
+    l=1  Current bracket: (8, 19, 32) (213619.5363112121, 210120.95671736635, 210473.4030863003)
+    l=1  Bisect at B = 24 with S = 210283.4504751928
+    l=1      B: 14 <- 19    shrinking 19 -> 15
+    l=1      B: 14 <- 19    B=15  niter:     1  count:    1  breaks:  1  min_S: 210109.69  max_S: 210109.69  S: 210109.69  ΔS:      0.00000  moves:     0 
+    l=1      B: 14 <- 19    shrinking 15 -> 14
+    l=1      B: 14 <- 19    B=14  niter:     1  count:    1  breaks:  1  min_S: 210099.82  max_S: 210099.82  S: 210099.50  ΔS:    -0.322511  moves:     1 
+    l=1  Current bracket: (8, 19, 24) (213619.5363112121, 210120.95671736635, 210283.45047519277)
+    l=1  Bisect at B = 14 with S = 210099.4955933132
+    l=1      B: 11 <- 14    shrinking 14 -> 11
+    l=1      B: 11 <- 14    B=11  niter:     1  count:    1  breaks:  1  min_S: 210249.83  max_S: 210249.83  S: 210249.83  ΔS:      0.00000  moves:     0 
+    l=1  Current bracket: (8, 14, 19) (213619.5363112121, 210099.49559331324, 210120.95671736635)
+    l=1  Bisect at B = 11 with S = 210249.8251920951
+    l=1      B: 16 <- 19    shrinking 19 -> 16
+    l=1      B: 16 <- 19    B=16  niter:     1  count:    1  breaks:  1  min_S: 210096.80  max_S: 210096.80  S: 210096.80  ΔS:      0.00000  moves:     0 
+    l=1  Current bracket: (11, 14, 19) (210249.8251920951, 210099.49559331324, 210120.95671736635)
+    l=1  Bisect at B = 16 with S = 210096.7972111764
+    l=1      B: 17 <- 19    shrinking 19 -> 17
+    l=1      B: 17 <- 19    B=17  niter:     1  count:    1  breaks:  1  min_S: 210096.69  max_S: 210096.69  S: 210096.69  ΔS:      0.00000  moves:     0 
+    l=1  Current bracket: (14, 16, 19) (210099.49559331324, 210096.79721117637, 210120.95671736635)
+    l=1  Bisect at B = 17 with S = 210096.6939428041
+    l=1      B: 18 <- 19    shrinking 19 -> 18
+    l=1      B: 18 <- 19    B=18  niter:     1  count:    1  breaks:  1  min_S: 210105.79  max_S: 210105.79  S: 210105.79  ΔS:      0.00000  moves:     0 
+    l=1  Current bracket: (16, 17, 19) (210096.79721117637, 210096.69394280406, 210120.95671736635)
+    l=1  Bisect at B = 18 with S = 210105.7878687962
+    l=1  Current bracket: (16, 17, 18) (210096.79721117637, 210096.69394280406, 210105.78786879618)
+    l=1  Bisect at B = 16 with S = 210096.7972111764
+    l=1  Best result: B = 17, S = 210096.6939428041
+level 1 : rejected insert 718 , dS: 4018.302746189933
+    l=0      B: 358 <- 735    shrinking 735 -> 565
+    l=0      B: 358 <- 735    B=565  niter:     1  count:    0  breaks:  0  min_S: 489789.11  max_S: 493581.66  S: 489789.11  ΔS:     -3792.56  moves:    10 
+    l=0      B: 358 <- 735    B=565  niter:     2  count:    0  breaks:  0  min_S: 488346.65  max_S: 493581.66  S: 488346.65  ΔS:     -1442.46  moves:     4 
+    l=0      B: 358 <- 735    B=565  niter:     3  count:    0  breaks:  0  min_S: 484118.34  max_S: 493581.66  S: 484118.34  ΔS:     -4228.31  moves:    11 
+    l=0      B: 358 <- 735    B=565  niter:     4  count:    0  breaks:  0  min_S: 480675.03  max_S: 493581.66  S: 480675.03  ΔS:     -3443.31  moves:     9 
+    l=0      B: 358 <- 735    B=565  niter:     5  count:    0  breaks:  0  min_S: 479772.34  max_S: 493581.66  S: 479772.34  ΔS:     -902.687  moves:     4 
+    l=0      B: 358 <- 735    B=565  niter:     6  count:    0  breaks:  0  min_S: 475482.22  max_S: 493581.66  S: 475482.22  ΔS:     -4290.12  moves:     7 
+    l=0      B: 358 <- 735    B=565  niter:     7  count:    0  breaks:  0  min_S: 473375.74  max_S: 493581.66  S: 473375.74  ΔS:     -2106.48  moves:     6 
+    l=0      B: 358 <- 735    B=565  niter:     8  count:    0  breaks:  0  min_S: 472552.27  max_S: 493581.66  S: 472552.27  ΔS:     -823.473  moves:     7 
+    l=0      B: 358 <- 735    B=565  niter:     9  count:    0  breaks:  0  min_S: 470481.20  max_S: 493581.66  S: 470481.20  ΔS:     -2071.07  moves:     7 
+    l=0      B: 358 <- 735    B=565  niter:    10  count:    0  breaks:  0  min_S: 469617.95  max_S: 493581.66  S: 469617.95  ΔS:     -863.243  moves:     3 
+    l=0      B: 358 <- 735    B=565  niter:    11  count:    0  breaks:  0  min_S: 468871.18  max_S: 493581.66  S: 468871.18  ΔS:     -746.771  moves:     6 
+    l=0      B: 358 <- 735    B=565  niter:    12  count:    0  breaks:  0  min_S: 467262.95  max_S: 493581.66  S: 467262.95  ΔS:     -1608.24  moves:     3 
+    l=0      B: 358 <- 735    B=565  niter:    13  count:    0  breaks:  0  min_S: 466348.01  max_S: 493581.66  S: 466348.01  ΔS:     -914.933  moves:     4 
+    l=0      B: 358 <- 735    B=565  niter:    14  count:    0  breaks:  0  min_S: 465193.64  max_S: 493581.66  S: 465193.64  ΔS:     -1154.38  moves:     3 
+    l=0      B: 358 <- 735    B=565  niter:    15  count:    0  breaks:  0  min_S: 464971.95  max_S: 493581.66  S: 464971.95  ΔS:     -221.684  moves:     1 
+    l=0      B: 358 <- 735    B=565  niter:    16  count:    0  breaks:  0  min_S: 462036.43  max_S: 493581.66  S: 462036.43  ΔS:     -2935.52  moves:     5 
+    l=0      B: 358 <- 735    B=565  niter:    17  count:    0  breaks:  0  min_S: 461666.23  max_S: 493581.66  S: 461666.23  ΔS:     -370.206  moves:     4 
+    l=0      B: 358 <- 735    B=565  niter:    18  count:    0  breaks:  0  min_S: 460296.42  max_S: 493581.66  S: 460296.42  ΔS:     -1369.80  moves:     3 
+    l=0      B: 358 <- 735    B=565  niter:    19  count:    0  breaks:  0  min_S: 457389.30  max_S: 493581.66  S: 457389.30  ΔS:     -2907.12  moves:     3 
+    l=0      B: 358 <- 735    B=565  niter:    20  count:    0  breaks:  0  min_S: 457014.74  max_S: 493581.66  S: 457014.74  ΔS:     -374.554  moves:     2 
+    l=0      B: 358 <- 735    B=565  niter:    21  count:    1  breaks:  1  min_S: 457014.74  max_S: 493581.66  S: 457000.37  ΔS:     -14.3723  moves:     2 
+    l=0      B: 358 <- 735    shrinking 565 -> 435
+    l=0      B: 358 <- 735    B=435  niter:     1  count:    0  breaks:  0  min_S: 882693.17  max_S: 889264.25  S: 882693.17  ΔS:     -6571.08  moves:    14 
+    l=0      B: 358 <- 735    B=435  niter:     2  count:    0  breaks:  0  min_S: 880630.88  max_S: 889264.25  S: 880630.88  ΔS:     -2062.30  moves:     9 
+    l=0      B: 358 <- 735    B=435  niter:     3  count:    0  breaks:  0  min_S: 873949.57  max_S: 889264.25  S: 873949.57  ΔS:     -6681.30  moves:    19 
+    l=0      B: 358 <- 735    B=435  niter:     4  count:    0  breaks:  0  min_S: 868529.30  max_S: 889264.25  S: 868529.30  ΔS:     -5420.27  moves:    10 
+    l=0      B: 358 <- 735    B=435  niter:     5  count:    0  breaks:  0  min_S: 860638.62  max_S: 889264.25  S: 860638.62  ΔS:     -7890.69  moves:    16 
+    l=0      B: 358 <- 735    B=435  niter:     6  count:    0  breaks:  0  min_S: 855839.72  max_S: 889264.25  S: 855839.72  ΔS:     -4798.89  moves:    11 
+    l=0      B: 358 <- 735    B=435  niter:     7  count:    0  breaks:  0  min_S: 851420.73  max_S: 889264.25  S: 851420.73  ΔS:     -4419.00  moves:     8 
+    l=0      B: 358 <- 735    B=435  niter:     8  count:    0  breaks:  0  min_S: 849135.77  max_S: 889264.25  S: 849135.77  ΔS:     -2284.95  moves:    10 
+    l=0      B: 358 <- 735    B=435  niter:     9  count:    0  breaks:  0  min_S: 845341.06  max_S: 889264.25  S: 845341.06  ΔS:     -3794.72  moves:     8 
+    l=0      B: 358 <- 735    B=435  niter:    10  count:    0  breaks:  0  min_S: 844364.58  max_S: 889264.25  S: 844364.58  ΔS:     -976.475  moves:     2 
+    l=0      B: 358 <- 735    B=435  niter:    11  count:    0  breaks:  0  min_S: 842044.88  max_S: 889264.25  S: 842044.88  ΔS:     -2319.71  moves:     6 
+    l=0      B: 358 <- 735    B=435  niter:    12  count:    0  breaks:  0  min_S: 841349.58  max_S: 889264.25  S: 841349.58  ΔS:     -695.298  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    13  count:    0  breaks:  0  min_S: 840590.31  max_S: 889264.25  S: 840590.31  ΔS:     -759.273  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    14  count:    0  breaks:  0  min_S: 839280.26  max_S: 889264.25  S: 839280.26  ΔS:     -1310.05  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    15  count:    0  breaks:  0  min_S: 834236.20  max_S: 889264.25  S: 834236.20  ΔS:     -5044.05  moves:     7 
+    l=0      B: 358 <- 735    B=435  niter:    16  count:    0  breaks:  0  min_S: 832636.01  max_S: 889264.25  S: 832636.01  ΔS:     -1600.19  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    17  count:    0  breaks:  0  min_S: 831066.88  max_S: 889264.25  S: 831066.88  ΔS:     -1569.13  moves:     6 
+    l=0      B: 358 <- 735    B=435  niter:    18  count:    0  breaks:  0  min_S: 829259.04  max_S: 889264.25  S: 829259.04  ΔS:     -1807.84  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    19  count:    0  breaks:  0  min_S: 828419.48  max_S: 889264.25  S: 828419.48  ΔS:     -839.566  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    20  count:    0  breaks:  0  min_S: 827354.44  max_S: 889264.25  S: 827354.44  ΔS:     -1065.03  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    21  count:    0  breaks:  0  min_S: 825236.99  max_S: 889264.25  S: 825236.99  ΔS:     -2117.46  moves:     5 
+    l=0      B: 358 <- 735    B=435  niter:    22  count:    0  breaks:  0  min_S: 822872.90  max_S: 889264.25  S: 822872.90  ΔS:     -2364.09  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    23  count:    0  breaks:  0  min_S: 821880.52  max_S: 889264.25  S: 821880.52  ΔS:     -992.380  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    24  count:    0  breaks:  0  min_S: 820884.72  max_S: 889264.25  S: 820884.72  ΔS:     -995.803  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    25  count:    0  breaks:  0  min_S: 819450.01  max_S: 889264.25  S: 819450.01  ΔS:     -1434.71  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    26  count:    0  breaks:  0  min_S: 818717.52  max_S: 889264.25  S: 818717.52  ΔS:     -732.488  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    27  count:    0  breaks:  0  min_S: 816084.57  max_S: 889264.25  S: 816084.57  ΔS:     -2632.95  moves:     7 
+    l=0      B: 358 <- 735    B=435  niter:    28  count:    0  breaks:  0  min_S: 814048.99  max_S: 889264.25  S: 814048.99  ΔS:     -2035.58  moves:    10 
+    l=0      B: 358 <- 735    B=435  niter:    29  count:    0  breaks:  0  min_S: 813813.29  max_S: 889264.25  S: 813813.29  ΔS:     -235.702  moves:     1 
+    l=0      B: 358 <- 735    B=435  niter:    30  count:    0  breaks:  0  min_S: 812587.90  max_S: 889264.25  S: 812587.90  ΔS:     -1225.39  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    31  count:    0  breaks:  0  min_S: 811718.15  max_S: 889264.25  S: 811718.15  ΔS:     -869.755  moves:     2 
+    l=0      B: 358 <- 735    B=435  niter:    32  count:    0  breaks:  0  min_S: 808840.85  max_S: 889264.25  S: 808840.85  ΔS:     -2877.30  moves:     4 
+    l=0      B: 358 <- 735    B=435  niter:    33  count:    0  breaks:  0  min_S: 806982.23  max_S: 889264.25  S: 806982.23  ΔS:     -1858.62  moves:     3 
+    l=0      B: 358 <- 735    B=435  niter:    34  count:    1  breaks:  1  min_S: 806982.23  max_S: 889264.25  S: 806982.23  ΔS:      0.00000  moves:     0 
+    l=0      B: 358 <- 735    shrinking 435 -> 358
+    l=0      B: 358 <- 735    B=358  niter:     1  count:    0  breaks:  0  min_S: 1140607.2  max_S: 1143483.4  S: 1140607.2  ΔS:     -2876.21  moves:    10 
+    l=0      B: 358 <- 735    B=358  niter:     2  count:    0  breaks:  0  min_S: 1132499.0  max_S: 1143483.4  S: 1132499.0  ΔS:     -8108.15  moves:    10 
+    l=0      B: 358 <- 735    B=358  niter:     3  count:    0  breaks:  0  min_S: 1129076.2  max_S: 1143483.4  S: 1129076.2  ΔS:     -3422.81  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:     4  count:    0  breaks:  0  min_S: 1122457.0  max_S: 1143483.4  S: 1122457.0  ΔS:     -6619.18  moves:    10 
+    l=0      B: 358 <- 735    B=358  niter:     5  count:    0  breaks:  0  min_S: 1115783.4  max_S: 1143483.4  S: 1115783.4  ΔS:     -6673.64  moves:    10 
+    l=0      B: 358 <- 735    B=358  niter:     6  count:    0  breaks:  0  min_S: 1115090.7  max_S: 1143483.4  S: 1115090.7  ΔS:     -692.636  moves:     2 
+    l=0      B: 358 <- 735    B=358  niter:     7  count:    0  breaks:  0  min_S: 1113310.5  max_S: 1143483.4  S: 1113310.5  ΔS:     -1780.19  moves:     2 
+    l=0      B: 358 <- 735    B=358  niter:     8  count:    0  breaks:  0  min_S: 1110954.5  max_S: 1143483.4  S: 1110954.5  ΔS:     -2356.00  moves:     4 
+    l=0      B: 358 <- 735    B=358  niter:     9  count:    0  breaks:  0  min_S: 1105949.4  max_S: 1143483.4  S: 1105949.4  ΔS:     -5005.13  moves:     7 
+    l=0      B: 358 <- 735    B=358  niter:    10  count:    0  breaks:  0  min_S: 1105802.3  max_S: 1143483.4  S: 1105802.3  ΔS:     -147.152  moves:     2 
+    l=0      B: 358 <- 735    B=358  niter:    11  count:    0  breaks:  0  min_S: 1104412.5  max_S: 1143483.4  S: 1104412.5  ΔS:     -1389.75  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:    12  count:    0  breaks:  0  min_S: 1103521.4  max_S: 1143483.4  S: 1103521.4  ΔS:     -891.099  moves:     3 
+    l=0      B: 358 <- 735    B=358  niter:    13  count:    0  breaks:  0  min_S: 1101683.2  max_S: 1143483.4  S: 1101683.2  ΔS:     -1838.19  moves:     6 
+    l=0      B: 358 <- 735    B=358  niter:    14  count:    0  breaks:  0  min_S: 1100325.9  max_S: 1143483.4  S: 1100325.9  ΔS:     -1357.31  moves:     2 
+    l=0      B: 358 <- 735    B=358  niter:    15  count:    0  breaks:  0  min_S: 1096295.9  max_S: 1143483.4  S: 1096295.9  ΔS:     -4029.98  moves:     6 
+    l=0      B: 358 <- 735    B=358  niter:    16  count:    0  breaks:  0  min_S: 1093347.6  max_S: 1143483.4  S: 1093347.6  ΔS:     -2948.36  moves:     4 
+    l=0      B: 358 <- 735    B=358  niter:    17  count:    0  breaks:  0  min_S: 1091600.8  max_S: 1143483.4  S: 1091600.8  ΔS:     -1746.79  moves:     4 
+    l=0      B: 358 <- 735    B=358  niter:    18  count:    0  breaks:  0  min_S: 1090591.5  max_S: 1143483.4  S: 1090591.5  ΔS:     -1009.27  moves:     2 
+    l=0      B: 358 <- 735    B=358  niter:    19  count:    0  breaks:  0  min_S: 1086102.3  max_S: 1143483.4  S: 1086102.3  ΔS:     -4489.18  moves:     5 
+    l=0      B: 358 <- 735    B=358  niter:    20  count:    0  breaks:  0  min_S: 1085005.8  max_S: 1143483.4  S: 1085005.8  ΔS:     -1096.52  moves:     2 
+    l=0      B: 358 <- 735    B=358  niter:    21  count:    1  breaks:  1  min_S: 1085005.8  max_S: 1143483.4  S: 1085005.8  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (13, 358, 735) (6722330.682638763, 1085005.8195234046, 218912.26918223896)
+    l=0      B: 502 <- 565    shrinking 565 -> 502
+    l=0      B: 502 <- 565    B=502  niter:     1  count:    0  breaks:  0  min_S: 626703.82  max_S: 628292.67  S: 626703.82  ΔS:     -1588.85  moves:     4 
+    l=0      B: 502 <- 565    B=502  niter:     2  count:    0  breaks:  0  min_S: 625393.92  max_S: 628292.67  S: 625393.92  ΔS:     -1309.90  moves:     2 
+    l=0      B: 502 <- 565    B=502  niter:     3  count:    1  breaks:  1  min_S: 625393.92  max_S: 628292.67  S: 625393.92  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (358, 502, 735) (1085005.8195234046, 625393.9199236275, 218912.26918223896)
+    l=0      B: 591 <- 735    shrinking 735 -> 591
+    l=0      B: 591 <- 735    B=591  niter:     1  count:    0  breaks:  0  min_S: 429098.47  max_S: 430096.59  S: 429098.47  ΔS:     -998.111  moves:     4 
+    l=0      B: 591 <- 735    B=591  niter:     2  count:    0  breaks:  0  min_S: 427375.88  max_S: 430096.59  S: 427375.88  ΔS:     -1722.59  moves:    12 
+    l=0      B: 591 <- 735    B=591  niter:     3  count:    0  breaks:  0  min_S: 427245.46  max_S: 430096.59  S: 427245.46  ΔS:     -130.418  moves:     3 
+    l=0      B: 591 <- 735    B=591  niter:     4  count:    0  breaks:  0  min_S: 424330.07  max_S: 430096.59  S: 424330.07  ΔS:     -2915.40  moves:    10 
+    l=0      B: 591 <- 735    B=591  niter:     5  count:    0  breaks:  0  min_S: 420822.25  max_S: 430096.59  S: 420822.25  ΔS:     -3507.82  moves:     8 
+    l=0      B: 591 <- 735    B=591  niter:     6  count:    0  breaks:  0  min_S: 418171.18  max_S: 430096.59  S: 418171.18  ΔS:     -2651.07  moves:     7 
+    l=0      B: 591 <- 735    B=591  niter:     7  count:    0  breaks:  0  min_S: 417842.89  max_S: 430096.59  S: 417842.89  ΔS:     -328.291  moves:     3 
+    l=0      B: 591 <- 735    B=591  niter:     8  count:    0  breaks:  0  min_S: 417525.96  max_S: 430096.59  S: 417525.96  ΔS:     -316.930  moves:     3 
+    l=0      B: 591 <- 735    B=591  niter:     9  count:    0  breaks:  0  min_S: 414640.38  max_S: 430096.59  S: 414640.38  ΔS:     -2885.58  moves:    10 
+    l=0      B: 591 <- 735    B=591  niter:    10  count:    0  breaks:  0  min_S: 414580.40  max_S: 430096.59  S: 414580.40  ΔS:     -59.9734  moves:     1 
+    l=0      B: 591 <- 735    B=591  niter:    11  count:    1  breaks:  1  min_S: 414580.40  max_S: 430096.59  S: 414580.40  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (502, 591, 735) (625393.9199236275, 414580.4018587009, 218912.26918223896)
+    l=0      B: 646 <- 735    shrinking 735 -> 646
+    l=0      B: 646 <- 735    B=646  niter:     1  count:    0  breaks:  0  min_S: 299479.21  max_S: 302477.96  S: 299479.21  ΔS:     -2998.75  moves:     9 
+    l=0      B: 646 <- 735    B=646  niter:     2  count:    0  breaks:  0  min_S: 298836.95  max_S: 302477.96  S: 298836.95  ΔS:     -642.265  moves:     4 
+    l=0      B: 646 <- 735    B=646  niter:     3  count:    0  breaks:  0  min_S: 296603.99  max_S: 302477.96  S: 296603.99  ΔS:     -2232.95  moves:     6 
+    l=0      B: 646 <- 735    B=646  niter:     4  count:    1  breaks:  1  min_S: 296603.99  max_S: 302477.96  S: 296599.02  ΔS:     -4.96999  moves:     1 
+    l=0  Current bracket: (591, 646, 735) (414580.4018587009, 296599.0241690127, 218912.26918223896)
+    l=0      B: 680 <- 735    shrinking 735 -> 680
+    l=0      B: 680 <- 735    B=680  niter:     1  count:    0  breaks:  0  min_S: 252065.11  max_S: 252567.04  S: 252065.11  ΔS:     -501.928  moves:    11 
+    l=0      B: 680 <- 735    B=680  niter:     2  count:    1  breaks:  1  min_S: 252065.11  max_S: 252567.04  S: 252065.11  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (646, 680, 735) (296599.0241690127, 252065.10909131647, 218912.26918223896)
+    l=0      B: 701 <- 735    shrinking 735 -> 701
+    l=0      B: 701 <- 735    B=701  niter:     1  count:    0  breaks:  0  min_S: 228370.50  max_S: 228520.43  S: 228370.50  ΔS:     -149.930  moves:     3 
+    l=0      B: 701 <- 735    B=701  niter:     2  count:    0  breaks:  0  min_S: 228304.44  max_S: 228520.43  S: 228304.44  ΔS:     -66.0604  moves:     3 
+    l=0      B: 701 <- 735    B=701  niter:     3  count:    0  breaks:  0  min_S: 227733.27  max_S: 228520.43  S: 227733.27  ΔS:     -571.173  moves:     4 
+    l=0      B: 701 <- 735    B=701  niter:     4  count:    1  breaks:  1  min_S: 227733.27  max_S: 228520.43  S: 227728.95  ΔS:     -4.32184  moves:     2 
+    l=0  Current bracket: (680, 701, 735) (252065.10909131647, 227728.94759431688, 218912.26918223896)
+    l=0      B: 714 <- 735    shrinking 735 -> 714
+    l=0      B: 714 <- 735    B=714  niter:     1  count:    0  breaks:  0  min_S: 220303.58  max_S: 220373.34  S: 220303.58  ΔS:     -69.7568  moves:     2 
+    l=0      B: 714 <- 735    B=714  niter:     2  count:    0  breaks:  0  min_S: 220204.32  max_S: 220373.34  S: 220204.32  ΔS:     -99.2612  moves:     4 
+    l=0      B: 714 <- 735    B=714  niter:     3  count:    0  breaks:  0  min_S: 219599.80  max_S: 220373.34  S: 219599.80  ΔS:     -604.523  moves:     5 
+    l=0      B: 714 <- 735    B=714  niter:     4  count:    1  breaks:  1  min_S: 219599.80  max_S: 220373.34  S: 219599.80  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (701, 714, 735) (227728.94759431688, 219599.79560059175, 218912.26918223896)
+    l=0      B: 722 <- 735    shrinking 735 -> 722
+    l=0      B: 722 <- 735    B=722  niter:     1  count:    0  breaks:  0  min_S: 217847.42  max_S: 217950.19  S: 217847.42  ΔS:     -102.769  moves:     5 
+    l=0      B: 722 <- 735    B=722  niter:     2  count:    0  breaks:  0  min_S: 217790.69  max_S: 217950.19  S: 217790.69  ΔS:     -56.7334  moves:     3 
+    l=0      B: 722 <- 735    B=722  niter:     3  count:    1  breaks:  1  min_S: 217790.69  max_S: 217950.19  S: 217790.69  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (714, 722, 735) (219599.79560059175, 217790.68699147622, 218912.26918223896)
+    l=0      B: 727 <- 735    shrinking 735 -> 727
+    l=0      B: 727 <- 735    B=727  niter:     1  count:    1  breaks:  1  min_S: 217714.74  max_S: 217714.74  S: 217701.58  ΔS:     -13.1593  moves:     2 
+    l=0  Current bracket: (714, 722, 735) (219599.79560059175, 217790.68699147622, 218912.26918223896)
+    l=0  Bisect at B = 727 with S = 217701.5840389208
+    l=0      B: 730 <- 735    shrinking 735 -> 730
+    l=0      B: 730 <- 735    B=730  niter:     1  count:    1  breaks:  1  min_S: 218095.68  max_S: 218095.68  S: 218095.68  ΔS:      0.00000  moves:     0 
+    l=0  Current bracket: (722, 727, 735) (217790.68699147622, 217701.58403892082, 218912.26918223896)
+    l=0  Bisect at B = 730 with S = 218095.6764204575
+    l=0      B: 724 <- 727    shrinking 727 -> 724
+    l=0      B: 724 <- 727    B=724  niter:     1  count:    1  breaks:  1  min_S: 217414.62  max_S: 217414.62  S: 217398.76  ΔS:     -15.8595  moves:     2 
+    l=0  Current bracket: (722, 727, 730) (217790.68699147622, 217701.58403892082, 218095.67642045754)
+    l=0  Bisect at B = 724 with S = 217398.7600035468
+    l=0      B: 725 <- 727    shrinking 727 -> 725
+    l=0      B: 725 <- 727    B=725  niter:     1  count:    0  breaks:  0  min_S: 217473.55  max_S: 217497.26  S: 217473.55  ΔS:     -23.7077  moves:     3 
+    l=0      B: 725 <- 727    B=725  niter:     2  count:    1  breaks:  1  min_S: 217473.55  max_S: 217497.26  S: 217471.62  ΔS:     -1.93018  moves:     1 
+    l=0  Current bracket: (722, 724, 727) (217790.68699147622, 217398.7600035468, 217701.58403892082)
+    l=0  Bisect at B = 725 with S = 217471.6218657565
+    l=0      B: 723 <- 724    shrinking 724 -> 723
+    l=0      B: 723 <- 724    B=723  niter:     1  count:    1  breaks:  1  min_S: 217365.59  max_S: 217365.59  S: 217354.89  ΔS:     -10.7065  moves:     1 
+    l=0  Current bracket: (722, 724, 725) (217790.68699147622, 217398.7600035468, 217471.62186575655)
+    l=0  Bisect at B = 723 with S = 217354.88616039
+    l=0  Best result: B = 723, S = 217354.88616039
+level 0 : rejected replacement (735, 718) -> (735, 723) , dS: 237.51650516875088
+Saving level 2
+Saving level 1
+Saving level 0
+mdl: 217583.417632
+ended
+it took  68.0926411151886 seconds
