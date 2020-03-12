@@ -1,0 +1,8 @@
+version: '2'
+services:
+  frontiers:
+    build: .
+    image: frontiers
+    ports:
+    - 8889:8888
+    working_dir: /home/jovyan
