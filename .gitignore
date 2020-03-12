@@ -44,7 +44,7 @@ corpus.*
 *.ok
 *.sub
 *.red
-
+*.npy
 *.txt
 
 *hSBM\.ipynb
@@ -60,16 +60,13 @@ output/
 thesis/
 
 hSBM/\.cache/fontconfig/
-
 hSBM/\.python_history
-
 hSBM/\.bash_history
 
 Pipeline_out.ipynb
 gdc-client
 
 docker/core
-
 docker/data_mining
 
 *.RData
@@ -90,3 +87,8 @@ docker/data_mining
 topicmapping/
 TCGAbiolinks/.rstudio/
 TCGAbiolinks/TCGAbiolinksGUI/*
+
+datasets/
+jupyter-drive/
+mouse_Atlas/tm
+mouse_Atlas/mca/
