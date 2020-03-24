@@ -48,6 +48,11 @@ corpus.*
 *.txt
 *.eps
 *.svg
+*.h5
+*.jpeg
+*.log
+*.err
+*.done
 
 *hSBM\.ipynb
 
