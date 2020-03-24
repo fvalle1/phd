@@ -1,21 +1,36 @@
+import os
+import numpy as np
+import pandas as pd
+from scipy import stats
+
 def get_files():
     # ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE108nnn/GSE108097/matrix/
+    os.system("wget ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE108nnn/GSE108097/matrix/GSE108097-GPL17021_series_matrix.txt.gz")
+    os.system("gunzip GSE108097-GPL17021_series_matrix.txt.gz")
+    os.system("mv GSE108097-GPL17021_series_matrix.txt mca/.")
+    os.system("mkdir -p mca/data")
     with open("mca/GSE108097-GPL17021_series_matrix.txt", "r") as file:
-        os.chdir("data")
+        os.chdir("mca")
         for row in file.readlines():
             if "Sample_supplementary_file_1" in row:
                 for sample in row.split("\t")[1:-1]:
                     print(sample)
                     os.system(f"wget {sample}")
     os.chdir("../")
+    cleanup()
 
 def cleanup():
-    os.chdir("data")
-    for file in files:
+    os.chdir("mca")
+    for file in os.listdir():
         print(file)
-        with open(file, "r") as f:
+        if ".gz" in file:
+            os.system(f"gunzip {file}")
+            unpacked_file = file[:-3]
+        else:
+            unpacked_file = file
+        with open(unpacked_file, "r") as f:
             data = f.read().replace("\"","")
-        with open(file, "w") as f:
+        with open(unpacked_file, "w") as f:
             f.write(data)
     os.chdir("../")
     
