@@ -46,6 +46,8 @@ corpus.*
 *.red
 *.npy
 *.txt
+*.eps
+*.svg
 
 *hSBM\.ipynb
 

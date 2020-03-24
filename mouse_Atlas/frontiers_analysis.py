@@ -23,6 +23,8 @@ def cleanup():
     os.chdir("mca")
     for file in os.listdir():
         print(file)
+        if (".ipynb_checkpoints" in file) or ("DS_Store" in file):
+            continue
         if ".gz" in file:
             os.system(f"gunzip {file}")
             unpacked_file = file[:-3]
@@ -83,6 +85,7 @@ def heaps(M, diffWords, tissue,  fit_bins = lambda x, a, b: a * np.power(x,b)):
 
 def save_model(df, name, tissue="global", n_bins=35, fit_bins = lambda x, a, b: a * np.power(x,b)):
     from scipy.optimize import curve_fit
+    import pickle
 
     print("saving")
     from scipy.integrate import quad

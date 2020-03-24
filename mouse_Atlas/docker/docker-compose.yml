@@ -6,5 +6,5 @@ services:
     ports:
     - 8889:8888
     volumes:
-    - .:/home/jovyan/work
-    working_dir: /home/jovyan
+    - ../:/home/jovyan/work
+    working_dir: /home/jovyan/work
