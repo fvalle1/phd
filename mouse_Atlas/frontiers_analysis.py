@@ -23,17 +23,20 @@ def cleanup():
     os.chdir("mca")
     for file in os.listdir():
         print(file)
-        if (".ipynb_checkpoints" in file) or ("DS_Store" in file):
+        if (".ipynb_checkpoints" in file) or ("DS_Store" in file) or ("data" in file):
             continue
         if ".gz" in file:
             os.system(f"gunzip {file}")
             unpacked_file = file[:-3]
         else:
             unpacked_file = file
-        with open(unpacked_file, "r") as f:
-            data = f.read().replace("\"","")
-        with open(unpacked_file, "w") as f:
-            f.write(data)
+        try:
+            with open(unpacked_file, "r") as f:
+                data = f.read().replace("\"","")
+            with open(unpacked_file, "w") as f:
+                f.write(data)
+        except:
+            print("Error with %s"%unpacked_file)
     os.chdir("../")
     
 def load_pickle(filename):
@@ -83,7 +86,7 @@ def heaps(M, diffWords, tissue,  fit_bins = lambda x, a, b: a * np.power(x,b)):
     fig.savefig(f"heaps_{tissue}.png")
     
 
-def save_model(df, name, tissue="global", n_bins=35, fit_bins = lambda x, a, b: a * np.power(x,b)):
+def save_model(df, name, tissue="global", n_bins=35, fit_bins = lambda x, a, b: a * np.power(x,b), **kwargs):
     from scipy.optimize import curve_fit
     import pickle
 
@@ -106,10 +109,12 @@ def save_model(df, name, tissue="global", n_bins=35, fit_bins = lambda x, a, b: 
     skip_bins=(bin_counts<10).astype(int).sum()
 
     if len(bin_means) - skip_bins < 2:
-        return
-    
-    x_bins = ((bin_edges[:-1]+bin_edges[1:])/2)[:-skip_bins]
-    popt, pcov = curve_fit(fit_bins, x_bins, bin_means[:-skip_bins])
+        x_bins = ((bin_edges[:-1]+bin_edges[1:])/2)[:-skip_bins]
+        popt, pcov = curve_fit(fit_bins, x_bins, bin_means[:-skip_bins])
+        integral = quad(fit_bins, 500, 1e4, args=(popt[0], popt[1]))
+    else:
+        popt = []
+        integral = -1
     
     data = {
     'means': means,
@@ -120,7 +125,7 @@ def save_model(df, name, tissue="global", n_bins=35, fit_bins = lambda x, a, b: 
     'M': M,
     'cv2': cv2,
     'diffWords': diffWords,
-    'heaps_integral': quad(fit_bins, 500, 1e4, args=(popt[0], popt[1])),
+    'heaps_integral': integral,
     'heaps_fit': popt
     }
 
@@ -135,7 +140,7 @@ def load_tissue(tissue, name="data", data_source="mca"):
     return data
         
         
-def mazzolini(M, f, tissue):
+def mazzolini(M, f, tissue, **kwargs):
     print("mazzolini")
     global rs 
     rs = np.random.RandomState(seed=42)
@@ -147,7 +152,7 @@ def mazzolini(M, f, tissue):
         gc.collect()
     #df_null=df_null.astype(int)
     gc.collect()
-    save_model(df_null, "mazzolini", tissue)
+    save_model(df_null, "mazzolini", tissue, **kwargs)
     del df_null
     gc.collect()
         
