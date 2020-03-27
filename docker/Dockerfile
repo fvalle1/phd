@@ -23,7 +23,7 @@ RUN apt-get update \
 
 RUN apt-get install ipython libgtk-3-dev libjs-mathjax pandoc --yes
 RUN pip3 install gobject matplotlib pandas jupyter cairocffi
-RUN pip3 install scanpy
+RUN pip3 install scanpy pandarallel regex
 
 RUN wget https://gdc.cancer.gov/system/files/authenticated%20user/0/gdc-client_v1.5.0_Ubuntu_x64.zip
 RUN unzip gdc-client_v1.5.0_Ubuntu_x64.zip
