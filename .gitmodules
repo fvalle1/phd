@@ -4,9 +4,6 @@
 [submodule "hSBM_Topicmodel"]
 	path = hSBM_Topicmodel
 	url = git@github.com:fvalle1/hSBM_Topicmodel.git
-[submodule "master_thesis"]
-	path = master_thesis
-	url = git@github.com:fvalle1/master_thesis
 [submodule "hsbm-occam"]
 	path = hsbm-occam
 	url = git@gitlab.c3s.unito.it:filippo.valle/hsbm-occam.git
