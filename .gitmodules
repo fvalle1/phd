@@ -13,3 +13,6 @@
 [submodule "Sanity"]
 	path = Sanity
 	url = git@github.com:jmbreda/Sanity.git
+[submodule "mouse_Atlas/The_single_cell_transcriptome_as_a_component_system"]
+	path = mouse_Atlas/The_single_cell_transcriptome_as_a_component_system
+	url = git@github.com:SilviaLazzardi/The_single_cell_transcriptome_as_a_component_system.git
