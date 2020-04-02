@@ -23,12 +23,13 @@ RUN apt-get update \
 
 RUN apt-get install ipython libgtk-3-dev libjs-mathjax pandoc --yes
 RUN pip3 install gobject matplotlib pandas jupyter cairocffi
-RUN pip3 install scanpy pandarallel regex tensorflow watermark
+RUN pip3 install scanpy pandarallel regex tensorflow watermark gseapy 
+RUN pip3 installtensorflow_probability
 
 RUN echo "deb http://downloads.skewed.de/apt bionic main" >> /etc/apt/sources.list
 RUN echo "deb-src http://downloads.skewed.de/apt/ bionic main" >> /etc/apt/sources.list
 RUN apt-key adv --keyserver keys.openpgp.org --recv-key 612DEFB798507F25
-RUN apt-get update && apt-get install python3-graph-tool --yes
+RUN apt-get update && apt-get install python3-graph-tool python3-cairo --yes
 
 RUN wget https://gdc.cancer.gov/system/files/authenticated%20user/0/gdc-client_v1.5.0_Ubuntu_x64.zip
 RUN unzip gdc-client_v1.5.0_Ubuntu_x64.zip
