@@ -73,7 +73,7 @@ def plot_cluster_composition(fraction_sites, directory, level, normalise=False, 
     sns.set(font_scale=0.8)
     df_clusters = pd.read_csv("%s/%s/%s_level_%d_clusters.csv" % (directory, algorithm, algorithm, level), header=[0])
     x = np.arange(1, 1 + len(df_clusters.columns))
-    fig = plt.figure(figsize=(20, 15))
+    fig = plt.figure(figsize=(25, 15))
     ax = fig.subplots()
     fraction_bar_plot(x, fraction_sites, ax)
     ax.set_xlabel("cluster", fontsize=35)
@@ -82,8 +82,11 @@ def plot_cluster_composition(fraction_sites, directory, level, normalise=False, 
     else:
         ax.set_ylabel("number of nodes", fontsize=35)
     ax.set_title("%s%s distribution across clusters" % ("Shuffled " if shuffled else '', label), fontsize=35)
-    ax.legend(ncol=3, loc='upper right')
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
+    # Put a legend to the right of the current axis
+    ax.legend(loc='best', bbox_to_anchor=(1, 0.8), fontsize=35, ncol=1)
     ax.tick_params(axis='both', labelsize=35)
     plt.show()
     fig.savefig("%s/%s/%s%sclustercomposition_l%d_%s.pdf" % (
@@ -441,7 +444,7 @@ def customize_metric_plot(ax, xl):
     ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
     # Put a legend to the right of the current axis
-    ax.legend(loc='best', bbox_to_anchor=(1, 0.5), fontsize=35, ncol=1)
+    ax.legend(loc='best', bbox_to_anchor=(1, 0.85), fontsize=35, ncol=1)
 
 def plot_topic_size(directory, l, algorithm='topsbm'):
     df_topics = pd.read_csv("%s/%s/%s_level_%d_topics.csv" % (directory, algorithm, algorithm, l))

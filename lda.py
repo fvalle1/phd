@@ -43,7 +43,7 @@ class lda(LatentDirichletAllocation):
                 true_out.append('')
         return true_out
 
-    def full_analysis(self, directory, xl, tl=None, label='primary_site', logarithmise=False, **kwargs) -> None:
+    def full_analysis(self, directory, xl, tl=None, label='primary_site', logarithmise=False, round_data=False, **kwargs) -> None:
         """
 
         :param df:
@@ -62,10 +62,12 @@ class lda(LatentDirichletAllocation):
         }
         if tl is None:
             tl = xl
-        df = pd.read_csv("%s/mainTable.csv" % directory, index_col=[0], header=[0]).astype(int)
-        df.dropna(inplace=True)
-	if logarithmise:
-		df = df.applymap(lambda count: np.log2(count+1))
+        df = pd.read_csv("%s/mainTable.csv" % directory, index_col=[0], header=[0])
+        df.dropna(how="all", inplace=True)
+        if logarithmise:
+            df = df.applymap(lambda count: np.log2(count+1))
+        if round_data:
+            df = df.astype(int)
         if self.verbose > 1:
             print(df.info())
         df_files = pd.read_csv("files.dat", index_col=[0])
@@ -75,6 +77,8 @@ class lda(LatentDirichletAllocation):
 
         if self.verbose > 1:
             print(df_files.info())
+        if label not in df_files.columns:
+            raise AttributeError(f"{label} not Avaliable")
         total_objects = len(df.columns)
         print("lda")
         os.system('mkdir -p lda')
@@ -126,7 +130,7 @@ class lda(LatentDirichletAllocation):
             out = np.argmax(topics, axis=1)
 
             for c in np.arange(out.max() + 1)[::-1]:
-                c_objects = df.columns[np.argwhere(out == c)].values.T[0]
+                c_objects = df.columns[np.argwhere(out == c)].T[0]
                 df_clusters.insert(0, "Cluster %d" % (c + 1), np.concatenate(
                     (c_objects, [np.nan for _ in np.arange(total_objects - len(c_objects))])))
             df_clusters.dropna(axis=0, how='all', inplace=True)
