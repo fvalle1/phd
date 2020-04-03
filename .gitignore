@@ -103,3 +103,4 @@ datasets/cancers/breast_withmiRNA/data_mining
 datasets/cancers/breast/data_mining
 *.odp
 *.pkl
+*.gmt
