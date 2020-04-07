@@ -86,7 +86,7 @@ def plot_cluster_composition(fraction_sites, directory, level, normalise=False, 
     ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
     # Put a legend to the right of the current axis
-    ax.legend(loc='best', bbox_to_anchor=(1, 0.8), fontsize=35, ncol=1)
+    ax.legend(loc='best', bbox_to_anchor=(1, 0.99), fontsize=35, ncol=round(len(fraction_sites)/20))
     ax.tick_params(axis='both', labelsize=35)
     plt.show()
     fig.savefig("%s/%s/%s%sclustercomposition_l%d_%s.pdf" % (
