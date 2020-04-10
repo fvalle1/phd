@@ -104,3 +104,6 @@ datasets/cancers/breast/data_mining
 *.odp
 *.pkl
 *.gmt
+*.afdesign
+*.aftemplate
+predictor/model/variables/*
