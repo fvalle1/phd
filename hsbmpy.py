@@ -86,7 +86,9 @@ def plot_cluster_composition(fraction_sites, directory, level, normalise=False, 
     ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
     # Put a legend to the right of the current axis
-    ax.legend(loc='best', bbox_to_anchor=(1, 0.99), fontsize=35, ncol=round(len(fraction_sites)/20))
+    n_labels = len(fraction_sites)
+    n_col = round(n_labels/20) if n_labels > 20 else 1
+    ax.legend(loc='best', bbox_to_anchor=(1, 0.99), fontsize=35, ncol=n_col)
     ax.tick_params(axis='both', labelsize=35)
     plt.show()
     fig.savefig("%s/%s/%s%sclustercomposition_l%d_%s.pdf" % (
@@ -615,6 +617,12 @@ def get_scores(directory, labels, df_files=None, algorithm='topsbm', verbose=Fal
         }
     return scores
 
+def shuffle_files(df_files, label, random_state=42):
+    df_files_shuffled = df_files.copy()
+    np.random.shuffle(df_files_shuffled[label])
+    return df_files_shuffled
+
+
 def get_scores_shuffled(directory, df_files, algorithm='topsbm', label='primary_site', verbose=False):
     scores = {
         'h': [],
@@ -624,8 +632,7 @@ def get_scores_shuffled(directory, df_files, algorithm='topsbm', label='primary_
     }
     xl = []
     l = get_max_available_L(directory, algorithm)
-    df_files_shuffled = df_files.copy()
-    np.random.shuffle(df_files_shuffled[label])
+    df_files_shuffled = shuffle_files(df_files.copy(), label, random_state=42)
     try:
         for l in np.arange(0, l + 1):
             try:
