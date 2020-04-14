@@ -619,6 +619,8 @@ def get_scores(directory, labels, df_files=None, algorithm='topsbm', verbose=Fal
 
 def shuffle_files(df_files, label, random_state=42):
     df_files_shuffled = df_files.copy()
+    if label not in df_files.columns:
+        raise(AttributeError(f"{label} non available in:{df_files.columns}"))
     np.random.shuffle(df_files_shuffled[label])
     return df_files_shuffled
 
