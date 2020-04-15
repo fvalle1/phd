@@ -708,7 +708,8 @@ def plot_sizes(level, directory, algorithm, ax=None):
     plt.show()
 
 
-def clusteranalysis(directory, labels, l_max=3, algorithm='topsbm'):
+def clusteranalysis(directory, labels, algorithm='topsbm'):
+    l_max = get_max_available_L(directory, algorithm)
     df_clusters = pd.read_csv("%s/%s/%s_level_%d_clusters.csv" % (directory, algorithm, algorithm, l_max), header=[0])
     if df_clusters is None:
         print("files not found")
@@ -717,49 +718,36 @@ def clusteranalysis(directory, labels, l_max=3, algorithm='topsbm'):
     df_files_shuffled.apply(lambda x: np.random.shuffle(x), 0)
     for normalise in [True, False]:
         for label in labels:
-            for level in np.arange(l_max + 1)[::-1]:
+            for level in np.arange(L+1)[::-1]:
+                if level==0:
+                    pass
+                    #continue
                 print(normalise, label, level)
                 try:
-                    cluster = get_cluster_given_l(level, directory, algorithm=algorithm)
-                    fraction_sites = get_fraction_sites(cluster, df_files=df_files, label=label, normalise=normalise)
+                    cluster = get_cluster_given_l(level, directory,algorithm=algorithm)
+                    fraction_sites = get_fraction_sites(cluster,df_files=df_files,label=label, normalise=normalise)
 
-                    # fsdf = pd.DataFrame(data=fraction_sites)
-                    # fsdf = fsdf.drop('Other', axis=1)
-                    # fsdf = fsdf.divide(fsdf.sum(axis=1), axis=0).fillna(0)
-                    # fraction_sites = fsdf.sort_values(by=fsdf.columns.to_list(), ascending=True).to_dict(orient='list')
+                    clustersinfo = get_clustersinfo(cluster,fraction_sites)
+                    plot_cluster_composition(fraction_sites,directory,level,label=label, normalise=normalise,algorithm=algorithm)
+                    make_heatmap(fraction_sites, directory, label, level, normalise=normalise,algorithm=algorithm)
 
-                    clustersinfo = get_clustersinfo(cluster, fraction_sites)
-                    plot_cluster_composition(fraction_sites, directory, level, label=label, normalise=normalise,
-                                             algorithm=algorithm)
-                    make_heatmap(fraction_sites, directory, label, level, normalise=normalise, algorithm=algorithm)
-
+                    clustersinfo = get_clustersinfo(cluster,fraction_sites)            
                     if not normalise:
-                        plot_maximum(clustersinfo, cluster, label, level, directory, algorithm=algorithm)
-                        plot_maximum_size(clustersinfo, label, level, directory, algorithm=algorithm)
-                        plot_maximum_label(clustersinfo, label, level, directory, algorithm=algorithm)
-                        plot_sizes(level, directory, algorithm=algorithm)
+                        plot_maximum(clustersinfo,cluster,label,level, directory,algorithm=algorithm)
+                        plot_maximum_size(clustersinfo,label,level, directory,algorithm=algorithm)
+                        plot_maximum_label(clustersinfo,label,level, directory,algorithm=algorithm)
+                        plot_sizes(level,directory, algorithm=algorithm)
                 except:
-                    print(sys.exc_info()[0])
-                try:
-                    fraction_sites_shuffle = get_fraction_sites(cluster,
-                                                                df_files_shuffled,
-                                                                label=label, normalise=normalise)
-                    clustersinfo_shuffle = get_clustersinfo(cluster, fraction_sites_shuffle)
-                    plot_cluster_composition(fraction_sites_shuffle, directory, level, normalise=normalise, label=label,
-                                             shuffled=True)
-                    if not normalise:
-                        plot_maximum(clustersinfo, cluster, label, level, directory, clustersinfo_shuffle,
-                                     algorithm=algorithm)
-                        plot_maximum_size(clustersinfo, label, level, directory, clustersinfo_shuffle,
-                                          algorithm=algorithm)
-                        plot_maximum_label(clustersinfo, label, level, directory, clustersinfo_shuffle,
-                                           algorithm=algorithm)
-                        plot_labels_size(clustersinfo, label, level, directory, clustersinfo_shuffle,
-                                         algorithm=algorithm)
-                except:
-                    print("must shuffle files")
                     print(*sys.exc_info())
-
+                shuffle_files(df_files,label).to_csv("%s/files_shuffles.dat"%directory, index=True)
+                fraction_sites_shuffle = get_fraction_sites(cluster, df_files=pd.read_csv("%s/files_shuffles.dat"%directory, index_col=[0]),label=label, normalise=normalise)
+                clustersinfo_shuffle = get_clustersinfo(cluster, fraction_sites_shuffle)
+                plot_cluster_composition(fraction_sites_shuffle,directory,level, label=label, shuffled=True, normalise=normalise, algorithm=algorithm)
+                if not normalise:
+                    plot_maximum(clustersinfo,cluster,label,level,directory,clustersinfo_shuffle,algorithm=algorithm)
+                    plot_maximum_size(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
+                    plot_maximum_label(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
+                    plot_labels_size(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
     ##define scores
     scores = get_scores(directory, labels)
     try:
