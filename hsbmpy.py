@@ -787,3 +787,14 @@ def out_to_file(out, index, name='new_method', l=0):
                            np.concatenate((c_objects, [np.nan for _ in np.arange(len(index) - len(c_objects))])))
     df_clusters.dropna(axis=0, how='all', inplace=True)
     df_clusters.to_csv("%s_level_%d_clusters.csv"%(name, l), index=False, header=True)
+	
+	
+#normalise to hsbm
+def normalise_score(scores, base_algorithm="hsbm"):
+    for algorithm in scores.keys():
+        baseline = np.interp(scores[algorithm]["xl"],
+							 scores[base_algorithm]["xl"][::-1],
+							 scores[base_algorithm]["V"][::-1])
+        scores[algorithm]["norm_V"]=np.array(scores[algorithm]["V"])/baseline
+    for algorithm in scores.keys():
+        scores[algorithm]["V"]=scores[algorithm]["norm_V"]
