@@ -22,3 +22,9 @@
 [submodule "tree_plotter"]
 	path = tree_plotter
 	url = git@github.com:fvalle1/tree_plotter.git
+[submodule "datasets/cancers/LUAD_LUSC_TCGA_comparison"]
+	path = datasets/cancers/LUAD_LUSC_TCGA_comparison
+	url = git@github.com:ELELAB/LUAD_LUSC_TCGA_comparison.git
+[submodule "openvino_tensorflow"]
+	path = openvino_tensorflow
+	url = git@github.com:fvalle1/openvino_tensorflow
