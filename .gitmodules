@@ -7,15 +7,9 @@
 [submodule "hsbm-occam"]
 	path = hsbm-occam
 	url = git@gitlab.c3s.unito.it:filippo.valle/hsbm-occam.git
-[submodule "topics"]
-	path = topics
-	url = git@github.com:fvalle1/topics.git
 [submodule "Sanity"]
 	path = Sanity
 	url = git@github.com:jmbreda/Sanity.git
-[submodule "tacos"]
-	path = tacos
-	url = git@github.com:fvalle1/tacos.git
 [submodule "mouse_Atlas/The_single_cell_transcriptome_as_a_component_system"]
 	path = mouse_Atlas/The_single_cell_transcriptome_as_a_component_system
 	url = git@github.com:SilviaLazzardi/The_single_cell_transcriptome_as_a_component_system
@@ -28,3 +22,6 @@
 [submodule "openvino_tensorflow"]
 	path = openvino_tensorflow
 	url = git@github.com:fvalle1/openvino_tensorflow
+[submodule "tacos"]
+	path = tacos
+	url = git@github.com:fvalle1/tacos
