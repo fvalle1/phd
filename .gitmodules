@@ -25,3 +25,6 @@
 [submodule "tacos"]
 	path = tacos
 	url = git@github.com:fvalle1/tacos
+[submodule "LUAD_LUSC_TCGA_comparison"]
+	path = LUAD_LUSC_TCGA_comparison
+	url = git@github.com:ELELAB/LUAD_LUSC_TCGA_comparison.git
