@@ -24,7 +24,7 @@ RUN apt-get update \
 RUN apt-get install ipython libgtk-3-dev libjs-mathjax pandoc --yes
 RUN pip3 install gobject matplotlib pandas jupyter cairocffi
 RUN pip3 install scanpy pandarallel regex tensorflow watermark gseapy 
-RUN pip3 installtensorflow_probability
+RUN pip3 install tensorflow_probability
 
 RUN echo "deb http://downloads.skewed.de/apt bionic main" >> /etc/apt/sources.list
 RUN echo "deb-src http://downloads.skewed.de/apt/ bionic main" >> /etc/apt/sources.list
