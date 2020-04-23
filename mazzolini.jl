@@ -13,31 +13,33 @@ function get_marginals(df)
     return (M, f)
 end
 
-function run_mazzolini(df_data)
+function run_mazzolini(df_data, ensamble=50)
     df = convert(Array, df_data)[:,2:end]
     M, f = get_marginals(df)
     new_df = []
     W = length(f)
+	D = length(M)
     for m in M
         dist = Multinomial(Int(round(m)), f)
-        append!(new_df,reshape(rand(dist),(1,W)))
+        append!(new_df,reshape(mean([reshape(rand(dist),(1,W)) for _ in 1:ensamble]),(1,W)))
     end
-    new_df = reshape(new_df,(W,1000))
+    new_df = reshape(new_df,(W,D))
     size(new_df)
     mazzolini_df = DataFrame([df_data[:,1] new_df])
     mazzolini_df = rename!(mazzolini_df, names(df_data))
     return mazzolini_df
 end
 
-function run_parallel_mazzolini(df_data)
+function run_parallel_mazzolini(df_data, ensamble=50)
 	df = convert(Array, df_data)[:,2:end]
 	M, f = get_marginals(df)
 	c = Channel(length(M))
     new_df = []
     W = length(f)
+	D = length(M)
 	function sample(m)
 		dist = Multinomial(Int(round(m)), f)
-        put!(c,reshape(rand(dist),(1,W)))
+        put!(c,reshape(mean([reshape(rand(dist),(1,W)) for _ in 1:ensamble]),(1,W)))
 	end
 	
 	function append()
@@ -49,7 +51,7 @@ function run_parallel_mazzolini(df_data)
         @async append()
     end
 	close(c)
-    new_df = reshape(new_df,(W,1000))
+    new_df = reshape(new_df,(W,D))
     size(new_df)
     mazzolini_df = DataFrame([df_data[:,1] new_df])
     mazzolini_df = rename!(mazzolini_df, names(df_data))
