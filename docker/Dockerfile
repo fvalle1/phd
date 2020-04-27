@@ -21,10 +21,10 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
+COPY requirements.txt /home/jovyan
+
 RUN apt-get install ipython libgtk-3-dev libjs-mathjax pandoc --yes
-RUN pip3 install gobject matplotlib pandas jupyter cairocffi
-RUN pip3 install scanpy pandarallel regex tensorflow watermark gseapy 
-RUN pip3 install tensorflow_probability
+RUN python3 -m pip install -r requirements.txt
 
 RUN apt-get install gnupg --yes
 RUN echo "deb http://downloads.skewed.de/apt bionic main" >> /etc/apt/sources.list

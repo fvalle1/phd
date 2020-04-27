@@ -1,0 +1,12 @@
+gobject 
+matplotlib 
+pandas 
+jupyter 
+cairocffi
+scanpy
+pandarallel 
+regex 
+tensorflow
+tensorflow_probability
+watermark 
+gseapy
