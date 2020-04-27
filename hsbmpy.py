@@ -175,7 +175,7 @@ def get_fraction_sites(cluster, df_files, label='primary_site', normalise=False)
             if foundsample is not None:
                 c_fraction_site[foundsample[label]] += 1
             else:
-                if 'unknown' in fraction_site.keys():
+                if 'unknown' in fraction_sites.keys():
                     c_fraction_site['unknown'] +=1
                 else:
                     c_fraction_site['unknown'] = 1
