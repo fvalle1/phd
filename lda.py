@@ -43,7 +43,7 @@ class lda(LatentDirichletAllocation):
                 true_out.append('')
         return true_out
 
-    def full_analysis(self, directory, xl, tl=None, label='primary_site', logarithmise=False, round_data=False, **kwargs) -> None:
+    def full_analysis(self, directory, xl, tl=None, label='primary_site', logarithmise=False, round_data=False, *args, **kwargs) -> None:
         """
 
         :param df:
@@ -78,7 +78,7 @@ class lda(LatentDirichletAllocation):
         if self.verbose > 1:
             print(df_files.info())
         if label not in df_files.columns:
-            raise AttributeError(f"{label} not Avaliable")
+            raise AttributeError(f"{label} not avaliable")
         total_objects = len(df.columns)
         print("lda")
         os.system('mkdir -p lda')
@@ -89,7 +89,7 @@ class lda(LatentDirichletAllocation):
             print("testing with %d clusters and %d topics" % (x, ntopic))
             self.n_components = ntopic
             print(self)
-            topics = self.fit_transform(df.T.values, **kwargs)
+            topics = self.fit_transform(df.T.values, *args, **kwargs)
 
             # save word distr
             print("saving word-distr")
