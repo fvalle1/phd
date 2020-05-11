@@ -43,9 +43,9 @@ def fit_cox(subset, name, duration_col='days_survival', event_col='vital_status'
 		print(*sys.exc_info())
 		return None, None
 
-def add_group_to_subset(topic, subset, df_clusters):
+def add_group_to_subset(topic, subset, df_clusters, quantile=0.75):
 	ret_subset = subset.copy()
-	mask = df_clusters[topic]>df_clusters[topic].quantile(0.75)
+	mask = df_clusters[topic]>df_clusters[topic].quantile(quantile)
 	up_samples = df_clusters[mask].index
 	ret_subset["group"] = np.zeros(ret_subset.shape[0])
 	ret_subset.loc[ret_subset.index.isin(up_samples),["group"]]=1
