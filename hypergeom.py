@@ -31,7 +31,7 @@ def build_map(num_successes, population_size, pop_successes, sample_sizes, lists
     return df_cmap
 
 
-def plot_map(df_cmap, first_name="topsbm", last_name="lda"):
+def plot_map(df_cmap, first_name="topsbm", last_name="lda", *args, **kwargs):
     import seaborn as sns
     import matplotlib.pyplot as plt
 
@@ -56,14 +56,16 @@ def plot_map(df_cmap, first_name="topsbm", last_name="lda"):
                         cmap='Blues_r', 
                         col_colors=network_col,
                         mask=False,
-                       cbar_pos=(1.05,0.05,0.05,0.7))
+                        cbar_pos=(1.05,0.05,0.05,0.7),
+                        *args, 
+                        **kwargs)
 
     ax = cm.ax_heatmap
     ax.tick_params(labelsize=15)
 
     ax.set_ylabel(first_name, fontsize=35)
     ax.set_xlabel(last_name, fontsize=35)
-    ax.set_xticklabels(df_cmap.columns, rotation=45)
+    ax.set_xticklabels(df_cmap.columns, rotation=75)
     ax.yaxis.tick_left()
     ax.yaxis.set_label_position("left")
 
