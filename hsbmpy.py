@@ -103,10 +103,11 @@ def fraction_bar_plot(x, fraction_sites, ax=None):
         ax = fig.subplots()
     bottom = np.zeros(len(x))
     ymax = 0
+    color_iterator = (color for color in colors_cycle)
     for site, data in fraction_sites.items():
         if np.max(data) == 0:
             continue
-        ax.bar(x, data, label=site, bottom=bottom, color=get_color_cycle())
+        ax.bar(x, data, label=site, bottom=bottom, color=next(color_iterator))
         bottom = bottom + data
 
 
@@ -197,7 +198,7 @@ def get_fraction_sites(cluster, df_files, label='primary_site', normalise=False)
     df.insert(0, 'avg', avgs)
     df = df.sort_values(by=['avg'], axis=0, ascending=False).drop('avg', axis=1).transpose()
     df = df.sort_values(by=[tissue for tissue in df.columns], axis=0, ascending=False)
-    return df.to_dict(orient='list')
+    return df.sort_index(1).to_dict(orient='list')
 
 
 def get_clustersinfo(cluster, fraction_sites):
