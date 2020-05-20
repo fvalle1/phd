@@ -2,6 +2,7 @@ import os
 
 import pandas as pd
 import numpy as np
+from scipy.utils import shuffle
 from matplotlib import pyplot as plt
 import sys
 import seaborn as sns
@@ -622,7 +623,7 @@ def shuffle_files(df_files, label, random_state=42):
     df_files_shuffled = df_files.copy()
     if label not in df_files.columns:
         raise(AttributeError(f"{label} non available in:{df_files.columns}"))
-    np.random.shuffle(df_files_shuffled[label])
+    df_files_shuffled[label] = shuffle(df_files_shuffled[label])
     return df_files_shuffled
 
 
