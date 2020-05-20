@@ -2,7 +2,7 @@ import os
 
 import pandas as pd
 import numpy as np
-from scipy.utils import shuffle
+from sklearn.utils import shuffle
 from matplotlib import pyplot as plt
 import sys
 import seaborn as sns
