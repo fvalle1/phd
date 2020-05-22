@@ -1,5 +1,6 @@
 import numpy as np
 import sys
+import matplotlib.pyplot as plt
 
 def plot_cox(fit_func):
 	def wrapper(*args, **kwargs):
@@ -13,15 +14,7 @@ def plot_cox(fit_func):
 			print(f"Too low -log2(p): {p}")
 			return summary, cph, None
 		ax = cph.plot_covariate_groups(name, [0,1], cmap='coolwarm', lw=10, figsize=(10,15))
-		ax.set_title(f"Survival per {name}", fontsize=35)
-		ax.set_xlabel("timeline (years from diagnosis)", fontsize=35)
-		ax.set_ylabel("Survival", fontsize=35)
-
-		lab = np.round(ax.get_xticks()/365).astype(int)
-		ax.set_xticklabels(lab)
-		ax.tick_params(labelsize=35)
-		ax.set_title("-Log2(P_val): %.2f"%p, fontsize=35)
-		ax.legend(fontsize=35)
+		format_ax(ax, name, p)
 		return summary, cph, ax
 		
 	return wrapper
@@ -51,3 +44,25 @@ def add_group_to_subset(topic, subset, df_clusters, quantile=0.75):
 	ret_subset.loc[ret_subset.index.isin(up_samples),["group"]]=1
 	ret_subset["group"]=ret_subset["group"].astype(int)
 	return ret_subset
+
+def format_ax(ax, name = "", p = 1.):
+    ax.set_title(f"Survival per {name}", fontsize=35)
+    ax.set_xlabel("timeline (years from diagnosis)", fontsize=35)
+    ax.set_ylabel("Survival", fontsize=35)
+
+    lab = np.round(ax.get_xticks()/365).astype(int)
+    ax.set_xticklabels(lab)
+    ax.tick_params(labelsize=35)
+    ax.set_title("-Log2(P_val): %.2f"%p, fontsize=35)
+    
+    for line in ax.get_lines():
+        line.set_linewidth(10)
+        label = line._label
+        line.set_label(label.replace("=0", " down").replace("=1", " up"))
+    
+    ax.legend(fontsize=35)
+    plt.tight_layout()
+
+def save_plot(ax, dataset, topic):
+    format_ax(ax)
+    ax.get_figure().savefig(f"survival_{dataset}_{topic}.pdf")
