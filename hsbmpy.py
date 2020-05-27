@@ -422,13 +422,13 @@ def add_score_lines(ax, scores, labels=None, h=False, c=False, alpha=0.8, **kwar
             colors[label]=next(color_iterator)
         xl = scores[label]['xl']
         if h:
-            ax.plot(xl, scores[label]['h'], ls='-.', c=colors[label], marker='x', lw=150, ms=40, alpha=alpha,
+            ax.plot(xl, scores[label]['h'], ls='-.', c=colors[label], marker='x', lw=150, ms=45, alpha=alpha,
                     label='homogeneity - %s' % label)
         if c:
-            ax.plot(xl, scores[label]['c'], ls=':', c=colors[label], marker='<', lw=10, ms=40, alpha=alpha,
+            ax.plot(xl, scores[label]['c'], ls=':', c=colors[label], marker='<', lw=10, ms=45, alpha=alpha,
                     label='completness - %s' % label)
         if len(scores[label]['V']) == len(xl):
-            ax.plot(xl, scores[label]['V'], label='%s' % label, ls='-', c=colors[label], marker='o', lw=15, ms=40,
+            ax.plot(xl, scores[label]['V'], label='%s' % label, ls='-', c=colors[label], marker='o', lw=20, ms=45,
                     **kwargs)
         else:
             raise(ValueError("xl has got wrong lenght"))
@@ -623,7 +623,7 @@ def shuffle_files(df_files, label, random_state=42):
     df_files_shuffled = df_files.copy()
     if label not in df_files.columns:
         raise(AttributeError(f"{label} non available in:{df_files.columns}"))
-    df_files_shuffled[label] = shuffle(df_files_shuffled[label])
+    df_files_shuffled[label] = shuffle(df_files_shuffled[label].values)
     return df_files_shuffled
 
 
