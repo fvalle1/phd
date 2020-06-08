@@ -52,7 +52,8 @@ def plot_map(df_cmap, first_name="topsbm", last_name="lda", *args, **kwargs):
                         row_cluster=False, 
                         col_cluster=False, 
                         metric='euclidean', 
-                        vmin=0, 
+                        vmin=0,
+                        vmax = 30,
                         cmap='Blues_r', 
                         col_colors=network_col,
                         mask=False,
@@ -65,12 +66,13 @@ def plot_map(df_cmap, first_name="topsbm", last_name="lda", *args, **kwargs):
 
     ax.set_ylabel(first_name, fontsize=35)
     ax.set_xlabel(last_name, fontsize=35)
-    ax.set_xticklabels(df_cmap.columns, rotation=75)
+    ax.set_xticklabels(["Topic %d"%(t+1) for t,_ in enumerate(df_cmap.columns)], rotation=75)
     ax.yaxis.tick_left()
     ax.yaxis.set_label_position("left")
+    ax.set_yticklabels(["Topic %d"%(t+1) for t,_ in enumerate(df_cmap.index)], rotation=0)
 
     cax = cm.ax_cbar
-    cax.tick_params(labelsize=24)
+    cax.tick_params(labelsize=35)
     cax.set_title("-Log(P-value)", fontsize=30)
 
     #plt.tight_layout()
