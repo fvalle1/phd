@@ -26,7 +26,21 @@ class Testsbmtm(unittest.TestCase):
 		self.mat = gt.spectral.adjacency(model.g, model.g.edge_properties["count"])[len(model.documents):,:len(model.documents)]
 		self.assertEqual(len(self.model.documents), self.mat.shape[1])
 
+	def test_approx(self):
+		import pandas as pd
+		model = self.model
+		self.model.make_graph_from_BoW_df(pd.DataFrame(data=[[1.1,2.2,3.3],[0.5,0.2,0.1],[0.03,0.01,1.005]], index = ["a","b","c"], columns = ["d1","d2","d3"]), counts = True)
+		self.mat = gt.spectral.adjacency(model.g, model.g.edge_properties["count"])[len(model.documents):,:len(model.documents)]
+		print(self.mat)
+		self.assertEqual(self.mat.toarray()[0][0],1.1)
 
+	def test_approx_nocounts(self):
+                import pandas as pd
+                model = self.model
+                self.model.make_graph_from_BoW_df(pd.DataFrame(data=[[1.1,2.2,3.3],[0.5,0.2,0.1],[0.03,0.01,1.005]], index = ["a","b","c"], columns = ["d1","d2","d3"]), counts =False)
+                self.mat = gt.spectral.adjacency(model.g, model.g.edge_properties["count"])[len(model.documents):,:len(model.documents)]
+                print(self.mat)
+                self.assertEqual(self.mat.toarray()[0][0],1.1)
 
 if __name__=="__main__":
 	unittest.main()
