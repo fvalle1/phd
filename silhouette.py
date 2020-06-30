@@ -25,10 +25,7 @@ class silhouette():
 
     def show_sites(self):
         return self.df_file.select(['SMID','SMTS']).distinct().show()
-
-    def 
-
-
+ 
 if __name__=='__main__':
     sil = silhouette()
     sil.show_sites()
