@@ -66,7 +66,7 @@ colors_cycle = ["#a257d4",
 def get_next_color():
     for color in colors_cycle:
         yield color
-        
+
 color_iterator = get_next_color()
 
 def plot_cluster_composition(fraction_sites, directory, level, normalise=False, label='primary_site', shuffled=False,
@@ -389,7 +389,7 @@ def define_labels(cluster, df_files, label='primary_site', verbose=False):
     return true_labels, predicted_labels
 
 
-def add_score_lines(ax, scores, labels=None, h=False, c=False, alpha=0.8, **kwargs):
+def add_score_lines(ax, scores, V="V", labels=None, h=False, c=False, alpha=0.8, **kwargs):
     '''
     add to ax lines in scores
     add homogeneity and completness if required by h and c
@@ -427,8 +427,8 @@ def add_score_lines(ax, scores, labels=None, h=False, c=False, alpha=0.8, **kwar
         if c:
             ax.plot(xl, scores[label]['c'], ls=':', c=colors[label], marker='<', lw=10, ms=45, alpha=alpha,
                     label='completness - %s' % label)
-        if len(scores[label]['V']) == len(xl):
-            ax.plot(xl, scores[label]['V'], label='%s' % label, ls='-', c=colors[label], marker='o', lw=20, ms=45,
+        if len(scores[label][V]) == len(xl):
+            ax.plot(xl, scores[label][V], label='%s' % label, ls='-', c=colors[label], marker='o', lw=20, ms=45,
                     **kwargs)
         else:
             raise(ValueError("xl has got wrong lenght"))
@@ -443,7 +443,7 @@ def customize_metric_plot(ax, xl):
     ax.set_ylim((0, 1.1))
     ax.set_xlim(1, np.max(xl)*1.1)
     ax.set_xscale('log')
-    
+
     box = ax.get_position()
     ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
@@ -715,15 +715,15 @@ def clusteranalysis(directory, labels, algorithm='topsbm'):
     df_clusters = pd.read_csv("%s/%s/%s_level_%d_clusters.csv" % (directory, algorithm, algorithm, l_max), header=[0])
     if df_clusters is None:
         print("files not found")
-    df_files = pd.read_csv("%s/files.dat" % directory, index_col=[0], header=[0])
+    df_files = pd.read_csv("%s/files.dat"%directory, index_col=[0], header=[0]).dropna(axis=1, how='all').dropna(axis=0, how='all')
+    samples = pd.read_csv("%s/%s/%s_level_0_clusters.csv"%(directory,algorithm,algorithm), header=[0]).astype(str).values.ravel()
+    samples=samples[samples!="nan"]
+    df_files = df_files.reindex(index=samples).dropna(how="all", axis=0).fillna("unknown")
     df_files_shuffled = df_files.copy()
     df_files_shuffled.apply(lambda x: np.random.shuffle(x), 0)
     for normalise in [True, False]:
         for label in labels:
-            for level in np.arange(L+1)[::-1]:
-                if level==0:
-                    pass
-                    #continue
+            for level in np.arange(l_max+1)[::-1]:
                 print(normalise, label, level)
                 try:
                     cluster = get_cluster_given_l(level, directory,algorithm=algorithm)
@@ -733,7 +733,7 @@ def clusteranalysis(directory, labels, algorithm='topsbm'):
                     plot_cluster_composition(fraction_sites,directory,level,label=label, normalise=normalise,algorithm=algorithm)
                     make_heatmap(fraction_sites, directory, label, level, normalise=normalise,algorithm=algorithm)
 
-                    clustersinfo = get_clustersinfo(cluster,fraction_sites)            
+                    clustersinfo = get_clustersinfo(cluster,fraction_sites)
                     if not normalise:
                         plot_maximum(clustersinfo,cluster,label,level, directory,algorithm=algorithm)
                         plot_maximum_size(clustersinfo,label,level, directory,algorithm=algorithm)
@@ -741,6 +741,7 @@ def clusteranalysis(directory, labels, algorithm='topsbm'):
                         plot_sizes(level,directory, algorithm=algorithm)
                 except:
                     print(*sys.exc_info())
+                continue
                 shuffle_files(df_files,label).to_csv("%s/files_shuffles.dat"%directory, index=True)
                 fraction_sites_shuffle = get_fraction_sites(cluster, df_files=pd.read_csv("%s/files_shuffles.dat"%directory, index_col=[0]),label=label, normalise=normalise)
                 clustersinfo_shuffle = get_clustersinfo(cluster, fraction_sites_shuffle)
@@ -789,14 +790,12 @@ def out_to_file(out, index, name='new_method', l=0):
                            np.concatenate((c_objects, [np.nan for _ in np.arange(len(index) - len(c_objects))])))
     df_clusters.dropna(axis=0, how='all', inplace=True)
     df_clusters.to_csv("%s_level_%d_clusters.csv"%(name, l), index=False, header=True)
-	
-	
+
+
 #normalise to hsbm
-def normalise_score(scores, base_algorithm="hsbm"):
+def normalise_score(scores : dict, base_algorithm="hsbm", operation=lambda x,y: x/y)->None:
     for algorithm in scores.keys():
         baseline = np.interp(scores[algorithm]["xl"],
 							 scores[base_algorithm]["xl"][::-1],
 							 scores[base_algorithm]["V"][::-1])
-        scores[algorithm]["norm_V"]=np.array(scores[algorithm]["V"])/baseline
-    for algorithm in scores.keys():
-        scores[algorithm]["V"]=scores[algorithm]["norm_V"]
+        scores[algorithm]["norm_V"]=operation(np.array(scores[algorithm]["V"]),baseline)

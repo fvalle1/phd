@@ -4,6 +4,13 @@ from scipy.stats import hypergeom
 
 
 def parameters_for_hypergeometric(list_1, list_2):
+    """
+    Returns
+    x num of successes
+    M population size
+    k successes in population
+    N sample size
+    """
     population_size = len(list_1[list_1.index.isin(list_2.index)])
     pop_successes = {module:len(list_2[list_2==module]) for module in list_2.unique()}
     sample_sizes = {topic:len(list_1[list_1==topic]) for topic in list_1.unique()}
