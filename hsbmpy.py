@@ -794,6 +794,7 @@ def out_to_file(out, index, name='new_method', l=0):
 
 #normalise to hsbm
 def normalise_score(scores : dict, base_algorithm="hsbm", operation=lambda x,y: x/y)->None:
+    "save scaled data to scores[norm_V]"
     for algorithm in scores.keys():
         baseline = np.interp(scores[algorithm]["xl"],
 							 scores[base_algorithm]["xl"][::-1],
