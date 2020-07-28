@@ -612,16 +612,17 @@ def get_scores(directory, labels, df_files=None, algorithm='topsbm', verbose=Fal
                 print("Skipping level ", l)
 
         # add the first point where all sample are in the same cluster by definition
-        if xl[0] < xl[-1]:
-            idx = 0
-        else:
-            idx = len(xl)
-        true_labels, _ = define_labels(get_cluster_given_l(l, directory, algorithm), df_files, label=label)
-        predicted_labels = np.ones_like(true_labels)
-        scores[label]['h'].insert(idx,metrics.cluster.homogeneity_score(true_labels, predicted_labels))
-        scores[label]['c'].insert(idx,metrics.cluster.completeness_score(true_labels, predicted_labels))
-        scores[label]['V'].insert(idx,metrics.cluster.v_measure_score(true_labels, predicted_labels))
-        xl.insert(idx,len(np.unique(predicted_labels)))
+        if 1 not in xl:
+            if xl[0] < xl[-1]:
+                idx = 0
+            else:
+                idx = len(xl)
+            true_labels, _ = define_labels(get_cluster_given_l(l, directory, algorithm), df_files, label=label)
+            predicted_labels = np.ones_like(true_labels)
+            scores[label]['h'].insert(idx,metrics.cluster.homogeneity_score(true_labels, predicted_labels))
+            scores[label]['c'].insert(idx,metrics.cluster.completeness_score(true_labels, predicted_labels))
+            scores[label]['V'].insert(idx,metrics.cluster.v_measure_score(true_labels, predicted_labels))
+            xl.insert(idx,len(np.unique(predicted_labels)))
 
         scores[label]['xl'] = xl
     if len(labels) >= 2:
