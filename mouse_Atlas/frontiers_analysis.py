@@ -38,7 +38,7 @@ def cleanup():
         except:
             print("Error with %s"%unpacked_file)
     os.chdir("../")
-    
+
 def load_pickle(filename):
     import pickle
     with open(filename,"rb") as f:
@@ -60,17 +60,17 @@ def heaps(M, diffWords, tissue,  fit_bins = lambda x, a, b: a * np.power(x,b)):
     bin_means, bin_edges, binnumber = stats.binned_statistic(M, diffWords,statistic='mean', bins=np.linspace(M.min(),max(M), n_bins))
     bin_counts, _, _ = stats.binned_statistic(M, diffWords,statistic='count', bins=np.linspace(M.min(),max(M), n_bins))
 
-    
+
     skip_bins=(bin_counts<10).astype(int).sum()
     x_bins = ((bin_edges[:-1]+bin_edges[1:])/2)[:-skip_bins]
-    
+
     if len(bin_means) - skip_bins < 2:
         return
 
     plt.hlines(bin_means[:-skip_bins], bin_edges[:-1][:-skip_bins], bin_edges[1:][:-skip_bins], colors='r', lw=5, label='binned average')
     bin_stds, _, _ = stats.binned_statistic(M, diffWords,statistic='std',  bins=np.linspace(M.min(),max(M), n_bins))
     plt.errorbar(x_bins,bin_means[:-skip_bins], bin_stds[:-skip_bins], fmt='none', ecolor='orange', elinewidth=3)
-    
+
     popt, pcov = curve_fit(fit_bins, x_bins, bin_means[:-skip_bins])
 
     plt.plot(np.linspace(500, 1e4), fit_bins(np.linspace(500, 1e4), *popt), lw=4, c='cyan')
@@ -84,7 +84,7 @@ def heaps(M, diffWords, tissue,  fit_bins = lambda x, a, b: a * np.power(x,b)):
     plt.legend(fontsize=20)
     plt.show()
     fig.savefig(f"heaps_{tissue}.png")
-    
+
 
 def save_model(df, name, tissue="global", n_bins=35, fit_bins = lambda x, a, b: a * np.power(x,b), **kwargs):
     from scipy.optimize import curve_fit
@@ -102,20 +102,24 @@ def save_model(df, name, tissue="global", n_bins=35, fit_bins = lambda x, a, b: 
     means = df.apply(np.mean, 1)
     var = df.apply(np.var, 1)
     cv2= var/means/means
-    
-    bin_means, bin_edges, binnumber = stats.binned_statistic(M, diffWords,statistic='mean', bins=np.linspace(M.min(),max(M), n_bins))
-    bin_counts, _, _ = stats.binned_statistic(M, diffWords,statistic='count', bins=np.linspace(M.min(),max(M), n_bins))
-    
-    skip_bins=(bin_counts<10).astype(int).sum()
 
-    if len(bin_means) - skip_bins < 2:
-        x_bins = ((bin_edges[:-1]+bin_edges[1:])/2)[:-skip_bins]
-        popt, pcov = curve_fit(fit_bins, x_bins, bin_means[:-skip_bins])
-        integral = quad(fit_bins, 500, 1e4, args=(popt[0], popt[1]))
-    else:
+    try:
+        bin_means, bin_edges, binnumber = stats.binned_statistic(M, diffWords,statistic='mean', bins=np.linspace(M.min(),max(M), n_bins))
+        bin_counts, _, _ = stats.binned_statistic(M, diffWords,statistic='count', bins=np.linspace(M.min(),max(M), n_bins))
+
+        skip_bins=(bin_counts<10).astype(int).sum()
+
+        if len(bin_means) - skip_bins < 2:
+            x_bins = ((bin_edges[:-1]+bin_edges[1:])/2)[:-skip_bins]
+            popt, pcov = curve_fit(fit_bins, x_bins, bin_means[:-skip_bins])
+            integral = quad(fit_bins, 500, 1e4, args=(popt[0], popt[1]))
+        else:
+            popt = []
+            integral = -1
+    except:
         popt = []
         integral = -1
-    
+
     data = {
     'means': means,
     'means_nonzero': df.apply(lambda x: x[x>0].mean(), 1),
@@ -138,75 +142,119 @@ def load_tissue(tissue, name="data", data_source="mca"):
     with open(f"{data_source}/data_{tissue}_{name}.pkl", "rb") as f:
         data = pickle.load(f)
     return data
-        
-        
-def mazzolini(M, f, tissue, **kwargs):
+
+
+def mazzolini(M, f, tissue, ensambles = 5, **kwargs):
     print("mazzolini")
-    global rs 
-    rs = np.random.RandomState(seed=42)
-    df_null = pd.DataFrame(index=f.index)
-    for sample in M.index:
-        if sample in df_null.columns:
-            continue
-        df_null.insert(0,sample,np.average(np.array([rs.multinomial(M[sample], f.astype(float).values/f.sum()) for _ in range(5)]), axis=0))
-        gc.collect()
-    #df_null=df_null.astype(int)
-    gc.collect()
-    save_model(df_null, "mazzolini", tissue, **kwargs)
-    del df_null
-    gc.collect()
-        
-def null_model(df, M, means_nozero):
-    print("null_model: start")
+    print(f"sampling {len(M)} cells")
     global rs
     rs = np.random.RandomState(seed=42)
-    f_null_1 = (means_nozero / means_nozero.sum()).dropna()
-    df_null_1 = pd.DataFrame(index=f_null_1.index)
-    number_of_zeros = df.apply(lambda x: len(x[x==0]), 1)
-    for sample in M.index:
-        if sample in df_null_1.columns:
-            continue
-        df_null_1.insert(0,sample,np.average(np.array([rs.multinomial(M[sample], f_null_1.astype(float).values) for _ in range(2)]), axis=0))
-        gc.collect()
-    df_null_1=df_null_1.round()
-    #df_null_1 = df_null_1.divide(df_null_1.sum(0),1).multiply(M[df_null_1.columns])
-    gc.collect()
-    
-    print("null model: flipping 0s")
-    
-    number_of_sampled_zeros = df_null_1.apply(lambda x: len(x[x==0]), 1)
-    df_null_1 = df_null_1.transpose()
+    import pickle
+    data = {
+    'means': [],
+    'means_nonzero':[],
+    'var': [],
+    'freq': [],
+    'O': [],
+    'M': [],
+    'cv2': [],
+    'diffWords': [],
+    'heaps_integral': [],
+    'heaps_fit': []
+    }
 
-    quantiles = np.quantile(M.sort_values(), q=np.linspace(0,1,15)[:-1])
-    classes = np.digitize(M.sort_values(),quantiles)
+    for ensamble in range(ensambles):
+        df_null = pd.DataFrame(index=f.index)
+        for isample,sample in enumerate(M.index):
+            if (isample % (len(M)/1000)) == 0:
+                print(f"{isample} of {len(M)}")
+            if sample in df_null.columns:
+                continue
+            df_null.insert(0,sample,rs.multinomial(M[sample], f.astype(float).values/f.sum()))
+            gc.collect()
 
-    genes_with_many_0 = []
-    for g in df_null_1.columns:
-        gexpr = df.loc[g,:]
-        if number_of_zeros[g] > number_of_sampled_zeros[g]:
-            df_null_1[g][rs.choice(df_null_1[g][df_null_1[g]>0].index, size=number_of_zeros[g]-number_of_sampled_zeros[g], replace=False)]=0
-        else:
-            genes_with_many_0.append(g)
-        #df_null_1[g][rs.choice(df_null_1[g].index, size=number_of_zeros[g], replace=False)]=0
-        #prob_classes = [(gexpr[M.index[classes==c]]==0).astype(int).sum()/float(len(M.index[classes==c])) for c in np.arange(max(classes))+1]
-        #probs = pd.Series(index=M.index, data=np.zeros_like(M))
-        #for c, prob_class in zip(classes, prob_classes):
-        #    probs[M.index[classes==c]] = prob_class
-        #df_null_1[g][rs.binomial(1,p=probs, size=len(df_null_1[g]))==1] = 0
-        #del probs
-        del gexpr
+        A = df_null.mean(axis=1)
+        A = A[A>0]
+        df = df_null.reindex(index=A.index)
+        data["freq"].append(A/A.sum())
+        data["O"].append(df_null.apply(lambda x: len(x[x>0])/float(len(x)), 1))
+        data["M"].append(df_null.apply(np.sum, 0))
+        data["diffWords"].append(df_null.apply(lambda x: len(x[x>0]), 0))
+        var = np.array(df_null.apply(np.var, 1))
+        means = np.array(df_null.apply(np.mean, 1))
+        data["means"].append(means)
+        data["means_nonzero"].append(df_null.apply(lambda x: x[x>0].mean(), 1))
+        data["var"].append(var)
+        data["cv2"].append(var/means/means)
+        del df_null
         gc.collect()
-        
-    df_null_1 = df_null_1.transpose()
-    
-    #df_null_1 = df_null_1.applymap(lambda x: 0 if rs.random()< np.exp(-x) else x)
-    df_null_1 = df_null_1.divide(df_null_1.sum(0),1).multiply(M[~M.duplicated()][df_null_1.columns])
+
+    for key, value in data.items():
+        data[key]=np.average(value, axis=0)
+
+
+    #df_null=df_null.astype(int)
     gc.collect()
-    save_model(df_null_1, "null_1", tissue)
-    with open(f"many0genes_{tissue}.txt","w") as file:
-        for g in genes_with_many_0:
-            file.write(g+"\n")
-    del df_null_1
+    with open(f"data_{tissue}_mazzolini.pkl","wb") as file:
+        pickle.dump(data, file, protocol=pickle.HIGHEST_PROTOCOL)
+
+    gc.collect()
+
+def null_model(M, f, tissue, **kwargs)->None:
+    import pickle
+    print("null_1")
+    global rs
+
+    data = {
+    'means': [],
+    'means_nonzero':[],
+    'var': [],
+    'freq': [],
+    'O': [],
+    'M': [],
+    'cv2': [],
+    'diffWords': [],
+    'heaps_integral': [],
+    'heaps_fit': []
+    }
+
+    rs = np.random.RandomState(seed=42)
+
+    for ensamble in range(3):
+        df_null = pd.DataFrame(index=f.index)
+        for isample,sample in enumerate(M.index):
+            if (isample % (len(M)/25)) == 0:
+                print(f"{isample} of {len(M)}")
+            if sample in df_null.columns:
+                continue
+            df_null.insert(0,sample,rs.multinomial(M[sample], f.astype(float).values/f.sum()))
+            gc.collect()
+
+        A = df_null.mean(axis=1)
+        A = A[A>0]
+        df = df_null.reindex(index=A.index)
+        data["freq"].append(A/A.sum())
+        data["O"].append(df_null.apply(lambda x: len(x[x>0])/float(len(x)), 1))
+        data["M"].append(df_null.apply(np.sum, 0))
+        data["diffWords"].append(df_null.apply(lambda x: len(x[x>0]), 0))
+        var = np.array(df_null.apply(np.var, 1))
+        means = np.array(df_null.apply(np.mean, 1))
+        data["means"].append(means)
+        data["means_nonzero"].append(df_null.apply(lambda x: x[x>0].mean(), 1))
+        data["var"].append(var)
+        data["cv2"].append(var/means/means)
+        del df_null
+        gc.collect()
+
+    for key, value in data.items():
+        data[key]=np.average(value, axis=0)
+
+
+    #df_null=df_null.astype(int)
+    gc.collect()
+    with open(f"data_{tissue}_null.pkl","wb") as file:
+        pickle.dump(data, file, protocol=pickle.HIGHEST_PROTOCOL)
+
     gc.collect()
 
 def load_all_data(data_source="mca"):
@@ -231,7 +279,7 @@ def load_all_data(data_source="mca"):
 	if 'cell_zeros' in data.keys():
 		cell_zeros = data['cell_zeros']
 	return data
-	
+
 # Tabula muris only!
 def clean_df(df):
     dfann = pd.read_csv("annotations_facs.csv")
