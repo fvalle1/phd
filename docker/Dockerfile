@@ -1,5 +1,7 @@
 FROM jupyter/datascience-notebook
 
+LABEL maintainer="filippo.valle@unito.it"
+
 COPY requirements.jl /home/jovyan
 RUN julia /home/jovyan/requirements.jl
 
