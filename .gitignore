@@ -109,3 +109,4 @@ datasets/cancers/breast/data_mining
 *.afdesign
 *.aftemplate
 predictor/model/variables/*
+*.tiff
