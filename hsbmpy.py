@@ -549,7 +549,15 @@ def get_tissue_style(tissue):
         c = 'darkred'
     elif 'rain' in tissue:
         c = 'darkgray'
-    elif 'estis' in tissue:
+    elif 'LumA' in tissue:
+        c = 'pink'
+    elif 'LumB' in tissue:
+        c = 'purple'
+    elif 'Normal' in tissue:
+        c = 'blue'
+    elif 'Basal' in tissue:
+        c = 'darkred'
+    elif 'Her2' in tissue:
         c = 'darkkhaki'
     else:
         c = 'k'
