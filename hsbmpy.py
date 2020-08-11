@@ -91,6 +91,7 @@ def plot_cluster_composition(fraction_sites, directory, level, normalise=False, 
     n_col = round(n_labels/20) if n_labels > 20 else 1
     ax.legend(loc='best', bbox_to_anchor=(1, 0.99), fontsize=35, ncol=n_col)
     ax.tick_params(axis='both', labelsize=35)
+    plt.tight_layout()
     plt.show()
     fig.savefig("%s/%s/%s%sclustercomposition_l%d_%s.pdf" % (
         directory, algorithm, "shuffled" if shuffled else '', "fraction_" if normalise else '', int(level), label))
