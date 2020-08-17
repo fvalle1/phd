@@ -25,3 +25,6 @@
 [submodule "cancers"]
 	path = cancers
 	url = git@github.com:fvalle1/cancers
+[submodule "topicpy"]
+	path = topicpy
+	url = git@github.com:fvalle1/topicpy
