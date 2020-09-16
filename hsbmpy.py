@@ -91,7 +91,6 @@ def plot_cluster_composition(fraction_sites, directory, level, normalise=False, 
     n_col = round(n_labels/20) if n_labels > 20 else 1
     ax.legend(loc='best', bbox_to_anchor=(1, 0.99), fontsize=35, ncol=n_col)
     ax.tick_params(axis='both', labelsize=35)
-    plt.tight_layout()
     plt.show()
     fig.savefig("%s/%s/%s%sclustercomposition_l%d_%s.pdf" % (
         directory, algorithm, "shuffled" if shuffled else '', "fraction_" if normalise else '', int(level), label))
@@ -550,6 +549,8 @@ def get_tissue_style(tissue):
         c = 'darkred'
     elif 'rain' in tissue:
         c = 'darkgray'
+    elif 'estis' in tissue:
+        c = 'darkkhaki'
     elif 'LumA' in tissue:
         c = 'pink'
     elif 'LumB' in tissue:
@@ -559,7 +560,7 @@ def get_tissue_style(tissue):
     elif 'Basal' in tissue:
         c = 'darkred'
     elif 'Her2' in tissue:
-        c = 'darkkhaki'
+        c = "green"
     else:
         c = 'k'
     return (marker, c, ls)
@@ -748,14 +749,14 @@ def plot_sizes(level, directory, algorithm, ax=None):
     plt.show()
 
 
-def clusteranalysis(directory, labels, algorithm='topsbm'):
+def clusteranalysis(directory, labels, algorithm='topsbm') -> None:
     """
-     Perform analyses of an algorithm output
+    Perform analyses of an algorithm output
 
-     Parameters:
-     - directory: where to search the data
-     - labels: ground truth label to search. This should be in a file called directory/files.dat
-     - algorithm: name of the folder in which data are stored
+    Parameters:
+    - directory: where to search the data
+    - labels: ground truth label to search. This should be in a file called directory/files.dat
+    - algorithm: name of the folder in which data are stored
     """
     l_max = get_max_available_L(directory, algorithm)
     df_clusters = pd.read_csv("%s/%s/%s_level_%d_clusters.csv" % (directory, algorithm, algorithm, l_max), header=[0])
@@ -798,7 +799,7 @@ def clusteranalysis(directory, labels, algorithm='topsbm'):
                     plot_maximum_label(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
                     plot_labels_size(clustersinfo,label,level, directory,clustersinfo_shuffle,algorithm=algorithm)
     ##define scores
-    scores = get_scores(directory, labels)
+    scores = get_scores(directory, labels, algorithm=algorithm)
     try:
         xl = getclustersizesarray(directory, l_max)
         with open("%s/clustersizes.txt" % directory, 'w') as f:
@@ -817,7 +818,7 @@ def clusteranalysis(directory, labels, algorithm='topsbm'):
 
     # save files for R analisys
     for l_max in np.arange(l_max + 1):
-        pd.DataFrame(data=define_labels(get_cluster_given_l(l_max, directory), df_files, label=labels[0])[1],
+        pd.DataFrame(data=define_labels(get_cluster_given_l(l_max, directory, algorithm=algorithm), df_files, label=labels[0])[1],
                      columns=['l%d' % l_max]).to_csv("%s/%s/%s_level_%d_labels.csv" % (directory, algorithm, algorithm, l_max),
                                                      header=True,
                                                      index=False)
