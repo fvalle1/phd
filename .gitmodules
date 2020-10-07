@@ -25,3 +25,6 @@
 [submodule "topicpy"]
 	path = topicpy
 	url = git@github.com:fvalle1/topicpy
+[submodule "mouse_Atlas/The_single_cell_transcriptome_as_a_component_system"]
+	path = mouse_Atlas/The_single_cell_transcriptome_as_a_component_system
+	url = git@github.com:SilviaLazzardi/The_single_cell_transcriptome_as_a_component_system
