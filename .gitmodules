@@ -31,3 +31,6 @@
 [submodule "topics"]
 	path = topics
 	url = git@github.com:fvalle1/topics.git
+[submodule "latentrees"]
+	path = latentrees
+	url = git@github.com:fvalle1/latentrees.git
