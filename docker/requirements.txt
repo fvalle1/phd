@@ -1,4 +1,4 @@
-gobject 
+gobject
 matplotlib 
 pandas 
 jupyter 
@@ -11,3 +11,8 @@ tensorflow_probability
 watermark 
 gseapy
 lifelines
+plotly
+seaborn
+papermill
+--extra-index https://test.pypi.org/simple
+topicpy
