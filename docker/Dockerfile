@@ -42,6 +42,9 @@ RUN jupyter labextension install jupyterlab-plotly --no-build
 RUN jupyter labextension install plotlywidget --no-build
 RUN jupyter lab build
 
+RUN conda install -c plotly plotly-orca
+
+
 RUN useradd -m -g users filippo
 
 ENV PYTHONIOENCODING=utf8
