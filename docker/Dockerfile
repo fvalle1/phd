@@ -43,7 +43,7 @@ RUN jupyter labextension install plotlywidget --no-build
 RUN jupyter lab build
 
 RUN conda install -c plotly plotly-orca
-
+RUN apt-get install xvfb --yes
 
 RUN useradd -m -g users filippo
 
