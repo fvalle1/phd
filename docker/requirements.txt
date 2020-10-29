@@ -16,3 +16,4 @@ seaborn
 papermill
 --extra-index https://test.pypi.org/simple
 topicpy
+sphinx
