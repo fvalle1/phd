@@ -37,12 +37,12 @@ RUN unzip gdc-client_v1.5.0_Ubuntu_x64.zip
 RUN mv gdc-client /usr/local/bin
 RUN rm -f gdc-client_v1.5.0_Ubuntu_x64.zip
 
-RUN jupyter labextension install jupyterlab-toc --no-build
+#RUN jupyter labextension install jupyterlab jupyterlab-toc --no-build
 RUN jupyter labextension install jupyterlab-plotly --no-build
 RUN jupyter labextension install plotlywidget --no-build
 RUN jupyter lab build
 
-RUN conda install -c plotly plotly-orca
+RUN conda install -c plotly plotly-orca -y
 RUN apt-get install xvfb --yes
 
 RUN useradd -m -g users filippo
