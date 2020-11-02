@@ -1,19 +1,18 @@
 gobject
-matplotlib 
-pandas 
-jupyter 
+matplotlib
+pandas
+jupyter
 cairocffi
 scanpy
-pandarallel 
-regex 
+pandarallel
+regex
 tensorflow
 tensorflow_probability
-watermark 
+watermark
 gseapy
 lifelines
 plotly
 seaborn
 papermill
---extra-index https://test.pypi.org/simple
 topicpy
 sphinx
