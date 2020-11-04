@@ -97,3 +97,54 @@ class mazzolini_broad(method):
             print(np.isnan(self.get_pvals()).any())
             print((self.get_pvals(m)>=1).any())
             print((self.get_pvals(m)<0).any())
+            
+            
+class mazzolini_nbinom(method):
+    def __init__(self, M_tilde = 100000, *args, **kwargs):
+        super().__init__("mazzolini_nbinom", "blue", *args, **kwargs)
+        self.p = None
+        self.M_tilde = M_tilde
+    
+    def get_pvals(self):
+        raise NotImplementedError("use get_pvals(m)")
+        
+    def get_pvals(self, m):
+        if m > self.M_tilde:
+            raise ValueError(f"{self.M} is a too low Mtilde use at least {m}")
+        if self.p is None:
+            self.p = [np.random.negative_binomial(round(fi * self.M_tilde)/(round(fi * self.M_tilde)-1), 1/round(fi * self.M_tilde)) if round(fi * self.M_tilde) > 1 else 0 for fi in super().get_pvals()]
+            self.p = self.p/np.sum(self.p)
+        return self.p
+    
+    def sample(self, m) -> None:
+        try:
+            c = np.random.multinomial(m, self.get_pvals(m))
+            self.table.append(c)
+            self.h.append((c>0).sum())
+        except:
+            import sys
+            print(sys.exc_info())
+            
+            
+class mazzolini_gaus(method):
+    def __init__(self, *args, **kwargs):
+        super().__init__("mazzolini_gaus", "blue", *args, **kwargs)
+        self.p = None
+    
+    def get_pvals(self):
+        raise NotImplementedError("use get_pvals(m)")
+        
+    def get_pvals(self, m):
+        if self.p is None:
+            self.p = [np.clip(np.random.normal(fi,fi), 0, np.inf) for fi in super().get_pvals()]
+            self.p = self.p/np.sum(self.p)
+        return self.p
+    
+    def sample(self, m) -> None:
+        try:
+            c = np.random.multinomial(m, self.get_pvals(m))
+            self.table.append(c)
+            self.h.append((c>0).sum())
+        except:
+            import sys
+            print(sys.exc_info())
