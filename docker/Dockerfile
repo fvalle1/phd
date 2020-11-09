@@ -28,7 +28,7 @@ RUN python3 -m pip install -r requirements.txt
 
 RUN apt-get install gnupg --yes
 RUN echo "deb http://downloads.skewed.de/apt focal main" >> /etc/apt/sources.list
-RUN echo "deb-src http://downloads.skewed.de/apt/ focal main" >> /etc/apt/sources.list
+#RUN echo "deb-src http://downloads.skewed.de/apt/ focal main" >> /etc/apt/sources.list
 RUN apt-key adv --keyserver keys.openpgp.org --recv-key 612DEFB798507F25 > /dev/null 2>&1
 RUN apt-get update && apt-get install python3-graph-tool python3-cairo --yes
 
@@ -42,7 +42,6 @@ RUN jupyter labextension install jupyterlab-plotly --no-build
 RUN jupyter labextension install plotlywidget --no-build
 RUN jupyter lab build
 
-RUN conda install -c plotly plotly-orca -y
 RUN apt-get install xvfb --yes
 
 RUN useradd -m -g users filippo
@@ -50,6 +49,8 @@ RUN useradd -m -g users filippo
 ENV PYTHONIOENCODING=utf8
 
 USER jovyan
+RUN conda install -c plotly plotly-orca -y
+
 WORKDIR /home/jovyan/work
 
 ENTRYPOINT jupyter lab
