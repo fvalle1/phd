@@ -81,13 +81,14 @@ class mazzolini_broad(method):
         if m > self.M_tilde:
             raise ValueError(f"{self.M} is a too low Mtilde use at least {m}")
         if self.p is None:
-            self.p = [np.random.poisson(round(fi * self.M_tilde), 1)[0] for fi in super().get_pvals()]
-            self.p = self.p/np.sum(self.p)
+            self.p = np.array([np.random.poisson(round(fi * self.M_tilde), 1)[0] for fi in super().get_pvals()])
+            self.p = self.p/float(np.sum(self.p))
         return self.p
     
     def sample(self, m) -> None:
         try:
             c = np.random.multinomial(m, self.get_pvals(m))
+            assert(c.sum()==m)
             self.table.append(c)
             self.h.append((c>0).sum())
         except:
