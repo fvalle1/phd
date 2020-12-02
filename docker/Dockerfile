@@ -37,14 +37,15 @@ RUN unzip gdc-client_v1.5.0_Ubuntu_x64.zip
 RUN mv gdc-client /usr/local/bin
 RUN rm -f gdc-client_v1.5.0_Ubuntu_x64.zip
 
-#RUN jupyter labextension install jupyterlab jupyterlab-toc --no-build
+RUN python3 -m pip install --no-cache-dir jupyterlab==2.2.9
+RUN jupyter labextension install @jupyterlab/toc --no-build
 RUN jupyter labextension install jupyterlab-plotly --no-build
 RUN jupyter labextension install plotlywidget --no-build
 RUN jupyter lab build
 
 RUN apt-get install xvfb --yes
 
-RUN useradd -m -g users filippo
+#RUN useradd -m -g users filippo
 
 ENV PYTHONIOENCODING=utf8
 
