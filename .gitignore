@@ -111,3 +111,4 @@ datasets/cancers/breast/data_mining
 predictor/model/variables/*
 *.tiff
 meeting
+.vscode/
