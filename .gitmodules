@@ -1,15 +1,9 @@
-[submodule "TWO-NN"]
-	path = TWO-NN
-	url = https://github.com/fmottes/TWO-NN.git
 [submodule "hSBM_Topicmodel"]
 	path = hSBM_Topicmodel
 	url = git@github.com:fvalle1/hSBM_Topicmodel.git
 [submodule "hsbm-occam"]
 	path = hsbm-occam
 	url = git@gitlab.c3s.unito.it:filippo.valle/hsbm-occam.git
-[submodule "Sanity"]
-	path = Sanity
-	url = git@github.com:jmbreda/Sanity.git
 [submodule "tree_plotter"]
 	path = tree_plotter
 	url = git@github.com:fvalle1/tree_plotter.git
