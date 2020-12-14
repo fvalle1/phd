@@ -82,7 +82,7 @@ class mazzolini_broad(method):
             raise ValueError(f"{self.M} is a too low Mtilde use at least {m}")
         if self.p is None:
             self.p = np.array(
-                [np.random.poisson(round(fi * self.M_tilde), 1)[0] for fi in super().get_p()])
+                [np.random.poisson(round(fi * self.M_tilde), size=1)[0] for fi in super().get_p()])
             self.p = self.p/float(np.sum(self.p))
         return self.p
     
@@ -151,7 +151,6 @@ class mazzolini_gaus(method):
         except:
             import sys
             print(sys.exc_info())
-
 
 class mazzolini_timesM(method):
     def __init__(self, multiplier = 10, *args, **kwargs):
