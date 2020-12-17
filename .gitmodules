@@ -28,3 +28,6 @@
 [submodule "latentrees"]
 	path = latentrees
 	url = git@github.com:fvalle1/latentrees.git
+[submodule "diffExpressed/diffexpr"]
+	path = diffExpressed/diffexpr
+	url = git@github.com:wckdouglas/diffexpr.git
