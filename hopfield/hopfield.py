@@ -3,11 +3,13 @@ import tensorflow as tf
 class Hopfield():
     def __init__(self, N: int):
         self.N = N
+        self.P = 0
         self.neurons = tf.ones((self.N,1), dtype=tf.int8)
         self._weights = tf.zeros((self.N,self.N), dtype=tf.double)
         
     def load(self, data):
         self.N = data.shape[1]
+        self.P += data.shape[0]
         all_weights = tf.map_fn(lambda point: tf.map_fn(lambda d_i: tf.map_fn(lambda d_j: d_i*d_j,point),point), data)
         self._weights = tf.divide(tf.reduce_sum(all_weights, axis=0), all_weights.shape[0])
             
@@ -20,4 +22,5 @@ class Hopfield():
         return tf.reshape(self.neurons, (self.N,))
     
     def __repr__(self):
-        return f"Hopfield model with {len(self.neurons)} neurons"
+        r = self.P/self.N
+        return f"Hopfield model with {self.N} neurons and {self.P} memories loaded (max. {round(self.N*0.138)}) "
