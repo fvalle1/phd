@@ -31,3 +31,6 @@
 [submodule "diffExpressed/diffexpr"]
 	path = diffExpressed/diffexpr
 	url = git@github.com:wckdouglas/diffexpr.git
+[submodule "diffExpressed/GSECA"]
+	path = diffExpressed/GSECA
+	url = git@github.com:matteocereda/GSECA.git
