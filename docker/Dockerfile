@@ -21,11 +21,10 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
-COPY requirements.txt /home/jovyan
-
 RUN apt-get install libgtk-3-dev libjs-mathjax pandoc --yes
-RUN python3 -m pip install -r requirements.txt
+USER jovyan
 
+USER root
 RUN apt-get install gnupg --yes
 RUN echo "deb http://downloads.skewed.de/apt focal main" >> /etc/apt/sources.list
 #RUN echo "deb-src http://downloads.skewed.de/apt/ focal main" >> /etc/apt/sources.list
@@ -37,20 +36,30 @@ RUN unzip gdc-client_v1.5.0_Ubuntu_x64.zip
 RUN mv gdc-client /usr/local/bin
 RUN rm -f gdc-client_v1.5.0_Ubuntu_x64.zip
 
+USER jovyan
 RUN python3 -m pip install --no-cache-dir jupyterlab==2.2.9
 RUN jupyter labextension install @jupyterlab/toc --no-build
 RUN jupyter labextension install jupyterlab-plotly --no-build
 RUN jupyter labextension install plotlywidget --no-build
 RUN jupyter lab build
 
+USER root
 RUN apt-get install xvfb --yes
-
+RUN apt-get autoremove --yes
 #RUN useradd -m -g users filippo
 
 ENV PYTHONIOENCODING=utf8
 
 USER jovyan
-RUN conda install -c plotly plotly-orca -y
+RUN conda config --set channel_priority strict
+
+RUN conda install -c conda-forge mamba -y
+RUN mamba install -c plotly plotly-orca -y
+RUN mamba install -c bioconda bioconductor-complexheatmap -y
+RUN mamba install -c conda-forge r-gert -y
+
+COPY requirements.txt /home/jovyan
+RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
 WORKDIR /home/jovyan/work
 
