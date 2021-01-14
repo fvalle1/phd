@@ -7,9 +7,6 @@
 [submodule "tree_plotter"]
 	path = tree_plotter
 	url = git@github.com:fvalle1/tree_plotter.git
-[submodule "openvino_tensorflow"]
-	path = openvino_tensorflow
-	url = git@github.com:fvalle1/openvino_tensorflow
 [submodule "tacos"]
 	path = tacos
 	url = git@github.com:fvalle1/tacos
