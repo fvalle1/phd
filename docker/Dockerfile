@@ -25,11 +25,10 @@ RUN apt-get install libgtk-3-dev libjs-mathjax pandoc --yes
 USER jovyan
 
 USER root
-RUN apt-get install gnupg --yes
-RUN echo "deb http://downloads.skewed.de/apt focal main" >> /etc/apt/sources.list
-#RUN echo "deb-src http://downloads.skewed.de/apt/ focal main" >> /etc/apt/sources.list
-RUN apt-key adv --keyserver keys.openpgp.org --recv-key 612DEFB798507F25 > /dev/null 2>&1
-RUN apt-get update && apt-get install python3-graph-tool python3-cairo --yes
+# RUN apt-get install gnupg --yes
+# RUN echo "deb http://downloads.skewed.de/apt focal main" >> /etc/apt/sources.list
+# RUN apt-key adv --keyserver keys.openpgp.org --recv-key 612DEFB798507F25 > /dev/null 2>&1
+# RUN apt-get update && apt-get install python3-graph-tool python3-cairo --yes
 
 RUN wget https://gdc.cancer.gov/system/files/authenticated%20user/0/gdc-client_v1.5.0_Ubuntu_x64.zip
 RUN unzip gdc-client_v1.5.0_Ubuntu_x64.zip
@@ -57,6 +56,7 @@ RUN conda install -c conda-forge mamba -y
 RUN mamba install -c plotly plotly-orca -y
 RUN mamba install -c bioconda bioconductor-complexheatmap -y
 RUN mamba install -c conda-forge r-gert -y
+RUN mamba install -c conda-forge graph-tool -y
 
 COPY requirements.txt /home/jovyan
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
