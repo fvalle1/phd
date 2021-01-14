@@ -16,12 +16,12 @@ class Testsbmtm(unittest.TestCase):
 
 	def test_get_mat(self):
 		model = self.model
-		model.load_graph("/home/jovyan/work/phd/datasets/paper/gtex10seed/topsbm/graph.xml.gz")
+		model.load_graph("/home/jovyan/work/phd/datasets/gtex/10/topsbm/graph.xml.gz")
 		self.mat = gt.spectral.adjacency(model.g, model.g.edge_properties["count"])[len(model.documents):,:len(model.documents)]
 		self.assertEqual(len(model.words),self.mat.shape[0])
 
 	def test_mat_shape(self):
-		self.model.load_graph("/home/jovyan/work/phd/datasets/paper/gtex10seed/topsbm/graph.xml.gz")
+		self.model.load_graph("/home/jovyan/work/phd/datasets/gtex/10/topsbm/graph.xml.gz")
 		model = self.model
 		self.mat = gt.spectral.adjacency(model.g, model.g.edge_properties["count"])[len(model.documents):,:len(model.documents)]
 		self.assertEqual(len(self.model.documents), self.mat.shape[1])
@@ -32,15 +32,15 @@ class Testsbmtm(unittest.TestCase):
 		self.model.make_graph_from_BoW_df(pd.DataFrame(data=[[1.1,2.2,3.3],[0.5,0.2,0.1],[0.03,0.01,1.005]], index = ["a","b","c"], columns = ["d1","d2","d3"]), counts = True)
 		self.mat = gt.spectral.adjacency(model.g, model.g.edge_properties["count"])[len(model.documents):,:len(model.documents)]
 		print(self.mat)
-		self.assertEqual(self.mat.toarray()[0][0],1.1)
+		self.assertEqual(self.mat.toarray()[0][0],1.0)
 
 	def test_approx_nocounts(self):
                 import pandas as pd
                 model = self.model
-                self.model.make_graph_from_BoW_df(pd.DataFrame(data=[[1.1,2.2,3.3],[0.5,0.2,0.1],[0.03,0.01,1.005]], index = ["a","b","c"], columns = ["d1","d2","d3"]), counts =False)
+                self.model.make_graph_from_BoW_df(pd.DataFrame(data=[[1.1,2.2,3.3],[0.5,0.2,0.1],[0.03,0.01,1.005]], index = ["a","b","c"], columns = ["d1","d2","d3"]), counts = True)
                 self.mat = gt.spectral.adjacency(model.g, model.g.edge_properties["count"])[len(model.documents):,:len(model.documents)]
                 print(self.mat)
-                self.assertEqual(self.mat.toarray()[0][0],1.1)
+                self.assertEqual(self.mat.toarray()[0][0],1.0)
 
 if __name__=="__main__":
 	unittest.main()
