@@ -13,12 +13,17 @@ class Hopfield():
         self.P = 0
         self.neurons = tf.ones((self.N,1), dtype=tf.int64)
         self._weights = tf.zeros((self.N,self.N), dtype=tf.double)
+        self.nthreads = 12
         
+    @tf.function
+    def load_all_weights(self, data):
+        return tf.map_fn(lambda point: tf.map_fn(lambda d_i: tf.map_fn(lambda d_j: d_i*d_j,point),point, parallel_iterations=self.nthreads), data, parallel_iterations=self.nthreads)
+    
     def load(self, data):
         logger.info("Loading data...")
         self.N = data.shape[1]
         self.P += data.shape[0]
-        all_weights = tf.map_fn(lambda point: tf.map_fn(lambda d_i: tf.map_fn(lambda d_j: d_i*d_j,point),point), data)
+        all_weights = self.load_all_weights(data)
         self._weights = tf.divide(tf.reduce_sum(all_weights, axis=0), self.N)
 
     @tf.function
@@ -28,9 +33,10 @@ class Hopfield():
     def train(self):
         logger.debug("Training...")
         #sign is required twice to avoid zeros
-        self.neurons = tf.cast(tf.map_fn(self._sign, tf.matmul(tf.cast(self._weights, tf.double),tf.cast(self.neurons, tf.double))), tf.int64)
+        self.neurons = tf.cast(tf.map_fn(self._sign, tf.matmul(tf.cast(self._weights, tf.double), tf.cast(self.neurons, tf.double))), tf.int64)
         self.neurons = tf.reshape(self.neurons, (self.N, 1))
 
+    @tf.function
     def reconstruct(self, corrupted):
         logger.debug("Reconstructing...")
         self.neurons = tf.reshape(corrupted, (self.N,1))
