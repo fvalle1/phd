@@ -93,7 +93,6 @@ docker/data_mining
 *.pb
 *.pkl
 
-topicmapping/
 TCGAbiolinks/.rstudio/
 TCGAbiolinks/TCGAbiolinksGUI/*
 
