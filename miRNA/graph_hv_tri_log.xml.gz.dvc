@@ -1,0 +1,4 @@
+outs:
+- md5: c6805a45f7478a4ba6eb2188a579b446
+  size: 24793444
+  path: graph_hv_tri_log.xml.gz
