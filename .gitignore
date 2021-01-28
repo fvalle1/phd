@@ -15,7 +15,6 @@ Enrichr/
 */build
 *.so
 
-data/
 data_counts/
 data_fpkm/
 data_fpkmuq/
