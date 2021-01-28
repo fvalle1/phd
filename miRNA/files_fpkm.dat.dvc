@@ -1,0 +1,4 @@
+outs:
+- md5: 464d9c4d9864d5fc6c1abb6ff50c2905
+  size: 248172
+  path: files_fpkm.dat
