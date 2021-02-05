@@ -9,13 +9,20 @@ hdl = logging.StreamHandler()
 hdl.setLevel(logging.INFO)
 log.addHandler(hdl)
 
-def make_silhouette(data, label, classes, cluster_labels, n_clusters, metrics = ["euclidean", "cosine"]):
-    for k in metrics:
+def make_silhouette(data, label, classes, cluster_labels, n_clusters, color_iterator = color_iterator, metrics = ["euclidean", "cosine"], figs=None):
+    """
+    :param axs: a list of matplotlib.Axes (len(metrics), 1)
+    """
+    for ifig,k in enumerate(metrics):
         log.info("metric "+k)
         y_lower = 10
         sample_silhouette_values = silhouette_samples(data, cluster_labels, metric=k)
         silhouette_avg=silhouette_score(data, cluster_labels, metric=k)
-        fig, ax = plt.subplots(1, 1)
+        if figs is not None:
+            fig = figs[ifig]
+            ax = fig.get_axes()[0]
+        else:
+            fig, ax = plt.subplots(1, 1)
         fig.set_size_inches(15, 35)
 
         # The 1st subplot is the silhouette plot
@@ -52,8 +59,19 @@ def make_silhouette(data, label, classes, cluster_labels, n_clusters, metrics = 
         ax.set_xlabel("score", fontsize=20)
         # Label the silhouette plots with their cluster numbers at the middle
         ax.axvline(x=silhouette_avg, color="red", linestyle="--", lw=2)
-        plt.tick_params(labelsize=20)
-        plt.show()
+        ax.tick_params(labelsize=20)
+        #plt.show()
         fig.savefig("silhouette_%s_%s.pdf"%(label,k))
         del sample_silhouette_values
         del silhouette_avg
+        
+        
+def make_figure(data, cluster_labels):
+    fig=plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(111)
+    #ax = fig.add_subplot(111, projection='3d')
+    for c in range(cluster_labels.max()+1):
+        ax.scatter(data[cluster_labels==c].T[0],data[cluster_labels==c].T[1], label=c)
+        #ax.scatter(data[cluster_labels==c].T[0],data[cluster_labels==c].T[1],data[cluster_labels==c].T[2], label=c)
+    plt.legend(ncol=4, loc='upper right')
+    plt.show()
