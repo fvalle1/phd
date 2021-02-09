@@ -22,7 +22,7 @@ class Hopfield():
         
     @tf.function
     def load_all_weights(self, data):
-        return tf.map_fn(lambda point: tf.map_fn(lambda d_i: tf.map_fn(lambda d_j: d_i*d_j, point), point, parallel_iterations=self.nthreads), data, parallel_iterations=self.nthreads)
+        return tf.map_fn(lambda point: tf.map_fn(lambda d_i: tf.map_fn(lambda d_j: d_i*d_j,point),point, parallel_iterations=self.nthreads), data, parallel_iterations=self.nthreads)
     
     def load(self, data: tf.Tensor) -> None:
         """
