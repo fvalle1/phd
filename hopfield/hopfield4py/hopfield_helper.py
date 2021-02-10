@@ -72,3 +72,47 @@ def get_predicted_labels(classes: list, samples: tf.Tensor, data_tensor: tf.Tens
     :return: tensor with list of classes
     """
     return list(map(lambda label_idx: classes[label_idx], get_all_prediction(samples, data_tensor, model).numpy()))
+
+@tf.function
+def dilutedhamming(A: tf.Tensor, B: tf.Tensor)-> tf.Tensor:
+    """
+    Hamming distance of non zero elements (A.B)/lenght(A)
+
+    A and be must have the same shape
+
+    :param A: first tensor
+    :param B: second tensor
+    :return: Distance: 0. if all non-zero elements of A are in B; 1. if all non-zero elements of A are opposite in B
+    """
+    assert(A.shape==B.shape)
+    x = tf.divide(tf.cast(tf.tensordot(tf.cast(A, tf.float64), tf.cast(B, tf.float64), axes=1), tf.int64),tf.reduce_sum(tf.cast(A != tf.constant(0, A.dtype), tf.int64)))
+    return -x/tf.constant(2, x.dtype)+tf.constant(0.5, x.dtype)
+    
+@tf.function
+def dilued_predict(sample, data_tensor, model):
+        reconstructed = tf.cast(model.reconstruct(sample), tf.int64)
+        return tf.argmin(tf.map_fn(lambda data: tf.cast(dilutedhamming(reconstructed, data), tf.float64), tf.cast(data_tensor,tf.float64), fn_output_signature=tf.float64, parallel_iterations=12), output_type=tf.int64)
+
+@tf.function
+def get_diluted_prediction(samples: tf.Tensor, data_tensor: tf.Tensor, model: Hopfield)-> tf.Tensor:
+    """
+    Get the nearest memory
+
+    :param samples: samples to reconstruct
+    :param data_tensor: tensor with memories
+    :param model: model used to infer
+    :return: tensor with list of argmin of the element of data_tensor nearest to each sample
+    """
+    return tf.map_fn(lambda sample: dilued_predict(sample, data_tensor, model), samples, fn_output_signature=tf.int64, parallel_iterations=12)
+
+
+def get_predicted_diluted_labels(classes: list, samples: tf.Tensor, data_tensor: tf.Tensor, model:Hopfield)->list:
+    """
+    Get the classes predicted for each sample
+
+    :param classes: list of classes names with shape (nclasses,)
+    :param samples: samples to reconstruct with shape (nsamples, nspins)
+    :param data_tensor: tensor with memories (nclasses, nspins)
+    :return: tensor with list of classes
+    """
+    return list(map(lambda label_idx: classes[label_idx], get_diluted_prediction(samples, data_tensor, model).numpy()))
