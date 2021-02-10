@@ -96,6 +96,7 @@ TCGAbiolinks/.rstudio/
 TCGAbiolinks/TCGAbiolinksGUI/*
 
 datasets/
+!datasets/.dvc
 jupyter-drive/
 mouse_Atlas/tm
 mouse_Atlas/mca/
