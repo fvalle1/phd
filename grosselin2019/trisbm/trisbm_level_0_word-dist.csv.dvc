@@ -1,0 +1,4 @@
+outs:
+- md5: 325278720d35cdff6d96dbfd941a25cf
+  size: 583744
+  path: trisbm_level_0_word-dist.csv

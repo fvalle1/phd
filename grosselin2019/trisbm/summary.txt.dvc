@@ -1,0 +1,4 @@
+outs:
+- md5: b73aa06f7342627ad364b60986c79088
+  size: 73
+  path: summary.txt
