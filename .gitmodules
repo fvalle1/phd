@@ -34,6 +34,6 @@
 [submodule "topicmapping"]
 	path = topicmapping
 	url = git@bitbucket.org:fvalle01/topicmapping.git
-[submodule "trisbm"]
+[submodule "topicmapping"]
 	path = trisbm
-	url = git@gitlab.c3s.unito.it:filippo.valle/trisbm.git
+	url = git@github.com:fvalle1/trisbm.git
