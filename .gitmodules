@@ -31,3 +31,9 @@
 [submodule "diffExpressed/GSECA"]
 	path = diffExpressed/GSECA
 	url = git@github.com:matteocereda/GSECA.git
+[submodule "topicmapping"]
+	path = topicmapping
+	url = git@bitbucket.org:fvalle01/topicmapping.git
+[submodule "trisbm"]
+	path = trisbm
+	url = git@github.com:fvalle1/trisbm
