@@ -16,7 +16,7 @@ def plot_cox(fit_func):
 		name = summary.index[-1]
 		p = float(summary.loc[name, "-log2(p)"])
 
-		if p < 1:
+		if p < -np.log10(0.05)/np.log10(2): # p>0.05
 			print(f"Too low -log2(p): {p}")
 			return summary, cph, None
 		ax = cph.plot_partial_effects_on_outcome("group", [0,1], cmap='coolwarm', lw=10, figsize=(10,15))
