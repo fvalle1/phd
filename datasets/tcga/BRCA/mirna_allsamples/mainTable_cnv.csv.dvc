@@ -1,0 +1,4 @@
+outs:
+- md5: ab897d07c6ba759e6c7b0c9e3ce7d259
+  size: 34276016
+  path: mainTable_cnv.csv
