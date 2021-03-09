@@ -20,3 +20,5 @@ twine
 dvc
 dvc[gdrive]
 rpy2
+python-louvain
+jgraph
