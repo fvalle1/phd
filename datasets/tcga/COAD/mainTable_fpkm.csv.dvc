@@ -1,0 +1,4 @@
+outs:
+- md5: 1c02b394ec6bc1a1853c371e37f34ba4
+  size: 42059293
+  path: mainTable_fpkm.csv

@@ -1,0 +1,4 @@
+outs:
+- md5: a62c4552e112a8b532a946eceba9abdb
+  size: 155383
+  path: files_manifest.dat
