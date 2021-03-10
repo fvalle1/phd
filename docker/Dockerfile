@@ -44,6 +44,7 @@ RUN jupyter lab build
 
 USER root
 RUN apt-get install xvfb --yes
+RUN apt-get install zsh --yes
 RUN apt-get autoremove --yes
 #RUN useradd -m -g users filippo
 
