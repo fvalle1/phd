@@ -1,0 +1,4 @@
+outs:
+- md5: 045015872b08e4bc1b93c564aeb0a010
+  size: 25082
+  path: twitter.xml.gz
