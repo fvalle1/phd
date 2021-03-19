@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook
+FROM jupyter/datascience-notebook:latest
 
 LABEL maintainer="filippo.valle@unito.it"
 
