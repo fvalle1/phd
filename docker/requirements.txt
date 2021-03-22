@@ -1,7 +1,5 @@
-gobject
 matplotlib
 pandas
-jupyter
 cairocffi
 scanpy
 pandarallel
@@ -11,7 +9,6 @@ tensorflow_probability
 watermark
 gseapy
 lifelines
-plotly
 seaborn
 papermill
 topicpy
