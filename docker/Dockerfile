@@ -54,7 +54,7 @@ USER jovyan
 RUN conda config --set channel_priority strict
 
 RUN conda install -c conda-forge mamba -y
-RUN mamba install -c plotly plotly-orca -y
+RUN mamba install -c plotly plotly-orca python-kaleido -y
 RUN mamba install -c bioconda bioconductor-complexheatmap -y
 RUN mamba install -c conda-forge r-gert -y
 RUN mamba install -c conda-forge graph-tool -y
