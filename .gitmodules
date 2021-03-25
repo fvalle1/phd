@@ -31,3 +31,6 @@
 [submodule "topicmapping"]
 	path = topicmapping
 	url = git@bitbucket.org:fvalle01/topicmapping.git
+[submodule "keywordTCGA"]
+	path = keywordTCGA
+	url = git@github.com:fvalle1/keywordTCGA.git
