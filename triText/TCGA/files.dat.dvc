@@ -1,0 +1,5 @@
+outs:
+- md5: c5bae157fc0a8748994f89c0da4823e6
+  size: 2299692
+  path: files.dat
+  isexec: true
