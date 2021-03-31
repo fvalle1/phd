@@ -34,3 +34,6 @@
 [submodule "keywordTCGA"]
 	path = keywordTCGA
 	url = git@github.com:fvalle1/keywordTCGA.git
+[submodule "class-slda"]
+	path = class-slda
+	url = git@github.com:fvalle1/class-slda.git
