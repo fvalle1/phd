@@ -21,3 +21,4 @@ python-louvain
 jgraph
 plotly
 kaleido
+inflect
