@@ -2,3 +2,4 @@ outs:
 - md5: a9bada62614e8b2576d44b12c0396e72
   size: 2640020
   path: sbmtm.pkl
+  isexec: true

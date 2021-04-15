@@ -1,4 +1,5 @@
 outs:
-- md5: 2146796e8af77a94f9cf6ef6593d5718
-  size: 347998
+- md5: 5c8d5a6d45a0a453f61c1de3f0620b68
+  size: 334113
   path: sbmtm.pkl
+  isexec: true
