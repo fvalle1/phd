@@ -37,3 +37,6 @@
 [submodule "class-slda"]
 	path = class-slda
 	url = git@github.com:fvalle1/class-slda.git
+[submodule "epj"]
+	path = epj
+	url = git@github.com:fvalle1/epj.git
