@@ -33,7 +33,7 @@ class method():
     
     def get_O(self):
         if self.O is None:
-            self.O =list(map(lambda x: len(x[x>0])/len(x), np.array(self.table).T))
+            self.O = list(map(lambda x: len(x[x>0])/len(x), np.array(self.table).T))
         return self.O
     
     @property
@@ -70,7 +70,7 @@ class mazzolini_pc(method):
     
 class mazzolini_broad(method):
     def __init__(self, M_tilde = 100000, *args, **kwargs):
-        super().__init__("mazzolini_broad", "green", *args, **kwargs)
+        super().__init__("mazzolini_pois", "green", *args, **kwargs)
         self.p = None
         self.M_tilde = M_tilde
     
