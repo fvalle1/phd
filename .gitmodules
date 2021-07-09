@@ -34,9 +34,6 @@
 [submodule "keywordTCGA"]
 	path = keywordTCGA
 	url = git@github.com:fvalle1/keywordTCGA.git
-[submodule "epj"]
-    path = epj
-    url = git@github.com:fvalle1/epj.git
 [submodule "multiSBM"]
 	path = multiSBM
 	url = git@github.com:fvalle1/multiSBM.git
